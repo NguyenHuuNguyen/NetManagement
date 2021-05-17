@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a6b3856411074182a34b828d9d535e62" Name="Diagram1">
+        <EntityTypeShape EntityType="NetManagementModel.Account" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NetManagementModel.Bill" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="NetManagementModel.BillInfo" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NetManagementModel.Computer" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NetManagementModel.ComputerLog" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NetManagementModel.Good" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="NetManagementModel.sysdiagram" Width="1.5" PointX="5.75" PointY="7" IsExpanded="true" />
+        <AssociationConnector Association="NetManagementModel.FK__Bill__UserName__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="NetManagementModel.FK__ComputerL__UserN__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="NetManagementModel.FK__BillInfo__idBill__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="NetManagementModel.FK__BillInfo__idGood__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="NetManagementModel.FK__ComputerL__idCom__300424B4" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
