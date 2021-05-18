@@ -23,6 +23,7 @@ namespace PBL3_NetManagement
             textBox1.Text = BLL_NM.Instance.Get_idComputer();
             NetManagementEntities db = new NetManagementEntities();
             dataGridView1.DataSource = db.Accounts.ToList();
+            //asdsad
         }
     }
 }
