@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using PBL3_NetManagement.DAL;
 
 namespace PBL3_NetManagement.BLL
 {
@@ -25,6 +26,20 @@ namespace PBL3_NetManagement.BLL
             IPHostEntry Ip = new IPHostEntry();
             Ip = Dns.GetHostEntry(username);
             return Ip.AddressList[Ip.AddressList.Length - 1].ToString();
+        }
+        public bool AccountCheck(string username, string password)
+        {
+            return DAL_NM.Instance.AccountCheck(username, password);
+        }
+        public bool AccountTypeCheck(string username)
+        {
+            //chỉ sử dụng khi đã chạy AccountCheck và xác nhận Account có tồn tại
+            return DAL_NM.Instance.AccountTypeCheck(username);
+        }
+        public void ChangePassword(string username, string newPassword)
+        {
+            //chỉ sử dụng khi đã chạy AccountCheck và xác nhận Account có tồn tại 
+            DAL_NM.Instance.ChangePassword(username, newPassword);
         }
     }
 }
