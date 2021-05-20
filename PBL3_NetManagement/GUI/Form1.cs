@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PBL3_NetManagement.BLL;
+using PBL3_NetManagement.DAL;
 
 namespace PBL3_NetManagement
 {
@@ -20,21 +21,21 @@ namespace PBL3_NetManagement
 
         private void button1_Click(object sender, EventArgs e)
         {
+            textBox1.Text = DAL_NM.Instance.ComputerCheck(textBox2.Text).ToString();
             NetManagementEntities db = new NetManagementEntities();
-
-            if (BLL_NM.Instance.AccountCheck(textBox1.Text, textBox2.Text))
-            {
-                textBox3.Text = "true, type: " + BLL_NM.Instance.AccountTypeCheck(textBox1.Text).ToString();
-            }
-            else
-            {
-                textBox3.Text = "false";
-            }
+            var computer = db.Computers.Where(p => string.Equals(p.idComputer, textBox2.Text)).Select(p => p);
+            //var computer = from p in db.Computers where p.idComputer == textBox2.Text select p;
+            dataGridView1.DataSource = computer.ToList();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             BLL_NM.Instance.ChangePassword(textBox1.Text, textBox4.Text);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
