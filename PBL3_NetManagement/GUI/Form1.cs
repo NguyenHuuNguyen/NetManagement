@@ -20,10 +20,21 @@ namespace PBL3_NetManagement
 
         private void button1_Click(object sender, EventArgs e)
         {
-            textBox1.Text = BLL_NM.Instance.Get_idComputer();
             NetManagementEntities db = new NetManagementEntities();
-            dataGridView1.DataSource = db.Accounts.ToList();
-            //asdsad
+
+            if (BLL_NM.Instance.AccountCheck(textBox1.Text, textBox2.Text))
+            {
+                textBox3.Text = "true, type: " + BLL_NM.Instance.AccountTypeCheck(textBox1.Text).ToString();
+            }
+            else
+            {
+                textBox3.Text = "false";
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            BLL_NM.Instance.ChangePassword(textBox1.Text, textBox4.Text);
         }
     }
 }
