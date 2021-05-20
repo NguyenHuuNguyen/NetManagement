@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PBL3_NetManagement.GUI
+namespace PBL3_NetManagement
 {
-    public partial class Chat : Form
+    public partial class FormLogin : Form
     {
-        public Chat()
+        public FormLogin()
         {
             InitializeComponent();
         }

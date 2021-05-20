@@ -1,7 +1,7 @@
 ﻿
 namespace PBL3_NetManagement.GUI
 {
-    partial class ChangePasswordAdmin
+    partial class FormPasswordAdmin
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@ namespace PBL3_NetManagement.GUI
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "ChangePasswordAdmin";
+            this.Text = "FormPasswordAdmin";
         }
 
         #endregion

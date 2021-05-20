@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PBL3_NetManagement.GUI
+namespace PBL3_NetManagement
 {
-    public partial class ChangePasswordUser : Form
+    public partial class FormOrder : Form
     {
-        public ChangePasswordUser()
+        public FormOrder()
         {
             InitializeComponent();
         }

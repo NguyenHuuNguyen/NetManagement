@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PBL3_NetManagement.GUI
+namespace PBL3_NetManagement
 {
-    public partial class Login : Form
+    public partial class FormUsercs : Form
     {
-        public Login()
+        public FormUsercs()
         {
             InitializeComponent();
         }

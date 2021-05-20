@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PBL3_NetManagement.GUI
+namespace PBL3_NetManagement
 {
-    public partial class Order : Form
+    public partial class FormPassword : Form
     {
-        public Order()
+        public FormPassword()
         {
             InitializeComponent();
         }

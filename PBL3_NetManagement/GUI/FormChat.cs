@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PBL3_NetManagement.GUI
+namespace PBL3_NetManagement
 {
-    public partial class ChangePasswordAdmin : Form
+    public partial class FormChat : Form
     {
-        public ChangePasswordAdmin()
+        public FormChat()
         {
             InitializeComponent();
         }

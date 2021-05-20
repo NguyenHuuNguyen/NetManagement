@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PBL3_NetManagement.GUI
 {
-    public partial class User : Form
+    public partial class FormPasswordAdmin : Form
     {
-        public User()
+        public FormPasswordAdmin()
         {
             InitializeComponent();
         }
