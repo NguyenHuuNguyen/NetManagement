@@ -16,5 +16,10 @@ namespace PBL3_NetManagement
         {
             InitializeComponent();
         }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

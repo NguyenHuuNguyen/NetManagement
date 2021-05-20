@@ -29,38 +29,39 @@ namespace PBL3_NetManagement
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listViewChat = new System.Windows.Forms.ListView();
             this.buttonSend = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxChat = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // listView1
+            // listViewChat
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(22, 28);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(514, 363);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listViewChat.HideSelection = false;
+            this.listViewChat.Location = new System.Drawing.Point(22, 28);
+            this.listViewChat.Name = "listViewChat";
+            this.listViewChat.Size = new System.Drawing.Size(514, 363);
+            this.listViewChat.TabIndex = 0;
+            this.listViewChat.UseCompatibleStateImageBehavior = false;
             // 
             // buttonSend
             // 
             this.buttonSend.BackColor = System.Drawing.SystemColors.HotTrack;
             this.buttonSend.Font = new System.Drawing.Font("MTO Chaney", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSend.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonSend.Location = new System.Drawing.Point(458, 410);
+            this.buttonSend.Location = new System.Drawing.Point(458, 397);
             this.buttonSend.Name = "buttonSend";
-            this.buttonSend.Size = new System.Drawing.Size(78, 77);
+            this.buttonSend.Size = new System.Drawing.Size(78, 74);
             this.buttonSend.TabIndex = 1;
             this.buttonSend.Text = "Send";
             this.buttonSend.UseVisualStyleBackColor = false;
             // 
-            // textBox1
+            // textBoxChat
             // 
-            this.textBox1.Location = new System.Drawing.Point(22, 440);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(414, 22);
-            this.textBox1.TabIndex = 2;
+            this.textBoxChat.Location = new System.Drawing.Point(22, 397);
+            this.textBoxChat.Multiline = true;
+            this.textBoxChat.Name = "textBoxChat";
+            this.textBoxChat.Size = new System.Drawing.Size(430, 74);
+            this.textBoxChat.TabIndex = 2;
             // 
             // FormChat
             // 
@@ -68,10 +69,10 @@ namespace PBL3_NetManagement
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PBL3_NetManagement.Properties.Resources.Backgroud;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(563, 515);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(563, 497);
+            this.Controls.Add(this.textBoxChat);
             this.Controls.Add(this.buttonSend);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.listViewChat);
             this.Name = "FormChat";
             this.Text = "Chat";
             this.ResumeLayout(false);
@@ -81,8 +82,8 @@ namespace PBL3_NetManagement
 
         #endregion
 
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listViewChat;
         private System.Windows.Forms.Button buttonSend;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxChat;
     }
 }

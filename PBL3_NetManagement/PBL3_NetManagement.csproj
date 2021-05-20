@@ -81,6 +81,42 @@
     <Compile Include="GUI\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\FormChat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormChat.designer.cs">
+      <DependentUpon>FormChat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormLogin.designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormOrder.designer.cs">
+      <DependentUpon>FormOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormPasswordAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormPasswordAdmin.Designer.cs">
+      <DependentUpon>FormPasswordAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormPasswordUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormPasswordUser.designer.cs">
+      <DependentUpon>FormPasswordUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormUsercs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormUsercs.designer.cs">
+      <DependentUpon>FormUsercs.cs</DependentUpon>
+    </Compile>
     <Compile Include="NetManagementEntityModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -104,6 +140,24 @@
     <EmbeddedResource Include="GUI\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormChat.resx">
+      <DependentUpon>FormChat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormOrder.resx">
+      <DependentUpon>FormOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormPasswordAdmin.resx">
+      <DependentUpon>FormPasswordAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormPasswordUser.resx">
+      <DependentUpon>FormPasswordUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormUsercs.resx">
+      <DependentUpon>FormUsercs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -112,6 +166,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EntityDeploy Include="NetManagementEntityModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -135,6 +190,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Resources\Backgroud.jpg" />
     <Content Include="NetManagementEntityModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>NetManagementEntityModel.Context.cs</LastGenOutput>
