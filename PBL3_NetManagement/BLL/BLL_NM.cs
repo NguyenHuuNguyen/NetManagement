@@ -31,6 +31,10 @@ namespace PBL3_NetManagement.BLL
         {
             return DAL_NM.Instance.AccountCheck(username, password);
         }
+        public bool CheckIfAccountExist(string username)
+        {
+            return DAL_NM.Instance.CheckIfAccountExist(username);
+        }
         public bool AccountTypeCheck(string username)
         {
             //chỉ sử dụng khi đã chạy AccountCheck và xác nhận Account có tồn tại
@@ -40,6 +44,30 @@ namespace PBL3_NetManagement.BLL
         {
             //chỉ sử dụng khi đã chạy AccountCheck và xác nhận Account có tồn tại 
             DAL_NM.Instance.ChangePassword(username, newPassword);
+        }
+        public bool ComputerCheck(string idcomputer)
+        {
+            return DAL_NM.Instance.ComputerCheck(idcomputer);
+        }
+        public void ChangeComputerStatus(string idcomputer, bool status)
+        {
+            DAL_NM.Instance.ChangeComputerStatus(idcomputer, status);
+        }
+        public bool GetComputerStatus(string idcomputer)
+        {
+            return DAL_NM.Instance.GetComputerStatus(idcomputer);
+        }
+        public bool GetAccountStatus(string username)
+        {
+            return DAL_NM.Instance.GetAccountStatus(username);
+        }
+        public void ChangeAccountStatus(string username, bool status)
+        {
+            DAL_NM.Instance.ChangeAccountStatus(username, status);
+        }
+        public double GetAccountBalance(string username)
+        {
+            return DAL_NM.Instance.GetAccountBalance(username);
         }
     }
 }

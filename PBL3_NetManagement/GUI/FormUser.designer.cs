@@ -59,9 +59,11 @@ namespace PBL3_NetManagement
             // 
             // textBoxBalance
             // 
-            this.textBoxBalance.Location = new System.Drawing.Point(209, 44);
+            this.textBoxBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxBalance.Location = new System.Drawing.Point(262, 40);
             this.textBoxBalance.Name = "textBoxBalance";
-            this.textBoxBalance.Size = new System.Drawing.Size(248, 22);
+            this.textBoxBalance.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textBoxBalance.Size = new System.Drawing.Size(195, 30);
             this.textBoxBalance.TabIndex = 2;
             // 
             // label2
@@ -77,9 +79,11 @@ namespace PBL3_NetManagement
             // 
             // textBoxRemainingTime
             // 
-            this.textBoxRemainingTime.Location = new System.Drawing.Point(209, 97);
+            this.textBoxRemainingTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxRemainingTime.Location = new System.Drawing.Point(262, 90);
             this.textBoxRemainingTime.Name = "textBoxRemainingTime";
-            this.textBoxRemainingTime.Size = new System.Drawing.Size(248, 22);
+            this.textBoxRemainingTime.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textBoxRemainingTime.Size = new System.Drawing.Size(195, 30);
             this.textBoxRemainingTime.TabIndex = 4;
             // 
             // label3
@@ -95,9 +99,11 @@ namespace PBL3_NetManagement
             // 
             // textBoxTimeUsed
             // 
-            this.textBoxTimeUsed.Location = new System.Drawing.Point(209, 150);
+            this.textBoxTimeUsed.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTimeUsed.Location = new System.Drawing.Point(262, 143);
             this.textBoxTimeUsed.Name = "textBoxTimeUsed";
-            this.textBoxTimeUsed.Size = new System.Drawing.Size(248, 22);
+            this.textBoxTimeUsed.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textBoxTimeUsed.Size = new System.Drawing.Size(195, 30);
             this.textBoxTimeUsed.TabIndex = 6;
             // 
             // label4
@@ -154,6 +160,7 @@ namespace PBL3_NetManagement
             this.buttonPassword.Size = new System.Drawing.Size(80, 76);
             this.buttonPassword.TabIndex = 9;
             this.buttonPassword.UseVisualStyleBackColor = false;
+            this.buttonPassword.Click += new System.EventHandler(this.buttonPassword_Click);
             // 
             // buttonOrder
             // 
@@ -176,6 +183,7 @@ namespace PBL3_NetManagement
             this.buttonLogout.Size = new System.Drawing.Size(80, 76);
             this.buttonLogout.TabIndex = 7;
             this.buttonLogout.UseVisualStyleBackColor = true;
+            this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
             // 
             // buttonChat
             // 
@@ -190,8 +198,7 @@ namespace PBL3_NetManagement
             // 
             // FormUsercs
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackgroundImage = global::PBL3_NetManagement.Properties.Resources.Backgroud;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(499, 346);
@@ -209,8 +216,10 @@ namespace PBL3_NetManagement
             this.Controls.Add(this.textBoxBalance);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonChat);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "FormUsercs";
             this.Text = "Username";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormUsercs_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

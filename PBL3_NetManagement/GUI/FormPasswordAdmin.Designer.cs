@@ -99,8 +99,7 @@ namespace PBL3_NetManagement.GUI
             // 
             // FormPasswordAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackgroundImage = global::PBL3_NetManagement.Properties.Resources.Backgroud;
             this.ClientSize = new System.Drawing.Size(433, 182);
             this.Controls.Add(this.buttonCancel);

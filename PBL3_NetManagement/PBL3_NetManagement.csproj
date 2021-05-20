@@ -111,11 +111,11 @@
     <Compile Include="GUI\FormPasswordUser.designer.cs">
       <DependentUpon>FormPasswordUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\FormUsercs.cs">
+    <Compile Include="GUI\FormUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\FormUsercs.designer.cs">
-      <DependentUpon>FormUsercs.cs</DependentUpon>
+    <Compile Include="GUI\FormUser.designer.cs">
+      <DependentUpon>FormUser.cs</DependentUpon>
     </Compile>
     <Compile Include="NetManagementEntityModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -155,8 +155,8 @@
     <EmbeddedResource Include="GUI\FormPasswordUser.resx">
       <DependentUpon>FormPasswordUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\FormUsercs.resx">
-      <DependentUpon>FormUsercs.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\FormUser.resx">
+      <DependentUpon>FormUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
