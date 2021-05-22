@@ -22,7 +22,7 @@ namespace PBL3_NetManagement
         private void button1_Click(object sender, EventArgs e)
         {
             textBox1.Text = DAL_NM.Instance.ComputerCheck(textBox2.Text).ToString();
-            NetManagementEntities db = new NetManagementEntities();
+            NetManagementEntity db = new NetManagementEntity();
             var computer = db.Computers.Where(p => string.Equals(p.idComputer, textBox2.Text)).Select(p => p);
             //var computer = from p in db.Computers where p.idComputer == textBox2.Text select p;
             dataGridView1.DataSource = computer.ToList();

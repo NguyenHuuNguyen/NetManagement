@@ -13,10 +13,10 @@ namespace PBL3_NetManagement
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class NetManagementEntities : DbContext
+    public partial class NetManagementEntity : DbContext
     {
-        public NetManagementEntities()
-            : base("name=NetManagementEntities")
+        public NetManagementEntity()
+            : base("name=NetManagementEntity")
         {
         }
     

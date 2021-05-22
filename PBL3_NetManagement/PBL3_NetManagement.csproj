@@ -56,36 +56,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs">
-      <DependentUpon>NetManagementEntityModel.tt</DependentUpon>
+      <DependentUpon>NetManagementEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Bill.cs">
-      <DependentUpon>NetManagementEntityModel.tt</DependentUpon>
+      <DependentUpon>NetManagementEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="BillInfo.cs">
-      <DependentUpon>NetManagementEntityModel.tt</DependentUpon>
+      <DependentUpon>NetManagementEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="BLL\BLL_NM.cs" />
     <Compile Include="Computer.cs">
-      <DependentUpon>NetManagementEntityModel.tt</DependentUpon>
+      <DependentUpon>NetManagementEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="ComputerLog.cs">
-      <DependentUpon>NetManagementEntityModel.tt</DependentUpon>
+      <DependentUpon>NetManagementEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\DAL_NM.cs" />
-    <Compile Include="FormAddEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormAddEdit.Designer.cs">
-      <DependentUpon>FormAddEdit.cs</DependentUpon>
+    <Compile Include="Good.cs">
+      <DependentUpon>NetManagementEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="GUI\FormAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\FormAdmin.Designer.cs">
       <DependentUpon>FormAdmin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Good.cs">
-      <DependentUpon>NetManagementEntityModel.tt</DependentUpon>
     </Compile>
     <Compile Include="GUI\Form1.cs">
       <SubType>Form</SubType>
@@ -129,29 +123,26 @@
     <Compile Include="GUI\FormUser.designer.cs">
       <DependentUpon>FormUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="NetManagementEntityModel.Context.cs">
+    <Compile Include="NetManagementEntity.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NetManagementEntityModel.Context.tt</DependentUpon>
+      <DependentUpon>NetManagementEntity.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="NetManagementEntityModel.cs">
+    <Compile Include="NetManagementEntity.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NetManagementEntityModel.tt</DependentUpon>
+      <DependentUpon>NetManagementEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="NetManagementEntityModel.Designer.cs">
+    <Compile Include="NetManagementEntity.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NetManagementEntityModel.edmx</DependentUpon>
+      <DependentUpon>NetManagementEntity.edmx</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sysdiagram.cs">
-      <DependentUpon>NetManagementEntityModel.tt</DependentUpon>
+      <DependentUpon>NetManagementEntity.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormAddEdit.resx">
-      <DependentUpon>FormAddEdit.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormAdmin.resx">
       <DependentUpon>FormAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,12 +177,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EntityDeploy Include="NetManagementEntityModel.edmx">
+    <EntityDeploy Include="NetManagementEntity.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>NetManagementEntityModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>NetManagementEntity.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="NetManagementEntityModel.edmx.diagram">
-      <DependentUpon>NetManagementEntityModel.edmx</DependentUpon>
+    <None Include="NetManagementEntity.edmx.diagram">
+      <DependentUpon>NetManagementEntity.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -209,19 +200,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Resources\Backgroud.jpg" />
-    <Content Include="NetManagementEntityModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NetManagementEntityModel.Context.cs</LastGenOutput>
-      <DependentUpon>NetManagementEntityModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="NetManagementEntityModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NetManagementEntityModel.edmx</DependentUpon>
-      <LastGenOutput>NetManagementEntityModel.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NetManagementEntity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NetManagementEntity.edmx</DependentUpon>
+      <LastGenOutput>NetManagementEntity.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="NetManagementEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NetManagementEntity.edmx</DependentUpon>
+      <LastGenOutput>NetManagementEntity.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

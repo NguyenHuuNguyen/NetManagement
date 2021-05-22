@@ -20,7 +20,7 @@ namespace PBL3_NetManagement.DAL
             }
             private set { }
         }
-        private NetManagementEntities db = new NetManagementEntities();
+        private NetManagementEntity db = new NetManagementEntity();
 
         public bool AccountCheck(string username, string password)
         {
@@ -100,20 +100,14 @@ namespace PBL3_NetManagement.DAL
                 idComputer = idcomputer,
                 UserName = username
             };
-            Console.WriteLine("li log: " + cl.DateLogin);
-            Console.WriteLine("li: " + login_time);
             db.ComputerLogs.Add(cl);
             db.SaveChanges();
         }
         public void Logout_ComputerLog(DateTime login_time, DateTime logout_time, string username)
         {
-            var cl = db.ComputerLogs.Where(p => string.Equals(p.UserName, username) && (p.DateLogin == login_time)).FirstOrDefault();
+            var cl = db.ComputerLogs.Where(p => (string.Equals(p.UserName, username) && (p.DateLogin == p.DateLogout))).FirstOrDefault();
             if (cl == null)
             {
-                Console.WriteLine("null roi`\nnull roi`\nnull roi`\n");
-                //Console.WriteLine("li log: " + cl.DateLogin);
-                Console.WriteLine("li: " + login_time);
-                Console.WriteLine("lo: " + logout_time);
                 return;
             }
             cl.DateLogout = logout_time;

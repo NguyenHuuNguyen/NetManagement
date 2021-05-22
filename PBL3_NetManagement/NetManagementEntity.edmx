@@ -20,7 +20,7 @@
             <PropertyRef Name="idBill" />
           </Key>
           <Property Name="idBill" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
           <Property Name="UserName" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="BillInfo">
@@ -37,7 +37,7 @@
             <PropertyRef Name="idComputer" />
           </Key>
           <Property Name="idComputer" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="ComputerName" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ComputerName" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="ComputerPrice" Type="float" Nullable="false" />
           <Property Name="ComputerStatus" Type="bit" Nullable="false" />
         </EntityType>
@@ -46,8 +46,8 @@
             <PropertyRef Name="idLog" />
           </Key>
           <Property Name="idLog" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="DateLogin" Type="date" Nullable="false" />
-          <Property Name="DateLogout" Type="date" Nullable="false" />
+          <Property Name="DateLogin" Type="datetime" Nullable="false" />
+          <Property Name="DateLogout" Type="datetime" Nullable="false" />
           <Property Name="idComputer" Type="nvarchar" MaxLength="100" />
           <Property Name="UserName" Type="nvarchar" MaxLength="100" />
         </EntityType>
@@ -69,7 +69,7 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
-        <Association Name="FK__Bill__UserName__38996AB5">
+        <Association Name="FK__Bill__UserName__398D8EEE">
           <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
           <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
           <ReferentialConstraint>
@@ -81,7 +81,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__BillInfo__idBill__3B75D760">
+        <Association Name="FK__BillInfo__idBill__3C69FB99">
           <End Role="Bill" Type="Self.Bill" Multiplicity="0..1" />
           <End Role="BillInfo" Type="Self.BillInfo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -93,7 +93,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__BillInfo__idGood__3C69FB99">
+        <Association Name="FK__BillInfo__idGood__3D5E1FD2">
           <End Role="Good" Type="Self.Good" Multiplicity="0..1" />
           <End Role="BillInfo" Type="Self.BillInfo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -105,7 +105,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ComputerL__idCom__300424B4">
+        <Association Name="FK__ComputerL__idCom__30F848ED">
           <End Role="Computer" Type="Self.Computer" Multiplicity="0..1" />
           <End Role="ComputerLog" Type="Self.ComputerLog" Multiplicity="*" />
           <ReferentialConstraint>
@@ -117,7 +117,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ComputerL__UserN__30F848ED">
+        <Association Name="FK__ComputerL__UserN__31EC6D26">
           <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
           <End Role="ComputerLog" Type="Self.ComputerLog" Multiplicity="*" />
           <ReferentialConstraint>
@@ -137,23 +137,23 @@
           <EntitySet Name="ComputerLog" EntityType="Self.ComputerLog" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Good" EntityType="Self.Good" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Bill__UserName__38996AB5" Association="Self.FK__Bill__UserName__38996AB5">
+          <AssociationSet Name="FK__Bill__UserName__398D8EEE" Association="Self.FK__Bill__UserName__398D8EEE">
             <End Role="Account" EntitySet="Account" />
             <End Role="Bill" EntitySet="Bill" />
           </AssociationSet>
-          <AssociationSet Name="FK__BillInfo__idBill__3B75D760" Association="Self.FK__BillInfo__idBill__3B75D760">
+          <AssociationSet Name="FK__BillInfo__idBill__3C69FB99" Association="Self.FK__BillInfo__idBill__3C69FB99">
             <End Role="Bill" EntitySet="Bill" />
             <End Role="BillInfo" EntitySet="BillInfo" />
           </AssociationSet>
-          <AssociationSet Name="FK__BillInfo__idGood__3C69FB99" Association="Self.FK__BillInfo__idGood__3C69FB99">
+          <AssociationSet Name="FK__BillInfo__idGood__3D5E1FD2" Association="Self.FK__BillInfo__idGood__3D5E1FD2">
             <End Role="Good" EntitySet="Good" />
             <End Role="BillInfo" EntitySet="BillInfo" />
           </AssociationSet>
-          <AssociationSet Name="FK__ComputerL__idCom__300424B4" Association="Self.FK__ComputerL__idCom__300424B4">
+          <AssociationSet Name="FK__ComputerL__idCom__30F848ED" Association="Self.FK__ComputerL__idCom__30F848ED">
             <End Role="Computer" EntitySet="Computer" />
             <End Role="ComputerLog" EntitySet="ComputerLog" />
           </AssociationSet>
-          <AssociationSet Name="FK__ComputerL__UserN__30F848ED" Association="Self.FK__ComputerL__UserN__30F848ED">
+          <AssociationSet Name="FK__ComputerL__UserN__31EC6D26" Association="Self.FK__ComputerL__UserN__31EC6D26">
             <End Role="Account" EntitySet="Account" />
             <End Role="ComputerLog" EntitySet="ComputerLog" />
           </AssociationSet>
@@ -172,18 +172,18 @@
           <Property Name="Type" Type="Boolean" Nullable="false" />
           <Property Name="Balance" Type="Double" Nullable="false" />
           <Property Name="AccountStatus" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Bills" Relationship="Self.FK__Bill__UserName__38996AB5" FromRole="Account" ToRole="Bill" />
-          <NavigationProperty Name="ComputerLogs" Relationship="Self.FK__ComputerL__UserN__30F848ED" FromRole="Account" ToRole="ComputerLog" />
+          <NavigationProperty Name="Bills" Relationship="Self.FK__Bill__UserName__398D8EEE" FromRole="Account" ToRole="Bill" />
+          <NavigationProperty Name="ComputerLogs" Relationship="Self.FK__ComputerL__UserN__31EC6D26" FromRole="Account" ToRole="ComputerLog" />
         </EntityType>
         <EntityType Name="Bill">
           <Key>
             <PropertyRef Name="idBill" />
           </Key>
           <Property Name="idBill" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Account" Relationship="Self.FK__Bill__UserName__38996AB5" FromRole="Bill" ToRole="Account" />
-          <NavigationProperty Name="BillInfoes" Relationship="Self.FK__BillInfo__idBill__3B75D760" FromRole="Bill" ToRole="BillInfo" />
+          <NavigationProperty Name="Account" Relationship="Self.FK__Bill__UserName__398D8EEE" FromRole="Bill" ToRole="Account" />
+          <NavigationProperty Name="BillInfoes" Relationship="Self.FK__BillInfo__idBill__3C69FB99" FromRole="Bill" ToRole="BillInfo" />
         </EntityType>
         <EntityType Name="BillInfo">
           <Key>
@@ -193,30 +193,30 @@
           <Property Name="idBill" Type="Int32" />
           <Property Name="idGood" Type="Int32" />
           <Property Name="Count" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Bill" Relationship="Self.FK__BillInfo__idBill__3B75D760" FromRole="BillInfo" ToRole="Bill" />
-          <NavigationProperty Name="Good" Relationship="Self.FK__BillInfo__idGood__3C69FB99" FromRole="BillInfo" ToRole="Good" />
+          <NavigationProperty Name="Bill" Relationship="Self.FK__BillInfo__idBill__3C69FB99" FromRole="BillInfo" ToRole="Bill" />
+          <NavigationProperty Name="Good" Relationship="Self.FK__BillInfo__idGood__3D5E1FD2" FromRole="BillInfo" ToRole="Good" />
         </EntityType>
         <EntityType Name="Computer">
           <Key>
             <PropertyRef Name="idComputer" />
           </Key>
           <Property Name="idComputer" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ComputerName" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ComputerName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ComputerPrice" Type="Double" Nullable="false" />
           <Property Name="ComputerStatus" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="ComputerLogs" Relationship="Self.FK__ComputerL__idCom__300424B4" FromRole="Computer" ToRole="ComputerLog" />
+          <NavigationProperty Name="ComputerLogs" Relationship="Self.FK__ComputerL__idCom__30F848ED" FromRole="Computer" ToRole="ComputerLog" />
         </EntityType>
         <EntityType Name="ComputerLog">
           <Key>
             <PropertyRef Name="idLog" />
           </Key>
           <Property Name="idLog" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="DateLogin" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="DateLogout" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DateLogin" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DateLogout" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="idComputer" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Account" Relationship="Self.FK__ComputerL__UserN__30F848ED" FromRole="ComputerLog" ToRole="Account" />
-          <NavigationProperty Name="Computer" Relationship="Self.FK__ComputerL__idCom__300424B4" FromRole="ComputerLog" ToRole="Computer" />
+          <NavigationProperty Name="Account" Relationship="Self.FK__ComputerL__UserN__31EC6D26" FromRole="ComputerLog" ToRole="Account" />
+          <NavigationProperty Name="Computer" Relationship="Self.FK__ComputerL__idCom__30F848ED" FromRole="ComputerLog" ToRole="Computer" />
         </EntityType>
         <EntityType Name="Good">
           <Key>
@@ -225,7 +225,7 @@
           <Property Name="idGood" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="GoodName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="GoodPrice" Type="Double" Nullable="false" />
-          <NavigationProperty Name="BillInfoes" Relationship="Self.FK__BillInfo__idGood__3C69FB99" FromRole="Good" ToRole="BillInfo" />
+          <NavigationProperty Name="BillInfoes" Relationship="Self.FK__BillInfo__idGood__3D5E1FD2" FromRole="Good" ToRole="BillInfo" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -237,7 +237,7 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <Association Name="FK__Bill__UserName__38996AB5">
+        <Association Name="FK__Bill__UserName__398D8EEE">
           <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
           <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
           <ReferentialConstraint>
@@ -249,7 +249,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ComputerL__UserN__30F848ED">
+        <Association Name="FK__ComputerL__UserN__31EC6D26">
           <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
           <End Role="ComputerLog" Type="Self.ComputerLog" Multiplicity="*" />
           <ReferentialConstraint>
@@ -261,7 +261,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__BillInfo__idBill__3B75D760">
+        <Association Name="FK__BillInfo__idBill__3C69FB99">
           <End Role="Bill" Type="Self.Bill" Multiplicity="0..1" />
           <End Role="BillInfo" Type="Self.BillInfo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -273,7 +273,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__BillInfo__idGood__3C69FB99">
+        <Association Name="FK__BillInfo__idGood__3D5E1FD2">
           <End Role="Good" Type="Self.Good" Multiplicity="0..1" />
           <End Role="BillInfo" Type="Self.BillInfo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -285,7 +285,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ComputerL__idCom__300424B4">
+        <Association Name="FK__ComputerL__idCom__30F848ED">
           <End Role="Computer" Type="Self.Computer" Multiplicity="0..1" />
           <End Role="ComputerLog" Type="Self.ComputerLog" Multiplicity="*" />
           <ReferentialConstraint>
@@ -297,7 +297,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="NetManagementEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="NetManagementEntity" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Accounts" EntityType="Self.Account" />
           <EntitySet Name="Bills" EntityType="Self.Bill" />
           <EntitySet Name="BillInfoes" EntityType="Self.BillInfo" />
@@ -305,23 +305,23 @@
           <EntitySet Name="ComputerLogs" EntityType="Self.ComputerLog" />
           <EntitySet Name="Goods" EntityType="Self.Good" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-          <AssociationSet Name="FK__Bill__UserName__38996AB5" Association="Self.FK__Bill__UserName__38996AB5">
+          <AssociationSet Name="FK__Bill__UserName__398D8EEE" Association="Self.FK__Bill__UserName__398D8EEE">
             <End Role="Account" EntitySet="Accounts" />
             <End Role="Bill" EntitySet="Bills" />
           </AssociationSet>
-          <AssociationSet Name="FK__ComputerL__UserN__30F848ED" Association="Self.FK__ComputerL__UserN__30F848ED">
+          <AssociationSet Name="FK__ComputerL__UserN__31EC6D26" Association="Self.FK__ComputerL__UserN__31EC6D26">
             <End Role="Account" EntitySet="Accounts" />
             <End Role="ComputerLog" EntitySet="ComputerLogs" />
           </AssociationSet>
-          <AssociationSet Name="FK__BillInfo__idBill__3B75D760" Association="Self.FK__BillInfo__idBill__3B75D760">
+          <AssociationSet Name="FK__BillInfo__idBill__3C69FB99" Association="Self.FK__BillInfo__idBill__3C69FB99">
             <End Role="Bill" EntitySet="Bills" />
             <End Role="BillInfo" EntitySet="BillInfoes" />
           </AssociationSet>
-          <AssociationSet Name="FK__BillInfo__idGood__3C69FB99" Association="Self.FK__BillInfo__idGood__3C69FB99">
+          <AssociationSet Name="FK__BillInfo__idGood__3D5E1FD2" Association="Self.FK__BillInfo__idGood__3D5E1FD2">
             <End Role="Good" EntitySet="Goods" />
             <End Role="BillInfo" EntitySet="BillInfoes" />
           </AssociationSet>
-          <AssociationSet Name="FK__ComputerL__idCom__300424B4" Association="Self.FK__ComputerL__idCom__300424B4">
+          <AssociationSet Name="FK__ComputerL__idCom__30F848ED" Association="Self.FK__ComputerL__idCom__30F848ED">
             <End Role="Computer" EntitySet="Computers" />
             <End Role="ComputerLog" EntitySet="ComputerLogs" />
           </AssociationSet>
@@ -331,7 +331,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="NetManagementModelStoreContainer" CdmEntityContainer="NetManagementEntities">
+        <EntityContainerMapping StorageEntityContainer="NetManagementModelStoreContainer" CdmEntityContainer="NetManagementEntity">
           <EntitySetMapping Name="Accounts">
             <EntityTypeMapping TypeName="NetManagementModel.Account">
               <MappingFragment StoreEntitySet="Account">
