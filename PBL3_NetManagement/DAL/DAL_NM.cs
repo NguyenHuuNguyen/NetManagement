@@ -91,6 +91,34 @@ namespace PBL3_NetManagement.DAL
             var account = db.Accounts.AsNoTracking().Where(p => string.Equals(p.UserName, username)).FirstOrDefault();
             return account.Balance;
         }
+        public void Login_ComputerLog(DateTime login_time, string idcomputer, string username)
+        {
+            ComputerLog cl = new ComputerLog
+            {
+                DateLogin = login_time,
+                DateLogout = login_time,
+                idComputer = idcomputer,
+                UserName = username
+            };
+            Console.WriteLine("li log: " + cl.DateLogin);
+            Console.WriteLine("li: " + login_time);
+            db.ComputerLogs.Add(cl);
+            db.SaveChanges();
+        }
+        public void Logout_ComputerLog(DateTime login_time, DateTime logout_time, string username)
+        {
+            var cl = db.ComputerLogs.Where(p => string.Equals(p.UserName, username) && (p.DateLogin == login_time)).FirstOrDefault();
+            if (cl == null)
+            {
+                Console.WriteLine("null roi`\nnull roi`\nnull roi`\n");
+                //Console.WriteLine("li log: " + cl.DateLogin);
+                Console.WriteLine("li: " + login_time);
+                Console.WriteLine("lo: " + logout_time);
+                return;
+            }
+            cl.DateLogout = logout_time;
+            db.SaveChanges();
+        }
     }
 }
 

@@ -69,5 +69,13 @@ namespace PBL3_NetManagement.BLL
         {
             return DAL_NM.Instance.GetAccountBalance(username);
         }
+        public void Login_ComputerLog(DateTime login_time, string idcomputer, string username)
+        {
+            DAL_NM.Instance.Login_ComputerLog(login_time, idcomputer, username);
+        }
+        public void Logout_ComputerLog(DateTime login_time, DateTime logout_time, string username)
+        {
+            DAL_NM.Instance.Logout_ComputerLog(login_time, logout_time, username);
+        }
     }
 }
