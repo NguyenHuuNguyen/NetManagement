@@ -46,7 +46,10 @@ namespace PBL3_NetManagement.DAL
         {
             //chỉ sử dụng khi đã chạy AccountCheck và xác nhận Account có tồn tại 
             var account = db.Accounts.Where(p => string.Equals(p.UserName, username)).FirstOrDefault();
-            if (account == null) return;
+            if (account == null)
+            {
+                return;
+            }
             account.PassWord = newPassword;
             db.SaveChanges();
         }

@@ -17,7 +17,6 @@ namespace PBL3_NetManagement
         public del1 SetVisible_Login;
         DateTime login_time;
         Timer BalanceSubtraction;
-        Timer clock;
         TimeSpan timeUsed;
         public FormUsercs(string username)
         {
