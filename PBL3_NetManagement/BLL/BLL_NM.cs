@@ -77,5 +77,13 @@ namespace PBL3_NetManagement.BLL
         {
             DAL_NM.Instance.Logout_ComputerLog(login_time, logout_time, username);
         }
+        public double GetComputerPrice(string idcomputer)
+        {
+            return DAL_NM.Instance.GetComputerPrice(idcomputer);
+        }
+        public void BalanceSubtraction(string username, double amount)
+        {
+            DAL_NM.Instance.BalanceSubtraction(username, amount);
+        }
     }
 }

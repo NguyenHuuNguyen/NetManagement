@@ -62,6 +62,7 @@ namespace PBL3_NetManagement
             this.textBoxBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxBalance.Location = new System.Drawing.Point(262, 40);
             this.textBoxBalance.Name = "textBoxBalance";
+            this.textBoxBalance.ReadOnly = true;
             this.textBoxBalance.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.textBoxBalance.Size = new System.Drawing.Size(195, 30);
             this.textBoxBalance.TabIndex = 2;
@@ -82,6 +83,7 @@ namespace PBL3_NetManagement
             this.textBoxRemainingTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxRemainingTime.Location = new System.Drawing.Point(262, 90);
             this.textBoxRemainingTime.Name = "textBoxRemainingTime";
+            this.textBoxRemainingTime.ReadOnly = true;
             this.textBoxRemainingTime.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.textBoxRemainingTime.Size = new System.Drawing.Size(195, 30);
             this.textBoxRemainingTime.TabIndex = 4;
@@ -102,6 +104,7 @@ namespace PBL3_NetManagement
             this.textBoxTimeUsed.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxTimeUsed.Location = new System.Drawing.Point(262, 143);
             this.textBoxTimeUsed.Name = "textBoxTimeUsed";
+            this.textBoxTimeUsed.ReadOnly = true;
             this.textBoxTimeUsed.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.textBoxTimeUsed.Size = new System.Drawing.Size(195, 30);
             this.textBoxTimeUsed.TabIndex = 6;
@@ -220,6 +223,7 @@ namespace PBL3_NetManagement
             this.Name = "FormUsercs";
             this.Text = "Username";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormUsercs_FormClosing);
+            this.Load += new System.EventHandler(this.FormUsercs_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

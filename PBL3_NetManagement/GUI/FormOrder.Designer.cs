@@ -63,6 +63,7 @@ namespace PBL3_NetManagement
             // 
             this.textBox1.Location = new System.Drawing.Point(99, 528);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(157, 22);
             this.textBox1.TabIndex = 2;
             // 

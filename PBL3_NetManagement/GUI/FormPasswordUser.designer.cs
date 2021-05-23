@@ -56,6 +56,7 @@ namespace PBL3_NetManagement
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(176, 22);
             this.textBoxPassword.TabIndex = 1;
+            this.textBoxPassword.UseSystemPasswordChar = true;
             // 
             // label2
             // 
@@ -74,6 +75,7 @@ namespace PBL3_NetManagement
             this.textBoxNewpassword.Name = "textBoxNewpassword";
             this.textBoxNewpassword.Size = new System.Drawing.Size(176, 22);
             this.textBoxNewpassword.TabIndex = 3;
+            this.textBoxNewpassword.UseSystemPasswordChar = true;
             // 
             // label3
             // 
@@ -92,6 +94,7 @@ namespace PBL3_NetManagement
             this.textBoxConfirm.Name = "textBoxConfirm";
             this.textBoxConfirm.Size = new System.Drawing.Size(176, 22);
             this.textBoxConfirm.TabIndex = 5;
+            this.textBoxConfirm.UseSystemPasswordChar = true;
             // 
             // buttonOK
             // 

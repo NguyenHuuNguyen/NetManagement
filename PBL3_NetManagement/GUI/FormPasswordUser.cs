@@ -36,7 +36,13 @@ namespace PBL3_NetManagement
                 MessageBox.Show("Error, please reconfirm your new password!");
                 return;
             }
-            //chưa xong
+            if (textBoxNewpassword.Text == "")
+            {
+                MessageBox.Show("Password cannot be blank!");
+                return;
+            }
+            BLL_NM.Instance.ChangePassword(Username, textBoxConfirm.Text);
+            this.Dispose();
         }
     }
 }
