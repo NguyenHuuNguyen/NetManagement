@@ -113,6 +113,23 @@ namespace PBL3_NetManagement.DAL
             cl.DateLogout = logout_time;
             db.SaveChanges();
         }
+        public double GetComputerPrice(string idcomputer)
+        {
+            var c = db.Computers.AsNoTracking().Where(p => string.Equals(p.idComputer, idcomputer)).FirstOrDefault();
+            return c.ComputerPrice; 
+        }
+        public void BalanceSubtraction(string username, double amount)
+        {
+            var account = db.Accounts.Where(p => string.Equals(p.UserName, username)).FirstOrDefault();
+            if (account == null)
+            {
+                return;
+            }
+            double temp = GetAccountBalance(username) - amount;
+            if (temp < 0) account.Balance = 0;
+            else account.Balance = temp;
+            db.SaveChanges();
+        }
     }
 }
 

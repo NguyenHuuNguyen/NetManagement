@@ -53,7 +53,7 @@ namespace PBL3_NetManagement
                 if (!BLL_NM.Instance.AccountTypeCheck(textBoxUsername.Text))
                 {
                     //tk phải có tiền vì đây là User
-                    if (BLL_NM.Instance.GetAccountBalance(textBoxUsername.Text) == 0)
+                    if (BLL_NM.Instance.GetAccountBalance(textBoxUsername.Text) <= 0)
                     {
                         MessageBox.Show("Your balance is 0!");
                         return;

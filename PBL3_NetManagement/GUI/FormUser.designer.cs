@@ -220,6 +220,7 @@ namespace PBL3_NetManagement
             this.Name = "FormUsercs";
             this.Text = "Username";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormUsercs_FormClosing);
+            this.Load += new System.EventHandler(this.FormUsercs_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
