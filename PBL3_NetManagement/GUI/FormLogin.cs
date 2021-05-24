@@ -59,13 +59,16 @@ namespace PBL3_NetManagement
                         return;
                     }
                     FormUsercs fu = new FormUsercs(textBoxUsername.Text);
-                    fu.Show();
-                    fu.SetVisible_Login = SetVisible;
+                    fu.SetVisible_Login = ReAppear;
                     this.Visible = false;
+                    fu.Show();
                 }
                 else
                 {
-                    //code cho form admin ở đây
+                    FormAdmin fadmin = new FormAdmin(textBoxUsername.Text);
+                    fadmin.SetVisible_Login = ReAppear;
+                    this.Visible = false;
+                    fadmin.Show();
                 }
             }
             else
@@ -73,7 +76,7 @@ namespace PBL3_NetManagement
                 MessageBox.Show("Username or Password is incorrect!");
             }
         }
-        public void SetVisible()
+        public void ReAppear()
         {
             this.Visible = true;
             textBoxUsername.Text = "";

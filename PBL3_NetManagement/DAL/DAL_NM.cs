@@ -133,6 +133,34 @@ namespace PBL3_NetManagement.DAL
             else account.Balance = temp;
             db.SaveChanges();
         }
+        public List<Computer> Get_All_Computer()
+        {
+            var computer = from p in db.Computers.AsNoTracking() select p;
+            return computer.ToList();
+        }
+        public Computer Get_Computer(string idcomputer)
+        {
+            var computer = db.Computers.AsNoTracking().Where(p => (string.Equals(p.idComputer, idcomputer))).FirstOrDefault();
+            return computer as Computer;
+        }
+        public void Add_Computer(Computer cpt)
+        {
+            db.Computers.Add(cpt);
+            db.SaveChanges();
+        }
+        public void Delete_Computer(string idcomputer)
+        {
+            var computer = db.Computers.Where(p => string.Equals(p.idComputer, idcomputer)).FirstOrDefault();
+            db.Computers.Remove(computer);
+            db.SaveChanges();
+        }
+        public void Edit_Computer(Computer computer)
+        {
+            var computer_var = db.Computers.Where(p => string.Equals(p.idComputer, computer.idComputer)).FirstOrDefault();
+            computer_var.ComputerPrice = computer.ComputerPrice;
+            computer_var.ComputerName = computer.ComputerName;
+            db.SaveChanges();
+        }
     }
 }
 
