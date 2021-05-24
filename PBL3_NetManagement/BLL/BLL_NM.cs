@@ -69,6 +69,26 @@ namespace PBL3_NetManagement.BLL
         {
             return DAL_NM.Instance.GetAccountBalance(username);
         }
+        // chạy hàm khi login
+        public void Login_init(DateTime login_time, string username)
+        {
+            // chuyển trạng tháy máy sang đang sử dụng
+            BLL_NM.Instance.ChangeComputerStatus(BLL_NM.Instance.Get_idComputer(), true);
+            // chuyển trạng thái tài khoản sang đang sử dụng
+            BLL_NM.Instance.ChangeAccountStatus(username, true);
+            // tạo ComputerLog
+            BLL_NM.Instance.Login_ComputerLog(login_time, BLL_NM.Instance.Get_idComputer(), username);
+        }
+        // chạy hàm khi logout
+        public void Logout_init(DateTime login_time, string username)
+        {
+            // cập nhật ComputerLog
+            BLL_NM.Instance.Logout_ComputerLog(login_time, DateTime.Now, username);
+            // chuyển trạng tháy máy sang đang không sử dụng
+            BLL_NM.Instance.ChangeComputerStatus(BLL_NM.Instance.Get_idComputer(), false);
+            // chuyển trạng thái tài khoản sang đang không sử dụng
+            BLL_NM.Instance.ChangeAccountStatus(username, false);
+        }
         public void Login_ComputerLog(DateTime login_time, string idcomputer, string username)
         {
             DAL_NM.Instance.Login_ComputerLog(login_time, idcomputer, username);
@@ -84,6 +104,26 @@ namespace PBL3_NetManagement.BLL
         public void BalanceSubtraction(string username, double amount)
         {
             DAL_NM.Instance.BalanceSubtraction(username, amount);
+        }
+        public List<Computer> Get_All_Computer()
+        {
+            return DAL_NM.Instance.Get_All_Computer();
+        }
+        public Computer Get_Computer(string idcomputer)
+        {
+            return DAL_NM.Instance.Get_Computer(idcomputer);
+        }
+        public void Add_Computer(Computer cpt)
+        {
+            DAL_NM.Instance.Add_Computer(cpt);
+        }
+        public void Delete_Computer(string idcomputer)
+        {
+            DAL_NM.Instance.Delete_Computer(idcomputer);
+        }
+        public void Edit_Computer(Computer computer)
+        {
+            DAL_NM.Instance.Edit_Computer(computer);
         }
     }
 }
