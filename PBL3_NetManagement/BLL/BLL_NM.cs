@@ -125,5 +125,9 @@ namespace PBL3_NetManagement.BLL
         {
             DAL_NM.Instance.Edit_Computer(computer);
         }
+        public List<ComputerLog> GetComputerLogs()
+        {
+           return DAL_NM.Instance.Get_All_ComputerLog();
+        }
     }
 }

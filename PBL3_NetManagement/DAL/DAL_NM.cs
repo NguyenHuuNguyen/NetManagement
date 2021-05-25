@@ -161,6 +161,11 @@ namespace PBL3_NetManagement.DAL
             computer_var.ComputerName = computer.ComputerName;
             db.SaveChanges();
         }
+        public List<ComputerLog> Get_All_ComputerLog()
+        {
+            var computerlog = from p in db.ComputerLogs.AsNoTracking() select p;
+            return computerlog.ToList();
+        }
     }
 }
 

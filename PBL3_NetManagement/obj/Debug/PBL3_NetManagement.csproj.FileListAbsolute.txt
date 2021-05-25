@@ -59,3 +59,26 @@ E:\Thanhnga - 102190176 - 19TCLC_DT4\HK_4\Doan\PBL3_NetManagement(re)\PBL3_NetMa
 E:\Thanhnga - 102190176 - 19TCLC_DT4\HK_4\Doan\PBL3_NetManagement(re)\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.pdb
 G:\Code\Visual Studio projects\Do_an\PBL3_NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.FormAdmin.resources
 G:\Code\Visual Studio projects\Do_an\PBL3_NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.GUI.FormAddEditComputer.resources
+D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\bin\Debug\PBL3_NetManagement.exe.config
+D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\bin\Debug\PBL3_NetManagement.exe
+D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\bin\Debug\PBL3_NetManagement.pdb
+D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\bin\Debug\EntityFramework.dll
+D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\bin\Debug\EntityFramework.SqlServer.dll
+D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\bin\Debug\EntityFramework.xml
+D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\bin\Debug\EntityFramework.SqlServer.xml
+D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.csprojAssemblyReference.cache
+D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.FormAdmin.resources
+D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.Form1.resources
+D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.FormChat.resources
+D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.GUI.FormAddEditComputer.resources
+D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.FormLogin.resources
+D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.FormOrder.resources
+D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.GUI.FormPasswordAdmin.resources
+D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.FormPassword.resources
+D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.FormUsercs.resources
+D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.Properties.Resources.resources
+D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.csproj.GenerateResource.cache
+D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.csproj.CoreCompileInputs.cache
+D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.csproj.CopyComplete
+D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.exe
+D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.pdb
