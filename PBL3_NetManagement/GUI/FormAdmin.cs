@@ -71,9 +71,13 @@ namespace PBL3_NetManagement
             timer_LoadComputer.Enabled = true;
             Load_Table();
         }
+        // Khi timer load lại flowl thì đồng thời load lại các textbox chứa thông tin của máy
         private void LoadComputer_Tick(object sender, EventArgs e)
         {
             Load_Table();
+            if (buttonEditComputer.Tag == null)
+            return;
+            Load_Info_Computer((buttonEditComputer.Tag as Computer).idComputer);
         }
         // load thông tin cac Computer lên Flowl
         private void Load_Table()
@@ -103,11 +107,21 @@ namespace PBL3_NetManagement
         // load thông tin Computer lên các textbox
         private void Load_Info_Computer(string idcomputer)
         {
+            // fix exception
+            if (!BLL_NM.Instance.ComputerCheck(idcomputer)) return;
+
             Computer computer = BLL_NM.Instance.Get_Computer(idcomputer);
             textBoxIDComputer.Text = computer.idComputer.ToString();
             textBoxNameComputer.Text = computer.ComputerName.ToString();
             textBoxPriceComputer.Text = computer.ComputerPrice.ToString();
             textBoxStatusComputer.Text = computer.ComputerStatus.ToString();
+            foreach(ComputerLog item in BLL_NM.Instance.GetComputerLogs())
+            if(computer.ComputerStatus == true && item.idComputer==computer.idComputer && item.DateLogout == item.DateLogin )
+            {
+                    textBoxUser.Text = item.UserName;
+            }
+            if (computer.ComputerStatus == false)
+                textBoxUser.Clear();
         }
         // khi nhấn vào các Computer trên Flowl
         private void Bt_Click(object sender, EventArgs e)
