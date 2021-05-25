@@ -77,7 +77,7 @@ namespace PBL3_NetManagement
             Load_Table();
             if (buttonEditComputer.Tag == null)
             return;
-           Load_Info_Computer((buttonEditComputer.Tag as Computer).idComputer);
+            Load_Info_Computer((buttonEditComputer.Tag as Computer).idComputer);
         }
         // load thông tin cac Computer lên Flowl
         private void Load_Table()
@@ -107,6 +107,9 @@ namespace PBL3_NetManagement
         // load thông tin Computer lên các textbox
         private void Load_Info_Computer(string idcomputer)
         {
+            // fix exception
+            if (!BLL_NM.Instance.ComputerCheck(idcomputer)) return;
+
             Computer computer = BLL_NM.Instance.Get_Computer(idcomputer);
             textBoxIDComputer.Text = computer.idComputer.ToString();
             textBoxNameComputer.Text = computer.ComputerName.ToString();
