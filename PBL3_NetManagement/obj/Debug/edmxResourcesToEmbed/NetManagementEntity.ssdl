@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NetManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="PassWord" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="Type" Type="bit" Nullable="false" />
+    <Property Name="Balance" Type="float" Nullable="false" />
+    <Property Name="AccountStatus" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Bill">
+    <Key>
+      <PropertyRef Name="idBill" />
+    </Key>
+    <Property Name="idBill" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="BillInfo">
+    <Key>
+      <PropertyRef Name="idBillInfo" />
+    </Key>
+    <Property Name="idBillInfo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idBill" Type="int" />
+    <Property Name="idGood" Type="int" />
+    <Property Name="Count" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Computer">
+    <Key>
+      <PropertyRef Name="idComputer" />
+    </Key>
+    <Property Name="idComputer" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ComputerName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ComputerPrice" Type="float" Nullable="false" />
+    <Property Name="ComputerStatus" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ComputerLog">
+    <Key>
+      <PropertyRef Name="idLog" />
+    </Key>
+    <Property Name="idLog" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateLogin" Type="datetime" Nullable="false" />
+    <Property Name="DateLogout" Type="datetime" Nullable="false" />
+    <Property Name="idComputer" Type="nvarchar" MaxLength="100" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Good">
+    <Key>
+      <PropertyRef Name="idGood" />
+    </Key>
+    <Property Name="idGood" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GoodName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="GoodPrice" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK__Bill__UserName__398D8EEE">
+    <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+    <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="UserName" />
+      </Principal>
+      <Dependent Role="Bill">
+        <PropertyRef Name="UserName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BillInfo__idBill__3C69FB99">
+    <End Role="Bill" Type="Self.Bill" Multiplicity="0..1" />
+    <End Role="BillInfo" Type="Self.BillInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bill">
+        <PropertyRef Name="idBill" />
+      </Principal>
+      <Dependent Role="BillInfo">
+        <PropertyRef Name="idBill" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BillInfo__idGood__3D5E1FD2">
+    <End Role="Good" Type="Self.Good" Multiplicity="0..1" />
+    <End Role="BillInfo" Type="Self.BillInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Good">
+        <PropertyRef Name="idGood" />
+      </Principal>
+      <Dependent Role="BillInfo">
+        <PropertyRef Name="idGood" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ComputerL__idCom__30F848ED">
+    <End Role="Computer" Type="Self.Computer" Multiplicity="0..1" />
+    <End Role="ComputerLog" Type="Self.ComputerLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Computer">
+        <PropertyRef Name="idComputer" />
+      </Principal>
+      <Dependent Role="ComputerLog">
+        <PropertyRef Name="idComputer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ComputerL__UserN__31EC6D26">
+    <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+    <End Role="ComputerLog" Type="Self.ComputerLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="UserName" />
+      </Principal>
+      <Dependent Role="ComputerLog">
+        <PropertyRef Name="UserName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="NetManagementModelStoreContainer">
+    <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bill" EntityType="Self.Bill" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BillInfo" EntityType="Self.BillInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Computer" EntityType="Self.Computer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ComputerLog" EntityType="Self.ComputerLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Good" EntityType="Self.Good" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Bill__UserName__398D8EEE" Association="Self.FK__Bill__UserName__398D8EEE">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="Bill" EntitySet="Bill" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BillInfo__idBill__3C69FB99" Association="Self.FK__BillInfo__idBill__3C69FB99">
+      <End Role="Bill" EntitySet="Bill" />
+      <End Role="BillInfo" EntitySet="BillInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BillInfo__idGood__3D5E1FD2" Association="Self.FK__BillInfo__idGood__3D5E1FD2">
+      <End Role="Good" EntitySet="Good" />
+      <End Role="BillInfo" EntitySet="BillInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ComputerL__idCom__30F848ED" Association="Self.FK__ComputerL__idCom__30F848ED">
+      <End Role="Computer" EntitySet="Computer" />
+      <End Role="ComputerLog" EntitySet="ComputerLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ComputerL__UserN__31EC6D26" Association="Self.FK__ComputerL__UserN__31EC6D26">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="ComputerLog" EntitySet="ComputerLog" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

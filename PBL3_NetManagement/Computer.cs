@@ -21,7 +21,7 @@ namespace PBL3_NetManagement
         }
     
         public string idComputer { get; set; }
-        public int ComputerName { get; set; }
+        public string ComputerName { get; set; }
         public double ComputerPrice { get; set; }
         public bool ComputerStatus { get; set; }
     
