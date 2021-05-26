@@ -70,6 +70,7 @@ namespace PBL3_NetManagement
             timer_LoadComputer.Interval = 1000;
             timer_LoadComputer.Enabled = true;
             Load_Table();
+            LoadSystemLogs();
         }
         // Khi timer load lại flowl thì đồng thời load lại các textbox chứa thông tin của máy
         private void LoadComputer_Tick(object sender, EventArgs e)
@@ -122,7 +123,7 @@ namespace PBL3_NetManagement
             }
             if (computer.ComputerStatus == false)
                 textBoxUser.Clear();
-        }
+         }
         // khi nhấn vào các Computer trên Flowl
         private void Bt_Click(object sender, EventArgs e)
         {
@@ -130,6 +131,32 @@ namespace PBL3_NetManagement
             buttonDeleteComputer.Tag = ((sender as Button).Tag as Computer);
             buttonEditComputer.Tag = ((sender as Button).Tag as Computer);
             Load_Info_Computer(idcomputer);
+        }
+        private void LoadSystemLogs()
+        {
+            textBoxSystemLog_All.Text = "";
+            foreach(ComputerLog i in BLL_NM.Instance.GetComputerLogs().OrderByDescending(o => o.idLog))
+            {
+                if (!i.UserName.Contains(textBox_SystemLogSearch.Text)) continue;
+                textBoxSystemLog_All.Text += "Log Id: " + i.idLog + "\r\n";
+                textBoxSystemLog_All.Text += "Username:     " + i.UserName + "\r\n";
+                textBoxSystemLog_All.Text += "Computer Id:  " + i.idComputer + "\r\n";
+                textBoxSystemLog_All.Text += "Login time:     " + i.DateLogin + "\r\n";
+                textBoxSystemLog_All.Text += "Logout time:  ";
+                if (i.DateLogin == i.DateLogout) textBoxSystemLog_All.Text += "Currently in use \r\n";
+                else textBoxSystemLog_All.Text += i.DateLogout + "\r\n";
+                textBoxSystemLog_All.Text += "-----------------------------------------------------\r\n";
+            }
+        }
+
+        private void buttonRefreshSystemLog_Click(object sender, EventArgs e)
+        {
+            LoadSystemLogs();
+        }
+
+        private void textBox_SystemLogSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadSystemLogs();
         }
     }
 }
