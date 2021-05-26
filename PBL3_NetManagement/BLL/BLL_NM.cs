@@ -129,5 +129,9 @@ namespace PBL3_NetManagement.BLL
         {
            return DAL_NM.Instance.Get_All_ComputerLog();
         }
+        public void Delete_Computer_Log(string idcomputer)
+        {
+            DAL_NM.Instance.Delete_Computer_Log(idcomputer);
+        }
     }
 }

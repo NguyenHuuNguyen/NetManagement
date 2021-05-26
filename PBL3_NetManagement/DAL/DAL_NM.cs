@@ -166,6 +166,20 @@ namespace PBL3_NetManagement.DAL
             var computerlog = from p in db.ComputerLogs.AsNoTracking() select p;
             return computerlog.ToList();
         }
+        public bool Check_If_IdComputer_Log_Exist(string idcomputer)
+        {
+            var computerlog = db.ComputerLogs.AsNoTracking().Where(p => string.Equals(p.idComputer, idcomputer)).Select(p => p);
+            return computerlog.ToList().Count > 0;
+        }
+        public void Delete_Computer_Log(string idcomputer)
+        {
+            if (Check_If_IdComputer_Log_Exist(idcomputer))
+            {
+                var computerlog = db.ComputerLogs.Where(p => string.Equals(p.idComputer, idcomputer)).Select(p => p);
+                db.ComputerLogs.RemoveRange(computerlog);
+                db.SaveChanges();
+            }    
+        }
     }
 }
 
