@@ -50,14 +50,12 @@ namespace PBL3_NetManagement
                 MessageBox.Show("This computer is currently in use!");
                 return;
             }
-           DialogResult result = MessageBox.Show("Do you really want to delete this computer", "Warning", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Do you really want to delete this computer", "Warning", MessageBoxButtons.YesNo);
             if(result == System.Windows.Forms.DialogResult.Yes)
             {
                 BLL_NM.Instance.Delete_Computer_Log((buttonDeleteComputer.Tag as Computer).idComputer);
                 BLL_NM.Instance.Delete_Computer((buttonDeleteComputer.Tag as Computer).idComputer);
-            }else if(result == System.Windows.Forms.DialogResult.No)
-            {
-                
+                LoadSystemLogs();
             }
             this.textBoxNameComputer.Text = "";
             this.textBoxStatusComputer.Text = "";
