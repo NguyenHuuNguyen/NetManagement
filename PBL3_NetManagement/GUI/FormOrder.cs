@@ -88,9 +88,9 @@ namespace PBL3_NetManagement
         void comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Count 1
-            int amount = ((ComboBox)sender).SelectedIndex;
+            int quantity = ((ComboBox)sender).SelectedIndex;
             int price = Convert.ToInt32(dataGridViewOrder.CurrentRow.Cells["Price"].Value.ToString());
-            dataGridViewOrder.CurrentRow.Cells["subTotal"].Value = (price * amount).ToString();
+            dataGridViewOrder.CurrentRow.Cells["subTotal"].Value = (price * quantity).ToString();
             // Count all
             List<Good> lGood = BLL_NM.Instance.Get_All_Good();
             int total = 0;
@@ -125,11 +125,12 @@ namespace PBL3_NetManagement
                 List<Good> lGood = BLL_NM.Instance.Get_All_Good();
                 for (int i = 0; i <= (lGood.Count - 1); i++)
                 {
-                    int subtotal = Convert.ToInt32(dataGridViewOrder.Rows[i].Cells[5].Value.ToString());
+                    int subtotal = Convert.ToInt32(dataGridViewOrder.Rows[i].Cells[5].Value.ToString());    
                     if (subtotal != 0)
                     {
+                        int quantity = Convert.ToInt32(dataGridViewOrder.Rows[i].Cells[4].Value.ToString());
                         int idgood = Convert.ToInt32(dataGridViewOrder.Rows[i].Cells[0].Value.ToString());
-                        BLL_NM.Instance.Add_BillInfo(idBill, idgood, subtotal);
+                        BLL_NM.Instance.Add_BillInfo(idBill, idgood, quantity);
                     }
                 }
                 this.Dispose();
