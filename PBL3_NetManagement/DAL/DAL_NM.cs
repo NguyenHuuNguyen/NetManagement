@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PBL3_NetManagement.DAL
 {
@@ -159,6 +160,40 @@ namespace PBL3_NetManagement.DAL
             var computer_var = db.Computers.Where(p => string.Equals(p.idComputer, computer.idComputer)).FirstOrDefault();
             computer_var.ComputerPrice = computer.ComputerPrice;
             computer_var.ComputerName = computer.ComputerName;
+            db.SaveChanges();
+        }
+        //
+        public List<Good> Get_All_Good()
+        {
+            var good = from p in db.Goods.AsNoTracking() select p;
+            return good.ToList();
+        }
+        public void Add_Bill(DateTime date, string username)
+        {
+            Bill lbill = new Bill();
+            lbill.Date = date;
+            lbill.UserName = username;
+            db.Bills.Add(lbill);
+            db.SaveChanges();
+        }
+        public int Get_idBill (DateTime date, string username)
+        {
+            var bill = db.Bills.AsNoTracking().Where(p => (p.UserName == username)).Select(p => p);
+            int idb = 0;
+            List<Bill> lbill = bill.ToList();
+            foreach(Bill i in lbill)
+            {
+                if (i.idBill > idb) idb = i.idBill;
+            }
+            return idb;
+        }
+        public void Add_BillInfo (int idbill, int idgood, int count)
+        {
+            BillInfo billInfo = new BillInfo();
+            billInfo.idBill = idbill;
+            billInfo.idGood = idgood;
+            billInfo.Count = count;
+            db.BillInfoes.Add(billInfo);
             db.SaveChanges();
         }
         public List<ComputerLog> Get_All_ComputerLog()
