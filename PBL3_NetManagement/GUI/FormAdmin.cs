@@ -115,9 +115,7 @@ namespace PBL3_NetManagement
         // load thông tin Computer lên các textbox
         private void Load_Info_Computer(string idcomputer)
         {
-            // fix exception
             if (!BLL_NM.Instance.ComputerCheck(idcomputer)) return;
-
             Computer computer = BLL_NM.Instance.Get_Computer(idcomputer);
             textBoxIDComputer.Text = computer.idComputer.ToString();
             textBoxNameComputer.Text = computer.ComputerName.ToString();
