@@ -50,7 +50,15 @@ namespace PBL3_NetManagement
                 MessageBox.Show("This computer is currently in use!");
                 return;
             }
-            BLL_NM.Instance.Delete_Computer((buttonDeleteComputer.Tag as Computer).idComputer);
+           DialogResult result = MessageBox.Show("Do you really want to delete this computer", "Warning", MessageBoxButtons.YesNo);
+            if(result == System.Windows.Forms.DialogResult.Yes)
+            {
+                BLL_NM.Instance.Delete_Computer_Log((buttonDeleteComputer.Tag as Computer).idComputer);
+                BLL_NM.Instance.Delete_Computer((buttonDeleteComputer.Tag as Computer).idComputer);
+            }else if(result == System.Windows.Forms.DialogResult.No)
+            {
+                
+            }
             this.textBoxNameComputer.Text = "";
             this.textBoxStatusComputer.Text = "";
             this.textBoxPriceComputer.Text = "";
@@ -108,9 +116,7 @@ namespace PBL3_NetManagement
         // load thông tin Computer lên các textbox
         private void Load_Info_Computer(string idcomputer)
         {
-            // fix exception
             if (!BLL_NM.Instance.ComputerCheck(idcomputer)) return;
-
             Computer computer = BLL_NM.Instance.Get_Computer(idcomputer);
             textBoxIDComputer.Text = computer.idComputer.ToString();
             textBoxNameComputer.Text = computer.ComputerName.ToString();
