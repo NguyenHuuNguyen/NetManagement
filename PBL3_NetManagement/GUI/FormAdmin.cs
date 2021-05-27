@@ -138,7 +138,7 @@ namespace PBL3_NetManagement
             foreach(ComputerLog i in BLL_NM.Instance.GetComputerLogs().OrderByDescending(o => o.idLog))
             {
                 if (!i.UserName.Contains(textBox_SystemLogSearch.Text)) continue;
-                textBoxSystemLog_All.Text += "Log Id: " + i.idLog + "\r\n";
+                textBoxSystemLog_All.Text += "Log Id:     " + i.idLog + "\r\n";
                 textBoxSystemLog_All.Text += "Username:     " + i.UserName + "\r\n";
                 textBoxSystemLog_All.Text += "Computer Id:  " + i.idComputer + "\r\n";
                 textBoxSystemLog_All.Text += "Login time:     " + i.DateLogin + "\r\n";
