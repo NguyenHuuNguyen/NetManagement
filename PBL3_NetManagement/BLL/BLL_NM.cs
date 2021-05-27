@@ -125,5 +125,22 @@ namespace PBL3_NetManagement.BLL
         {
             DAL_NM.Instance.Edit_Computer(computer);
         }
+        //
+        public List<Good> Get_All_Good()
+        {
+            return DAL_NM.Instance.Get_All_Good();
+        }
+        public void Add_Bill(DateTime date, string username)
+        {
+            DAL_NM.Instance.Add_Bill(date, username);
+        }
+        public int Get_idBill(DateTime date, string username)
+        {
+            return DAL_NM.Instance.Get_idBill(date, username);
+        }
+        public void Add_BillInfo(int idbill, int idgood, int count)
+        {
+            DAL_NM.Instance.Add_BillInfo(idbill, idgood, count);
+        }
     }
 }
