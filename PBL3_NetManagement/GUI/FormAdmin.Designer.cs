@@ -53,30 +53,32 @@ namespace PBL3_NetManagement
             this.buttonDeleteComputer = new System.Windows.Forms.Button();
             this.flowLayoutComputer = new System.Windows.Forms.FlowLayoutPanel();
             this.Accouts = new System.Windows.Forms.TabPage();
-            this.buttonAddbill = new System.Windows.Forms.Button();
+            this.buttonDep_Account = new System.Windows.Forms.Button();
             this.buttonSearch_Account = new System.Windows.Forms.Button();
-            this.textBox_Account = new System.Windows.Forms.TextBox();
+            this.textBoxSearch_Account = new System.Windows.Forms.TextBox();
             this.dataGridView_Account = new System.Windows.Forms.DataGridView();
             this.buttonDel_Account = new System.Windows.Forms.Button();
             this.buttonEdit_Account = new System.Windows.Forms.Button();
-            this.buttonAdd_Accout = new System.Windows.Forms.Button();
             this.Goods = new System.Windows.Forms.TabPage();
             this.buttonSearch_Goods = new System.Windows.Forms.Button();
-            this.textBox_Goods = new System.Windows.Forms.TextBox();
+            this.textBoxSearch_Goods = new System.Windows.Forms.TextBox();
             this.buttonDel_Goods = new System.Windows.Forms.Button();
             this.buttonEdit_Goods = new System.Windows.Forms.Button();
             this.buttonAdd_Goods = new System.Windows.Forms.Button();
             this.dataGridView_Goods = new System.Windows.Forms.DataGridView();
             this.SystemLog = new System.Windows.Forms.TabPage();
+            this.textBoxSystemLog_All = new System.Windows.Forms.TextBox();
             this.buttonRefreshSystemLog = new System.Windows.Forms.Button();
             this.buttonSearch_SystemLog = new System.Windows.Forms.Button();
             this.textBox_SystemLogSearch = new System.Windows.Forms.TextBox();
             this.Bills = new System.Windows.Forms.TabPage();
             this.buttonSearch_Bills = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.texboxSearch_Bills = new System.Windows.Forms.TextBox();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.textBoxSystemLog_All = new System.Windows.Forms.TextBox();
+            this.buttonAdd_Account = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.buttonRefresh_Bills = new System.Windows.Forms.Button();
+            this.buttonAddBill = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.Computers.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -331,13 +333,13 @@ namespace PBL3_NetManagement
             // 
             this.Accouts.BackgroundImage = global::PBL3_NetManagement.Properties.Resources.Backgroud;
             this.Accouts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Accouts.Controls.Add(this.buttonAddbill);
+            this.Accouts.Controls.Add(this.buttonDep_Account);
             this.Accouts.Controls.Add(this.buttonSearch_Account);
-            this.Accouts.Controls.Add(this.textBox_Account);
+            this.Accouts.Controls.Add(this.textBoxSearch_Account);
             this.Accouts.Controls.Add(this.dataGridView_Account);
             this.Accouts.Controls.Add(this.buttonDel_Account);
+            this.Accouts.Controls.Add(this.buttonAdd_Account);
             this.Accouts.Controls.Add(this.buttonEdit_Account);
-            this.Accouts.Controls.Add(this.buttonAdd_Accout);
             this.Accouts.Location = new System.Drawing.Point(4, 25);
             this.Accouts.Name = "Accouts";
             this.Accouts.Padding = new System.Windows.Forms.Padding(3);
@@ -346,21 +348,22 @@ namespace PBL3_NetManagement
             this.Accouts.Text = "Account";
             this.Accouts.UseVisualStyleBackColor = true;
             // 
-            // buttonAddbill
+            // buttonDep_Account
             // 
-            this.buttonAddbill.BackColor = System.Drawing.SystemColors.Highlight;
-            this.buttonAddbill.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddbill.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonAddbill.Location = new System.Drawing.Point(427, 33);
-            this.buttonAddbill.Name = "buttonAddbill";
-            this.buttonAddbill.Size = new System.Drawing.Size(100, 44);
-            this.buttonAddbill.TabIndex = 7;
-            this.buttonAddbill.Text = "Add Bill";
-            this.buttonAddbill.UseVisualStyleBackColor = false;
+            this.buttonDep_Account.BackColor = System.Drawing.SystemColors.Highlight;
+            this.buttonDep_Account.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDep_Account.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonDep_Account.Location = new System.Drawing.Point(427, 33);
+            this.buttonDep_Account.Name = "buttonDep_Account";
+            this.buttonDep_Account.Size = new System.Drawing.Size(100, 44);
+            this.buttonDep_Account.TabIndex = 7;
+            this.buttonDep_Account.Text = "Dep";
+            this.buttonDep_Account.UseVisualStyleBackColor = false;
             // 
             // buttonSearch_Account
             // 
             this.buttonSearch_Account.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonSearch_Account.Enabled = false;
             this.buttonSearch_Account.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSearch_Account.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonSearch_Account.Location = new System.Drawing.Point(833, 32);
@@ -370,13 +373,13 @@ namespace PBL3_NetManagement
             this.buttonSearch_Account.Text = "Search";
             this.buttonSearch_Account.UseVisualStyleBackColor = false;
             // 
-            // textBox_Account
+            // textBoxSearch_Account
             // 
-            this.textBox_Account.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Account.Location = new System.Drawing.Point(566, 40);
-            this.textBox_Account.Name = "textBox_Account";
-            this.textBox_Account.Size = new System.Drawing.Size(241, 30);
-            this.textBox_Account.TabIndex = 5;
+            this.textBoxSearch_Account.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSearch_Account.Location = new System.Drawing.Point(566, 40);
+            this.textBoxSearch_Account.Name = "textBoxSearch_Account";
+            this.textBoxSearch_Account.Size = new System.Drawing.Size(241, 30);
+            this.textBoxSearch_Account.TabIndex = 5;
             // 
             // dataGridView_Account
             // 
@@ -413,24 +416,12 @@ namespace PBL3_NetManagement
             this.buttonEdit_Account.Text = "Edit";
             this.buttonEdit_Account.UseVisualStyleBackColor = false;
             // 
-            // buttonAdd_Accout
-            // 
-            this.buttonAdd_Accout.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.buttonAdd_Accout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdd_Accout.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonAdd_Accout.Location = new System.Drawing.Point(45, 33);
-            this.buttonAdd_Accout.Name = "buttonAdd_Accout";
-            this.buttonAdd_Accout.Size = new System.Drawing.Size(100, 44);
-            this.buttonAdd_Accout.TabIndex = 1;
-            this.buttonAdd_Accout.Text = "Add";
-            this.buttonAdd_Accout.UseVisualStyleBackColor = false;
-            // 
             // Goods
             // 
             this.Goods.BackgroundImage = global::PBL3_NetManagement.Properties.Resources.Backgroud;
             this.Goods.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Goods.Controls.Add(this.buttonSearch_Goods);
-            this.Goods.Controls.Add(this.textBox_Goods);
+            this.Goods.Controls.Add(this.textBoxSearch_Goods);
             this.Goods.Controls.Add(this.buttonDel_Goods);
             this.Goods.Controls.Add(this.buttonEdit_Goods);
             this.Goods.Controls.Add(this.buttonAdd_Goods);
@@ -447,6 +438,7 @@ namespace PBL3_NetManagement
             // buttonSearch_Goods
             // 
             this.buttonSearch_Goods.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonSearch_Goods.Enabled = false;
             this.buttonSearch_Goods.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSearch_Goods.Location = new System.Drawing.Point(827, 35);
             this.buttonSearch_Goods.Name = "buttonSearch_Goods";
@@ -455,12 +447,12 @@ namespace PBL3_NetManagement
             this.buttonSearch_Goods.Text = "Search";
             this.buttonSearch_Goods.UseVisualStyleBackColor = false;
             // 
-            // textBox_Goods
+            // textBoxSearch_Goods
             // 
-            this.textBox_Goods.Location = new System.Drawing.Point(459, 41);
-            this.textBox_Goods.Name = "textBox_Goods";
-            this.textBox_Goods.Size = new System.Drawing.Size(353, 30);
-            this.textBox_Goods.TabIndex = 4;
+            this.textBoxSearch_Goods.Location = new System.Drawing.Point(459, 41);
+            this.textBoxSearch_Goods.Name = "textBoxSearch_Goods";
+            this.textBoxSearch_Goods.Size = new System.Drawing.Size(353, 30);
+            this.textBoxSearch_Goods.TabIndex = 4;
             // 
             // buttonDel_Goods
             // 
@@ -523,6 +515,18 @@ namespace PBL3_NetManagement
             this.SystemLog.Text = "System Log";
             this.SystemLog.UseVisualStyleBackColor = true;
             // 
+            // textBoxSystemLog_All
+            // 
+            this.textBoxSystemLog_All.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSystemLog_All.Location = new System.Drawing.Point(54, 96);
+            this.textBoxSystemLog_All.Multiline = true;
+            this.textBoxSystemLog_All.Name = "textBoxSystemLog_All";
+            this.textBoxSystemLog_All.ReadOnly = true;
+            this.textBoxSystemLog_All.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxSystemLog_All.Size = new System.Drawing.Size(866, 508);
+            this.textBoxSystemLog_All.TabIndex = 3;
+            this.textBoxSystemLog_All.WordWrap = false;
+            // 
             // buttonRefreshSystemLog
             // 
             this.buttonRefreshSystemLog.BackColor = System.Drawing.SystemColors.MenuHighlight;
@@ -561,9 +565,11 @@ namespace PBL3_NetManagement
             // 
             this.Bills.BackgroundImage = global::PBL3_NetManagement.Properties.Resources.Backgroud;
             this.Bills.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Bills.Controls.Add(this.textBox2);
+            this.Bills.Controls.Add(this.buttonAddBill);
+            this.Bills.Controls.Add(this.buttonRefresh_Bills);
             this.Bills.Controls.Add(this.buttonSearch_Bills);
-            this.Bills.Controls.Add(this.textBox1);
-            this.Bills.Controls.Add(this.listView1);
+            this.Bills.Controls.Add(this.texboxSearch_Bills);
             this.Bills.Location = new System.Drawing.Point(4, 25);
             this.Bills.Name = "Bills";
             this.Bills.Size = new System.Drawing.Size(973, 630);
@@ -574,6 +580,7 @@ namespace PBL3_NetManagement
             // buttonSearch_Bills
             // 
             this.buttonSearch_Bills.BackColor = System.Drawing.SystemColors.Highlight;
+            this.buttonSearch_Bills.Enabled = false;
             this.buttonSearch_Bills.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSearch_Bills.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonSearch_Bills.Location = new System.Drawing.Point(431, 32);
@@ -583,39 +590,66 @@ namespace PBL3_NetManagement
             this.buttonSearch_Bills.Text = "Search";
             this.buttonSearch_Bills.UseVisualStyleBackColor = false;
             // 
-            // textBox1
+            // texboxSearch_Bills
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(53, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(347, 30);
-            this.textBox1.TabIndex = 1;
-            // 
-            // listView1
-            // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(53, 107);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(870, 490);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.texboxSearch_Bills.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.texboxSearch_Bills.Location = new System.Drawing.Point(53, 38);
+            this.texboxSearch_Bills.Name = "texboxSearch_Bills";
+            this.texboxSearch_Bills.Size = new System.Drawing.Size(347, 30);
+            this.texboxSearch_Bills.TabIndex = 1;
             // 
             // notifyIcon1
             // 
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
             // 
-            // textBoxSystemLog_All
+            // buttonAdd_Account
             // 
-            this.textBoxSystemLog_All.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSystemLog_All.Location = new System.Drawing.Point(54, 96);
-            this.textBoxSystemLog_All.Multiline = true;
-            this.textBoxSystemLog_All.Name = "textBoxSystemLog_All";
-            this.textBoxSystemLog_All.ReadOnly = true;
-            this.textBoxSystemLog_All.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxSystemLog_All.Size = new System.Drawing.Size(866, 508);
-            this.textBoxSystemLog_All.TabIndex = 3;
-            this.textBoxSystemLog_All.WordWrap = false;
+            this.buttonAdd_Account.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonAdd_Account.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAdd_Account.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonAdd_Account.Location = new System.Drawing.Point(45, 33);
+            this.buttonAdd_Account.Name = "buttonAdd_Account";
+            this.buttonAdd_Account.Size = new System.Drawing.Size(100, 44);
+            this.buttonAdd_Account.TabIndex = 2;
+            this.buttonAdd_Account.Text = "Add";
+            this.buttonAdd_Account.UseVisualStyleBackColor = false;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(53, 92);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox2.Size = new System.Drawing.Size(866, 508);
+            this.textBox2.TabIndex = 4;
+            this.textBox2.WordWrap = false;
+            // 
+            // buttonRefresh_Bills
+            // 
+            this.buttonRefresh_Bills.BackColor = System.Drawing.SystemColors.Highlight;
+            this.buttonRefresh_Bills.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRefresh_Bills.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonRefresh_Bills.Location = new System.Drawing.Point(559, 32);
+            this.buttonRefresh_Bills.Name = "buttonRefresh_Bills";
+            this.buttonRefresh_Bills.Size = new System.Drawing.Size(100, 44);
+            this.buttonRefresh_Bills.TabIndex = 2;
+            this.buttonRefresh_Bills.Text = "Refresh";
+            this.buttonRefresh_Bills.UseVisualStyleBackColor = false;
+            // 
+            // buttonAddBill
+            // 
+            this.buttonAddBill.BackColor = System.Drawing.SystemColors.Highlight;
+            this.buttonAddBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddBill.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonAddBill.Location = new System.Drawing.Point(687, 32);
+            this.buttonAddBill.Name = "buttonAddBill";
+            this.buttonAddBill.Size = new System.Drawing.Size(100, 44);
+            this.buttonAddBill.TabIndex = 2;
+            this.buttonAddBill.Text = "Add Bill";
+            this.buttonAddBill.UseVisualStyleBackColor = false;
             // 
             // FormAdmin
             // 
@@ -663,25 +697,23 @@ namespace PBL3_NetManagement
         private System.Windows.Forms.TabPage Goods;
         private System.Windows.Forms.TabPage SystemLog;
         private System.Windows.Forms.Button buttonSearch_Account;
-        private System.Windows.Forms.TextBox textBox_Account;
+        private System.Windows.Forms.TextBox textBoxSearch_Account;
         private System.Windows.Forms.DataGridView dataGridView_Account;
         private System.Windows.Forms.Button buttonDel_Account;
         private System.Windows.Forms.Button buttonEdit_Account;
-        private System.Windows.Forms.Button buttonAdd_Accout;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.Button buttonDel_Goods;
         private System.Windows.Forms.Button buttonEdit_Goods;
         private System.Windows.Forms.Button buttonAdd_Goods;
         private System.Windows.Forms.DataGridView dataGridView_Goods;
         private System.Windows.Forms.Button buttonSearch_Goods;
-        private System.Windows.Forms.TextBox textBox_Goods;
+        private System.Windows.Forms.TextBox textBoxSearch_Goods;
         private System.Windows.Forms.Button buttonSearch_SystemLog;
         private System.Windows.Forms.TextBox textBox_SystemLogSearch;
-        private System.Windows.Forms.Button buttonAddbill;
+        private System.Windows.Forms.Button buttonDep_Account;
         private System.Windows.Forms.TabPage Bills;
         private System.Windows.Forms.Button buttonSearch_Bills;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.TextBox texboxSearch_Bills;
         private System.Windows.Forms.Button buttonEditComputer;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label labelStatus;
@@ -704,5 +736,9 @@ namespace PBL3_NetManagement
         private System.Windows.Forms.TextBox textBoxUser;
         private System.Windows.Forms.Button buttonRefreshSystemLog;
         private System.Windows.Forms.TextBox textBoxSystemLog_All;
+        private System.Windows.Forms.Button buttonAdd_Account;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button buttonRefresh_Bills;
+        private System.Windows.Forms.Button buttonAddBill;
     }
 }

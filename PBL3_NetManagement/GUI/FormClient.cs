@@ -97,5 +97,10 @@ namespace PBL3_NetManagement
             FormOrder od = new FormOrder(this.Text);
             od.Show();
         }
+
+        private void buttonChat_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Hét to lên cho chủ quán nghe :)");
+        }
     }
 }
