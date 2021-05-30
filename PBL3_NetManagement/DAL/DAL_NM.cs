@@ -215,6 +215,21 @@ namespace PBL3_NetManagement.DAL
                 db.SaveChanges();
             }    
         }
+        public bool GoodCheck(int idgood, string namegood, int price)
+        {
+            var idGood = from p in db.Goods.AsNoTracking() where ((p.idGood == idgood) && (p.GoodName == namegood) && (p.GoodPrice == price)) select p;
+            return idGood.ToList().Count > 0;
+        }
+        public List<Bill> Get_Bill()
+        {
+            var bill = from p in db.Bills.AsNoTracking() select p;
+            return bill.ToList();
+        }
+        public List<BillInfo> Get_Billinfo_with_idBill(int idbill)
+        {
+            var billinfo_wid = from p in db.BillInfoes.AsNoTracking() where (p.idBill == idbill) select p;
+            return billinfo_wid.ToList();
+        }
     }
 }
 

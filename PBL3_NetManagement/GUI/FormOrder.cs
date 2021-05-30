@@ -92,9 +92,8 @@ namespace PBL3_NetManagement
             int price = Convert.ToInt32(dataGridViewOrder.CurrentRow.Cells["Price"].Value.ToString());
             dataGridViewOrder.CurrentRow.Cells["subTotal"].Value = (price * quantity).ToString();
             // Count all
-            List<Good> lGood = BLL_NM.Instance.Get_All_Good();
             int total = 0;
-            for (int i = 0; i <= (lGood.Count - 1); i++)
+            for (int i = 0; i <= (dataGridViewOrder.Rows.Count - 1); i++)
             {
                 string data = dataGridViewOrder.Rows[i].Cells[5].Value.ToString();
                 total += Convert.ToInt32(data);
@@ -109,6 +108,19 @@ namespace PBL3_NetManagement
 
         private void buttonOrder_Order_Click(object sender, EventArgs e)
         {
+            for (int i = 0; i <= (dataGridViewOrder.Rows.Count - 1); i++)
+            {
+                int idGood = Convert.ToInt32(dataGridViewOrder.Rows[i].Cells[0].Value.ToString());
+                string namegood = dataGridViewOrder.Rows[i].Cells[1].Value.ToString();
+                int price = Convert.ToInt32(dataGridViewOrder.Rows[i].Cells[2].Value.ToString());
+                if (BLL_NM.Instance.GoodCheck(idGood, namegood, price) == false)
+                {
+                    MessageBox.Show("There was some changes in the data, aborting!");
+                    this.Dispose();
+                    return;
+                }
+            }
+
             //if total = 0
             if (textBoxOrder.Text == "0")
             {
@@ -122,20 +134,18 @@ namespace PBL3_NetManagement
                 BLL_NM.Instance.Add_Bill(date, this.Text);
                 //Add BillInfo to SQL
                 int idBill = BLL_NM.Instance.Get_idBill(date, this.Text);
-                List<Good> lGood = BLL_NM.Instance.Get_All_Good();
-                for (int i = 0; i <= (lGood.Count - 1); i++)
+                for (int i = 0; i <= (dataGridViewOrder.Rows.Count - 1); i++)
                 {
-                    int subtotal = Convert.ToInt32(dataGridViewOrder.Rows[i].Cells[5].Value.ToString());    
+                    int subtotal = Convert.ToInt32(dataGridViewOrder.Rows[i].Cells[5].Value.ToString());
                     if (subtotal != 0)
                     {
-                        int quantity = Convert.ToInt32(dataGridViewOrder.Rows[i].Cells[4].Value.ToString());
+                        int count = Convert.ToInt32(dataGridViewOrder.Rows[i].Cells[4].Value.ToString());
                         int idgood = Convert.ToInt32(dataGridViewOrder.Rows[i].Cells[0].Value.ToString());
-                        BLL_NM.Instance.Add_BillInfo(idBill, idgood, quantity);
+                        BLL_NM.Instance.Add_BillInfo(idBill, idgood, count);
                     }
                 }
                 this.Dispose();
             }
-
         }
     }
 }

@@ -41,7 +41,6 @@ E:\Thanhnga - 102190176 - 19TCLC_DT4\HK_4\Doan\PBL3_NetManagement(re)\PBL3_NetMa
 E:\Thanhnga - 102190176 - 19TCLC_DT4\HK_4\Doan\PBL3_NetManagement(re)\PBL3_NetManagement\bin\Debug\EntityFramework.xml
 E:\Thanhnga - 102190176 - 19TCLC_DT4\HK_4\Doan\PBL3_NetManagement(re)\PBL3_NetManagement\bin\Debug\EntityFramework.SqlServer.xml
 E:\Thanhnga - 102190176 - 19TCLC_DT4\HK_4\Doan\PBL3_NetManagement(re)\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.csprojAssemblyReference.cache
-E:\Thanhnga - 102190176 - 19TCLC_DT4\HK_4\Doan\PBL3_NetManagement(re)\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.FormAddEdit.resources
 E:\Thanhnga - 102190176 - 19TCLC_DT4\HK_4\Doan\PBL3_NetManagement(re)\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.FormAdmin.resources
 E:\Thanhnga - 102190176 - 19TCLC_DT4\HK_4\Doan\PBL3_NetManagement(re)\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.Form1.resources
 E:\Thanhnga - 102190176 - 19TCLC_DT4\HK_4\Doan\PBL3_NetManagement(re)\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.FormChat.resources
@@ -82,3 +81,4 @@ D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManag
 D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.exe
 D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.pdb
 G:\Code\Visual Studio projects\Do_an\PBL3_NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.csprojAssemblyReference.cache
+E:\Thanhnga - 102190176 - 19TCLC_DT4\HK_4\Doan\PBL3_NetManagement(re)\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.GUI.FormAddEditComputer.resources

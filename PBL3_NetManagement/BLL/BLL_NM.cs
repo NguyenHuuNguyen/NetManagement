@@ -150,5 +150,41 @@ namespace PBL3_NetManagement.BLL
         {
             DAL_NM.Instance.Delete_Computer_Log(idcomputer);
         }
+        public bool GoodCheck(int idgood, string namegood, int price)
+        {
+            return DAL_NM.Instance.GoodCheck(idgood, namegood, price);
+        }
+        public List<Bill> Get_Bill()
+        {
+            return DAL_NM.Instance.Get_Bill();
+        }
+        public List<BillInfo> Get_Billinfo_with_idBill(int idbill)
+        {
+            return DAL_NM.Instance.Get_Billinfo_with_idBill(idbill);
+        }
+        public string Get_GoodName(int idgood)
+        {
+            string goodname = "";
+            foreach (Good i in Get_All_Good())
+            {
+                if (i.idGood == idgood)
+                {
+                    goodname = i.GoodName;
+                }
+            }
+            return goodname;
+        }
+        public string Text_alignment (string text, int leght)
+        {
+            string texttxt = text;
+            if(texttxt.Length < leght)
+            {
+                for (int i = 1; i <= (leght - text.Length); i++)
+                {
+                    texttxt = texttxt + " "; 
+                }
+            }
+            return texttxt;
+        }
     }
 }
