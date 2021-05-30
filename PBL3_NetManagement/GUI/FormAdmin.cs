@@ -77,6 +77,7 @@ namespace PBL3_NetManagement
             timer_LoadComputer.Enabled = true;
             Load_Table();
             LoadSystemLogs();
+            LoadAccounts();
         }
         // Khi timer load lại flowl thì đồng thời load lại các textbox chứa thông tin của máy
         private void LoadComputer_Tick(object sender, EventArgs e)
@@ -161,6 +162,45 @@ namespace PBL3_NetManagement
         private void textBox_SystemLogSearch_TextChanged(object sender, EventArgs e)
         {
             LoadSystemLogs();
+        }
+        private void LoadAccounts()
+        {
+            dataGridView_Account.DataSource = BLL_NM.Instance.Get_Clients_Show(textBoxSearch_Account.Text);
+        }
+
+        private void textBoxSearch_Account_TextChanged(object sender, EventArgs e)
+        {
+            LoadAccounts();
+        }
+
+        private void buttonDep_Account_Click(object sender, EventArgs e)
+        {
+            if (dataGridView_Account.CurrentRow == null) return;
+            FormDep fd = new FormDep(dataGridView_Account.CurrentRow.Cells["Username"].Value.ToString());
+            fd.Reload_Accounts = LoadAccounts;
+            fd.Show();
+        }
+
+        private void buttonAdd_Account_Click(object sender, EventArgs e)
+        {
+            FormAddEditAccount ftemp = new FormAddEditAccount();
+            ftemp.Reload_Accounts = LoadAccounts;
+            ftemp.Show();
+        }
+
+        private void buttonEdit_Account_Click(object sender, EventArgs e)
+        {
+            if (dataGridView_Account.CurrentRow == null) return;
+            FormAddEditAccount ftemp = new FormAddEditAccount(dataGridView_Account.CurrentRow.Cells["Username"].Value.ToString());
+            ftemp.Reload_Accounts = LoadAccounts;
+            ftemp.Show();
+        }
+
+        private void buttonDel_Account_Click(object sender, EventArgs e)
+        {
+            if (dataGridView_Account.CurrentRow == null) return;
+            BLL_NM.Instance.Delete_Account(dataGridView_Account.CurrentRow.Cells["Username"].Value.ToString());
+            LoadAccounts();
         }
     }
 }

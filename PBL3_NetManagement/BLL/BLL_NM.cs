@@ -20,6 +20,27 @@ namespace PBL3_NetManagement.BLL
             }
             private set { }
         }
+        public Account Get_Account_By_Username(string username)
+        {
+            return DAL_NM.Instance.Get_Account_By_Username(username);
+        }
+        public List<Account_Show> Get_Clients_Show(string username)
+        {
+            List<Account_Show> data = new List<Account_Show>();
+            foreach(Account i in DAL_NM.Instance.Get_All_Accounts())
+            {
+                if (!i.Type && i.UserName.Contains(username))
+                {
+                    data.Add(new Account_Show
+                    {
+                        Username = i.UserName,
+                        AccountStatus = i.AccountStatus,
+                        Balance = i.Balance
+                    });
+                }
+            }
+            return data;
+        }
         public string Get_idComputer()
         {
             string username = Dns.GetHostName();
@@ -149,6 +170,20 @@ namespace PBL3_NetManagement.BLL
         public void Delete_Computer_Log(string idcomputer)
         {
             DAL_NM.Instance.Delete_Computer_Log(idcomputer);
+        }
+        public void Add_Account(Account account)
+        {
+            DAL_NM.Instance.Add_Account(account);
+        }
+        public void Edit_Account(Account account)
+        {
+            DAL_NM.Instance.Edit_Account(account);
+        }
+        public void Delete_Account(string username)
+        {
+            DAL_NM.Instance.Delete_Bills_By_username(username);
+            DAL_NM.Instance.Delete_Computer_Log_By_Username(username);
+            DAL_NM.Instance.Delete_Account_By_Username(username);
         }
     }
 }
