@@ -150,5 +150,62 @@ namespace PBL3_NetManagement.BLL
         {
             DAL_NM.Instance.Delete_Computer_Log(idcomputer);
         }
+        public List<Good> Get_All_Good_With_Name(string goodname)
+        {
+            List<Good> listgood= new List<Good>();
+            foreach(Good item in DAL_NM.Instance.Get_All_Good())
+            {
+                if (item.GoodName.Contains(goodname))
+                {
+                    listgood.Add(item);
+                }
+            }
+            return listgood;
+        }
+        public Good Get_Good_With_Name(string goodname)
+        {
+            foreach (Good item in DAL_NM.Instance.Get_All_Good())
+            {
+                if (item.GoodName == goodname)
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
+        public Good Get_Good_With_Id(int idgood)
+        {
+            foreach (Good item in DAL_NM.Instance.Get_All_Good())
+            {
+                if (item.idGood == idgood)
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
+        public bool Check_Name_Good(string goodname)
+        {
+            foreach (Good item in DAL_NM.Instance.Get_All_Good())
+            {
+                if (item.GoodName == goodname)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public void Add_Good(Good good)
+        {
+            DAL_NM.Instance.Add_Good(good);
+        }
+        public void Edit_Good(Good good)
+        {
+            DAL_NM.Instance.Edit_Good(good);
+        }
+        public void Delete_Good(string goodname)
+        {
+            DAL_NM.Instance.Delete_Good(goodname);
+        }
     }
 }

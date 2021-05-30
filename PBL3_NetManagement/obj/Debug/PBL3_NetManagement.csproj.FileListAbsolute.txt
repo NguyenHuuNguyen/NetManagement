@@ -82,3 +82,4 @@ D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManag
 D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.exe
 D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.pdb
 G:\Code\Visual Studio projects\Do_an\PBL3_NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.csprojAssemblyReference.cache
+D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.GUI.FormAddEditGood.resources

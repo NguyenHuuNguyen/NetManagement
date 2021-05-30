@@ -77,10 +77,12 @@ namespace PBL3_NetManagement
             timer_LoadComputer.Enabled = true;
             Load_Table();
             LoadSystemLogs();
+            Load_DTGrid_Good();
         }
         // Khi timer load lại flowl thì đồng thời load lại các textbox chứa thông tin của máy
         private void LoadComputer_Tick(object sender, EventArgs e)
         {
+            Load_DTGrid_Good();
             Load_Table();
             if (buttonEditComputer.Tag == null)
             return;
@@ -152,7 +154,11 @@ namespace PBL3_NetManagement
                 textBoxSystemLog_All.Text += "-----------------------------------------------------\r\n";
             }
         }
-
+        private void Load_DTGrid_Good()
+        {
+            dataGridView_Goods.Controls.Clear();
+            dataGridView_Goods.DataSource = BLL_NM.Instance.Get_All_Good_With_Name(textBoxSearch_Goods.Text).Select(p=> new Good_Show(){ GoodName = p.GoodName, GoodPrice = p.GoodPrice }).ToList();
+        }
         private void buttonRefreshSystemLog_Click(object sender, EventArgs e)
         {
             LoadSystemLogs();
@@ -161,6 +167,32 @@ namespace PBL3_NetManagement
         private void textBox_SystemLogSearch_TextChanged(object sender, EventArgs e)
         {
             LoadSystemLogs();
+        }
+
+        private void textBoxSearch_Goods_TextChanged(object sender, EventArgs e)
+        {
+            Load_DTGrid_Good();
+        }
+
+        private void buttonAdd_Goods_Click(object sender, EventArgs e)
+        {
+            FormAddEditGood fgood = new FormAddEditGood();
+            fgood.Show();
+        }
+
+        private void buttonEdit_Goods_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow dr = dataGridView_Goods.CurrentRow;
+            if (dr == null) return;
+            FormAddEditGood fgood = new FormAddEditGood(dr.Cells["GoodName"].Value.ToString());
+            fgood.Show();
+        }
+
+        private void buttonDel_Goods_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow dr = dataGridView_Goods.CurrentRow;
+            if (dr == null) return;
+            BLL_NM.Instance.Delete_Good(dr.Cells["GoodName"].Value.ToString());
         }
     }
 }
