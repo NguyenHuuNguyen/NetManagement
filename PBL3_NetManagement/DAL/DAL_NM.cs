@@ -280,6 +280,24 @@ namespace PBL3_NetManagement.DAL
             var billinfo_wid = from p in db.BillInfoes.AsNoTracking() where (p.idBill == idbill) select p;
             return billinfo_wid.ToList();
         }
+        public void Add_Good(Good good)
+        {
+            db.Goods.Add(good);
+            db.SaveChanges();
+        }
+        public void Edit_Good(Good good)
+        {
+            var goodvar = (from p in db.Goods where p.idGood == good.idGood select p).FirstOrDefault();
+            goodvar.GoodName = good.GoodName;
+            goodvar.GoodPrice = good.GoodPrice;
+            db.SaveChanges();
+        }
+        public void Delete_Good(string goodname)
+        {
+            var goodvar = db.Goods.Where(p => string.Equals(p.GoodName,goodname)).FirstOrDefault();
+            db.Goods.Remove(goodvar);
+            db.SaveChanges();
+        }
     }
 }
 
