@@ -22,7 +22,16 @@ namespace PBL3_NetManagement.DAL
             private set { }
         }
         private NetManagementEntity db = new NetManagementEntity();
-
+        public Account Get_Account_By_Username(string username)
+        {
+            var account = db.Accounts.AsNoTracking().Where(p => string.Equals(p.UserName, username)).Select(p => p).FirstOrDefault();
+            return account as Account;
+        }
+        public List<Account> Get_All_Accounts()
+        {
+            var account = db.Accounts.AsNoTracking().Select(p => p);
+            return account.ToList();
+        }
         public bool AccountCheck(string username, string password)
         {
             var account = from p in db.Accounts.AsNoTracking() where ((p.UserName == username) && (p.PassWord == password)) select p;
@@ -214,6 +223,47 @@ namespace PBL3_NetManagement.DAL
                 db.ComputerLogs.RemoveRange(computerlog);
                 db.SaveChanges();
             }    
+        }
+        public void Add_Account(Account account)
+        {
+            db.Accounts.Add(account);
+            db.SaveChanges();
+        }
+        public void Edit_Account(Account account)
+        {
+            var data = db.Accounts.Where(p => string.Equals(account.UserName, p.UserName)).FirstOrDefault();
+            db.Accounts.Attach(data);
+            data.PassWord = account.PassWord;
+            data.Balance = account.Balance;
+            db.SaveChanges();
+            Console.WriteLine(data.PassWord + " " + account.PassWord + " " + data.UserName);
+        }
+        public void Delete_Computer_Log_By_Username(string username)
+        {
+            var computerlog = db.ComputerLogs.Where(p => string.Equals(p.UserName, username)).Select(p => p);
+            if (computerlog == null) return;
+            db.ComputerLogs.RemoveRange(computerlog);
+            db.SaveChanges();
+        }
+        public void Delete_Bills_By_username(string  username)
+        {
+            var bill = db.Bills.Where(p => string.Equals(p.UserName, username)).Select(p => p);
+            if (bill == null) return;
+            foreach(Bill i in bill.ToList())
+            {
+                var billinfor = db.BillInfoes.Where(p => p.idBill == i.idBill).Select(p => p);
+                if (billinfor == null) continue;
+                db.BillInfoes.RemoveRange(billinfor);
+                db.SaveChanges();
+            }
+            db.Bills.RemoveRange(bill);
+            db.SaveChanges();
+        }
+        public void Delete_Account_By_Username(string username)
+        {
+            var account = db.Accounts.Where(p => string.Equals(username, p.UserName)).Select(p => p).FirstOrDefault();
+            db.Accounts.Remove(account);
+            db.SaveChanges();
         }
     }
 }

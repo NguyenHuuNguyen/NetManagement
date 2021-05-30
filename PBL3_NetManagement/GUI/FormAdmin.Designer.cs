@@ -58,6 +58,7 @@ namespace PBL3_NetManagement
             this.textBoxSearch_Account = new System.Windows.Forms.TextBox();
             this.dataGridView_Account = new System.Windows.Forms.DataGridView();
             this.buttonDel_Account = new System.Windows.Forms.Button();
+            this.buttonAdd_Account = new System.Windows.Forms.Button();
             this.buttonEdit_Account = new System.Windows.Forms.Button();
             this.Goods = new System.Windows.Forms.TabPage();
             this.buttonSearch_Goods = new System.Windows.Forms.Button();
@@ -72,13 +73,12 @@ namespace PBL3_NetManagement
             this.buttonSearch_SystemLog = new System.Windows.Forms.Button();
             this.textBox_SystemLogSearch = new System.Windows.Forms.TextBox();
             this.Bills = new System.Windows.Forms.TabPage();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.buttonAddBill = new System.Windows.Forms.Button();
+            this.buttonRefresh_Bills = new System.Windows.Forms.Button();
             this.buttonSearch_Bills = new System.Windows.Forms.Button();
             this.texboxSearch_Bills = new System.Windows.Forms.TextBox();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.buttonAdd_Account = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.buttonRefresh_Bills = new System.Windows.Forms.Button();
-            this.buttonAddBill = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.Computers.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -359,6 +359,7 @@ namespace PBL3_NetManagement
             this.buttonDep_Account.TabIndex = 7;
             this.buttonDep_Account.Text = "Dep";
             this.buttonDep_Account.UseVisualStyleBackColor = false;
+            this.buttonDep_Account.Click += new System.EventHandler(this.buttonDep_Account_Click);
             // 
             // buttonSearch_Account
             // 
@@ -380,15 +381,21 @@ namespace PBL3_NetManagement
             this.textBoxSearch_Account.Name = "textBoxSearch_Account";
             this.textBoxSearch_Account.Size = new System.Drawing.Size(241, 30);
             this.textBoxSearch_Account.TabIndex = 5;
+            this.textBoxSearch_Account.TextChanged += new System.EventHandler(this.textBoxSearch_Account_TextChanged);
             // 
             // dataGridView_Account
             // 
+            this.dataGridView_Account.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_Account.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridView_Account.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_Account.Location = new System.Drawing.Point(45, 121);
+            this.dataGridView_Account.MultiSelect = false;
             this.dataGridView_Account.Name = "dataGridView_Account";
+            this.dataGridView_Account.ReadOnly = true;
             this.dataGridView_Account.RowHeadersWidth = 51;
             this.dataGridView_Account.RowTemplate.Height = 24;
+            this.dataGridView_Account.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView_Account.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView_Account.Size = new System.Drawing.Size(888, 471);
             this.dataGridView_Account.TabIndex = 4;
             // 
@@ -403,6 +410,20 @@ namespace PBL3_NetManagement
             this.buttonDel_Account.TabIndex = 3;
             this.buttonDel_Account.Text = "Delete";
             this.buttonDel_Account.UseVisualStyleBackColor = false;
+            this.buttonDel_Account.Click += new System.EventHandler(this.buttonDel_Account_Click);
+            // 
+            // buttonAdd_Account
+            // 
+            this.buttonAdd_Account.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonAdd_Account.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAdd_Account.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonAdd_Account.Location = new System.Drawing.Point(45, 33);
+            this.buttonAdd_Account.Name = "buttonAdd_Account";
+            this.buttonAdd_Account.Size = new System.Drawing.Size(100, 44);
+            this.buttonAdd_Account.TabIndex = 2;
+            this.buttonAdd_Account.Text = "Add";
+            this.buttonAdd_Account.UseVisualStyleBackColor = false;
+            this.buttonAdd_Account.Click += new System.EventHandler(this.buttonAdd_Account_Click);
             // 
             // buttonEdit_Account
             // 
@@ -415,6 +436,7 @@ namespace PBL3_NetManagement
             this.buttonEdit_Account.TabIndex = 2;
             this.buttonEdit_Account.Text = "Edit";
             this.buttonEdit_Account.UseVisualStyleBackColor = false;
+            this.buttonEdit_Account.Click += new System.EventHandler(this.buttonEdit_Account_Click);
             // 
             // Goods
             // 
@@ -577,6 +599,42 @@ namespace PBL3_NetManagement
             this.Bills.Text = "Bills";
             this.Bills.UseVisualStyleBackColor = true;
             // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(53, 92);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox2.Size = new System.Drawing.Size(866, 508);
+            this.textBox2.TabIndex = 4;
+            this.textBox2.WordWrap = false;
+            // 
+            // buttonAddBill
+            // 
+            this.buttonAddBill.BackColor = System.Drawing.SystemColors.Highlight;
+            this.buttonAddBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddBill.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonAddBill.Location = new System.Drawing.Point(687, 32);
+            this.buttonAddBill.Name = "buttonAddBill";
+            this.buttonAddBill.Size = new System.Drawing.Size(100, 44);
+            this.buttonAddBill.TabIndex = 2;
+            this.buttonAddBill.Text = "Add Bill";
+            this.buttonAddBill.UseVisualStyleBackColor = false;
+            // 
+            // buttonRefresh_Bills
+            // 
+            this.buttonRefresh_Bills.BackColor = System.Drawing.SystemColors.Highlight;
+            this.buttonRefresh_Bills.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRefresh_Bills.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonRefresh_Bills.Location = new System.Drawing.Point(559, 32);
+            this.buttonRefresh_Bills.Name = "buttonRefresh_Bills";
+            this.buttonRefresh_Bills.Size = new System.Drawing.Size(100, 44);
+            this.buttonRefresh_Bills.TabIndex = 2;
+            this.buttonRefresh_Bills.Text = "Refresh";
+            this.buttonRefresh_Bills.UseVisualStyleBackColor = false;
+            // 
             // buttonSearch_Bills
             // 
             this.buttonSearch_Bills.BackColor = System.Drawing.SystemColors.Highlight;
@@ -602,54 +660,6 @@ namespace PBL3_NetManagement
             // 
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
-            // 
-            // buttonAdd_Account
-            // 
-            this.buttonAdd_Account.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.buttonAdd_Account.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdd_Account.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonAdd_Account.Location = new System.Drawing.Point(45, 33);
-            this.buttonAdd_Account.Name = "buttonAdd_Account";
-            this.buttonAdd_Account.Size = new System.Drawing.Size(100, 44);
-            this.buttonAdd_Account.TabIndex = 2;
-            this.buttonAdd_Account.Text = "Add";
-            this.buttonAdd_Account.UseVisualStyleBackColor = false;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(53, 92);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox2.Size = new System.Drawing.Size(866, 508);
-            this.textBox2.TabIndex = 4;
-            this.textBox2.WordWrap = false;
-            // 
-            // buttonRefresh_Bills
-            // 
-            this.buttonRefresh_Bills.BackColor = System.Drawing.SystemColors.Highlight;
-            this.buttonRefresh_Bills.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRefresh_Bills.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonRefresh_Bills.Location = new System.Drawing.Point(559, 32);
-            this.buttonRefresh_Bills.Name = "buttonRefresh_Bills";
-            this.buttonRefresh_Bills.Size = new System.Drawing.Size(100, 44);
-            this.buttonRefresh_Bills.TabIndex = 2;
-            this.buttonRefresh_Bills.Text = "Refresh";
-            this.buttonRefresh_Bills.UseVisualStyleBackColor = false;
-            // 
-            // buttonAddBill
-            // 
-            this.buttonAddBill.BackColor = System.Drawing.SystemColors.Highlight;
-            this.buttonAddBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddBill.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonAddBill.Location = new System.Drawing.Point(687, 32);
-            this.buttonAddBill.Name = "buttonAddBill";
-            this.buttonAddBill.Size = new System.Drawing.Size(100, 44);
-            this.buttonAddBill.TabIndex = 2;
-            this.buttonAddBill.Text = "Add Bill";
-            this.buttonAddBill.UseVisualStyleBackColor = false;
             // 
             // FormAdmin
             // 
