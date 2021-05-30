@@ -77,6 +77,7 @@ namespace PBL3_NetManagement
             timer_LoadComputer.Enabled = true;
             Load_Table();
             LoadSystemLogs();
+            LoadBill();
             LoadAccounts();
         }
         // Khi timer load lại flowl thì đồng thời load lại các textbox chứa thông tin của máy
@@ -162,6 +163,34 @@ namespace PBL3_NetManagement
         private void textBox_SystemLogSearch_TextChanged(object sender, EventArgs e)
         {
             LoadSystemLogs();
+        }
+        private void LoadBill()
+        {
+            textBoxBill.Text = "";
+            foreach (Bill lbill in BLL_NM.Instance.Get_Bill().OrderByDescending(o => o.idBill))
+            {
+                if (!lbill.UserName.Contains(texboxSearch_Bills.Text)) continue;
+                textBoxBill.Text += "Bill ID: " + lbill.idBill + "\r\n";
+                textBoxBill.Text += "Username: " + lbill.UserName + "\r\n";
+                foreach (BillInfo lbillinfo in BLL_NM.Instance.Get_Billinfo_with_idBill(lbill.idBill))
+                {
+                    textBoxBill.Text += "ID BillIfo: " + lbillinfo.idBillInfo + "    ";
+                    textBoxBill.Text += "ID Good: " + lbillinfo.idGood + "    ";
+                    textBoxBill.Text += "Good Name: " + BLL_NM.Instance.Text_alignment(BLL_NM.Instance.Get_GoodName(Convert.ToInt32(lbillinfo.idGood.ToString())),20);
+                    textBoxBill.Text += "Count: " + lbillinfo.Count + "\r\n";
+                }
+                textBoxBill.Text += "-----------------------------------------------------\r\n";
+            }
+        }
+
+        private void textboxBill_Textchanged(object sender, EventArgs e)
+        {
+            LoadBill();
+        }
+
+        private void buttonRefresh_Click(object sender, EventArgs e)
+        {
+            LoadBill();
         }
         private void LoadAccounts()
         {
