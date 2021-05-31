@@ -84,7 +84,6 @@ namespace PBL3_NetManagement
         // Khi timer load lại flowl thì đồng thời load lại các textbox chứa thông tin của máy
         private void LoadComputer_Tick(object sender, EventArgs e)
         {
-            Load_DTGrid_Good();
             Load_Table();
             if (buttonEditComputer.Tag == null)
             return;
@@ -99,8 +98,8 @@ namespace PBL3_NetManagement
             {
                 Button bt = new Button() { Width = 75, Height = 75 };
                 string status;
-                if (item.ComputerStatus == false) status = "Trống";
-                else status = "Bận";
+                if (item.ComputerStatus == false) status = "OFF";
+                else status = "ON";
                 bt.Text = item.ComputerName + Environment.NewLine + status;
                 bt.Click += Bt_Click;
                 bt.Tag = item;
@@ -234,8 +233,14 @@ namespace PBL3_NetManagement
         private void buttonDel_Account_Click(object sender, EventArgs e)
         {
             if (dataGridView_Account.CurrentRow == null) return;
-            BLL_NM.Instance.Delete_Account(dataGridView_Account.CurrentRow.Cells["Username"].Value.ToString());
-            LoadAccounts();
+            DialogResult result = MessageBox.Show("Do you really want to delete this account", "Warning", MessageBoxButtons.YesNo);
+            if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                BLL_NM.Instance.Delete_Account(dataGridView_Account.CurrentRow.Cells["Username"].Value.ToString());
+                LoadAccounts();
+                LoadBill();
+                LoadSystemLogs();
+            }
         }
 
         private void textBoxSearch_Goods_TextChanged(object sender, EventArgs e)
@@ -246,6 +251,7 @@ namespace PBL3_NetManagement
         private void buttonAdd_Goods_Click(object sender, EventArgs e)
         {
             FormAddEditGood fgood = new FormAddEditGood();
+            fgood.Reload_Goods = Load_DTGrid_Good;
             fgood.Show();
         }
 
@@ -254,6 +260,7 @@ namespace PBL3_NetManagement
             DataGridViewRow dr = dataGridView_Goods.CurrentRow;
             if (dr == null) return;
             FormAddEditGood fgood = new FormAddEditGood(dr.Cells["GoodName"].Value.ToString());
+            fgood.Reload_Goods = Load_DTGrid_Good;
             fgood.Show();
         }
 
@@ -261,7 +268,19 @@ namespace PBL3_NetManagement
         {
             DataGridViewRow dr = dataGridView_Goods.CurrentRow;
             if (dr == null) return;
-            BLL_NM.Instance.Delete_Good(dr.Cells["GoodName"].Value.ToString());
+            DialogResult result = MessageBox.Show("Do you really want to delete this account", "Warning", MessageBoxButtons.YesNo);
+            if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                BLL_NM.Instance.Delete_Good(dr.Cells["GoodName"].Value.ToString());
+                Load_DTGrid_Good();
+                LoadBill();
+            }
+        }
+
+        private void buttonAddBill_Click(object sender, EventArgs e)
+        {
+            FormOrder od = new FormOrder(dataGridView_Account.CurrentRow.Cells["Username"].Value.ToString());
+            od.Show();
         }
     }
 }

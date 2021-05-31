@@ -292,8 +292,20 @@ namespace PBL3_NetManagement.DAL
             goodvar.GoodPrice = good.GoodPrice;
             db.SaveChanges();
         }
+        //
+        // xài tạm bợ, đợi đổi thành idbill
+        //
+        public int Get_idGood_By_NameFood(string namegood)
+        {
+            var good = db.Goods.Where(p => string.Equals(namegood, p.GoodName)).FirstOrDefault();
+            return good.idGood;
+        }
         public void Delete_Good(string goodname)
         {
+            int temp = Get_idGood_By_NameFood(goodname);
+            var billinfo = db.BillInfoes.Where(p => p.idGood == temp).Select(p => p);
+            db.BillInfoes.RemoveRange(billinfo);
+            db.SaveChanges();
             var goodvar = db.Goods.Where(p => string.Equals(p.GoodName,goodname)).FirstOrDefault();
             db.Goods.Remove(goodvar);
             db.SaveChanges();

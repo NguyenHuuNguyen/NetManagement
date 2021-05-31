@@ -13,6 +13,8 @@ namespace PBL3_NetManagement.GUI
 {
     public partial class FormAddEditGood : Form
     {
+        public delegate void del1();
+        public del1 Reload_Goods;
         public FormAddEditGood()
         {
             InitializeComponent();
@@ -42,7 +44,7 @@ namespace PBL3_NetManagement.GUI
             Good good = new Good();
             good.idGood = Convert.ToInt32(label1.Tag.ToString());
             good.GoodName = textBoxNameGood.Text;
-            good.GoodPrice = Convert.ToInt32(textBoxPriceGood.Text);
+            good.GoodPrice = Convert.ToDouble(textBoxPriceGood.Text);
             BLL_NM.Instance.Edit_Good(good);
         }
 
@@ -60,6 +62,11 @@ namespace PBL3_NetManagement.GUI
                 return;
             }
             string temp = textBoxPriceGood.Text;
+            if (temp[0] == '.')
+            {
+                MessageBox.Show("Balance is invalid!");
+                return;
+            }
             for (int i = 0; i < textBoxPriceGood.Text.Length; i++)
             {
                 if (!((temp[i] <= '9' && temp[i] >= '0'&& temp[i] <= 57 && temp[i] >= 48) || temp[i] == '.'))
@@ -76,6 +83,7 @@ namespace PBL3_NetManagement.GUI
             {
                 Edit_Good();
             }
+            Reload_Goods();
             Dispose();
         }
 

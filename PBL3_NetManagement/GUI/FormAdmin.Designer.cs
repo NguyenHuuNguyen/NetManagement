@@ -30,9 +30,6 @@ namespace PBL3_NetManagement
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Computers = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -57,7 +54,6 @@ namespace PBL3_NetManagement
             this.flowLayoutComputer = new System.Windows.Forms.FlowLayoutPanel();
             this.Accouts = new System.Windows.Forms.TabPage();
             this.buttonDep_Account = new System.Windows.Forms.Button();
-            this.buttonSearch_Account = new System.Windows.Forms.Button();
             this.textBoxSearch_Account = new System.Windows.Forms.TextBox();
             this.dataGridView_Account = new System.Windows.Forms.DataGridView();
             this.buttonDel_Account = new System.Windows.Forms.Button();
@@ -68,7 +64,6 @@ namespace PBL3_NetManagement
             this.buttonDel_Goods = new System.Windows.Forms.Button();
             this.buttonEdit_Goods = new System.Windows.Forms.Button();
             this.buttonAdd_Goods = new System.Windows.Forms.Button();
-            this.dataGridView_Goods = new System.Windows.Forms.DataGridView();
             this.SystemLog = new System.Windows.Forms.TabPage();
             this.textBoxSystemLog_All = new System.Windows.Forms.TextBox();
             this.buttonRefreshSystemLog = new System.Windows.Forms.Button();
@@ -76,12 +71,14 @@ namespace PBL3_NetManagement
             this.textBox_SystemLogSearch = new System.Windows.Forms.TextBox();
             this.Bills = new System.Windows.Forms.TabPage();
             this.textBoxBill = new System.Windows.Forms.TextBox();
-            this.buttonAddBill = new System.Windows.Forms.Button();
             this.buttonRefresh_Bills = new System.Windows.Forms.Button();
             this.buttonSearch_Bills = new System.Windows.Forms.Button();
             this.texboxSearch_Bills = new System.Windows.Forms.TextBox();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.dataGridView_Goods = new System.Windows.Forms.DataGridView();
+            this.buttonAddBill = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.Computers.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -92,9 +89,9 @@ namespace PBL3_NetManagement
             this.Accouts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Account)).BeginInit();
             this.Goods.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Goods)).BeginInit();
             this.SystemLog.SuspendLayout();
             this.Bills.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Goods)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -124,10 +121,10 @@ namespace PBL3_NetManagement
             this.Computers.Controls.Add(this.buttonDeleteComputer);
             this.Computers.Controls.Add(this.flowLayoutComputer);
             this.Computers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Computers.Location = new System.Drawing.Point(4, 29);
+            this.Computers.Location = new System.Drawing.Point(4, 25);
             this.Computers.Name = "Computers";
             this.Computers.Padding = new System.Windows.Forms.Padding(3);
-            this.Computers.Size = new System.Drawing.Size(973, 626);
+            this.Computers.Size = new System.Drawing.Size(973, 630);
             this.Computers.TabIndex = 0;
             this.Computers.Text = "Computers";
             this.Computers.UseVisualStyleBackColor = true;
@@ -147,7 +144,7 @@ namespace PBL3_NetManagement
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(12, 10);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 29);
+            this.label5.Size = new System.Drawing.Size(57, 25);
             this.label5.TabIndex = 4;
             this.label5.Text = "User";
             // 
@@ -157,7 +154,7 @@ namespace PBL3_NetManagement
             this.textBoxUser.Location = new System.Drawing.Point(93, 8);
             this.textBoxUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxUser.Name = "textBoxUser";
-            this.textBoxUser.Size = new System.Drawing.Size(227, 35);
+            this.textBoxUser.Size = new System.Drawing.Size(227, 30);
             this.textBoxUser.TabIndex = 3;
             // 
             // buttonEditComputer
@@ -189,7 +186,7 @@ namespace PBL3_NetManagement
             this.labelStatus.AutoSize = true;
             this.labelStatus.Location = new System.Drawing.Point(12, 10);
             this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(85, 29);
+            this.labelStatus.Size = new System.Drawing.Size(74, 25);
             this.labelStatus.TabIndex = 4;
             this.labelStatus.Text = "Status";
             // 
@@ -199,7 +196,7 @@ namespace PBL3_NetManagement
             this.textBoxStatusComputer.Location = new System.Drawing.Point(93, 8);
             this.textBoxStatusComputer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxStatusComputer.Name = "textBoxStatusComputer";
-            this.textBoxStatusComputer.Size = new System.Drawing.Size(227, 35);
+            this.textBoxStatusComputer.Size = new System.Drawing.Size(227, 30);
             this.textBoxStatusComputer.TabIndex = 3;
             // 
             // panel3
@@ -218,7 +215,7 @@ namespace PBL3_NetManagement
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(12, 10);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 29);
+            this.label4.Size = new System.Drawing.Size(61, 25);
             this.label4.TabIndex = 5;
             this.label4.Text = "Price";
             // 
@@ -227,7 +224,7 @@ namespace PBL3_NetManagement
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 10);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 29);
+            this.label3.Size = new System.Drawing.Size(0, 25);
             this.label3.TabIndex = 4;
             // 
             // textBoxPriceComputer
@@ -236,7 +233,7 @@ namespace PBL3_NetManagement
             this.textBoxPriceComputer.Location = new System.Drawing.Point(93, 8);
             this.textBoxPriceComputer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPriceComputer.Name = "textBoxPriceComputer";
-            this.textBoxPriceComputer.Size = new System.Drawing.Size(227, 35);
+            this.textBoxPriceComputer.Size = new System.Drawing.Size(227, 30);
             this.textBoxPriceComputer.TabIndex = 3;
             // 
             // panel2
@@ -254,7 +251,7 @@ namespace PBL3_NetManagement
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 29);
+            this.label2.Size = new System.Drawing.Size(68, 25);
             this.label2.TabIndex = 4;
             this.label2.Text = "Name";
             // 
@@ -264,7 +261,7 @@ namespace PBL3_NetManagement
             this.textBoxNameComputer.Location = new System.Drawing.Point(93, 8);
             this.textBoxNameComputer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxNameComputer.Name = "textBoxNameComputer";
-            this.textBoxNameComputer.Size = new System.Drawing.Size(227, 35);
+            this.textBoxNameComputer.Size = new System.Drawing.Size(227, 30);
             this.textBoxNameComputer.TabIndex = 3;
             // 
             // panel1
@@ -282,7 +279,7 @@ namespace PBL3_NetManagement
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 29);
+            this.label1.Size = new System.Drawing.Size(33, 25);
             this.label1.TabIndex = 4;
             this.label1.Text = "ID";
             // 
@@ -292,7 +289,7 @@ namespace PBL3_NetManagement
             this.textBoxIDComputer.Location = new System.Drawing.Point(93, 8);
             this.textBoxIDComputer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxIDComputer.Name = "textBoxIDComputer";
-            this.textBoxIDComputer.Size = new System.Drawing.Size(227, 35);
+            this.textBoxIDComputer.Size = new System.Drawing.Size(227, 30);
             this.textBoxIDComputer.TabIndex = 3;
             // 
             // buttonAddComputer
@@ -336,17 +333,18 @@ namespace PBL3_NetManagement
             // 
             this.Accouts.BackgroundImage = global::PBL3_NetManagement.Properties.Resources.Backgroud;
             this.Accouts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Accouts.Controls.Add(this.label6);
+            this.Accouts.Controls.Add(this.buttonAddBill);
             this.Accouts.Controls.Add(this.buttonDep_Account);
-            this.Accouts.Controls.Add(this.buttonSearch_Account);
             this.Accouts.Controls.Add(this.textBoxSearch_Account);
             this.Accouts.Controls.Add(this.dataGridView_Account);
             this.Accouts.Controls.Add(this.buttonDel_Account);
             this.Accouts.Controls.Add(this.buttonAdd_Account);
             this.Accouts.Controls.Add(this.buttonEdit_Account);
-            this.Accouts.Location = new System.Drawing.Point(4, 29);
+            this.Accouts.Location = new System.Drawing.Point(4, 25);
             this.Accouts.Name = "Accouts";
             this.Accouts.Padding = new System.Windows.Forms.Padding(3);
-            this.Accouts.Size = new System.Drawing.Size(973, 626);
+            this.Accouts.Size = new System.Drawing.Size(973, 630);
             this.Accouts.TabIndex = 1;
             this.Accouts.Text = "Account";
             this.Accouts.UseVisualStyleBackColor = true;
@@ -364,25 +362,12 @@ namespace PBL3_NetManagement
             this.buttonDep_Account.UseVisualStyleBackColor = false;
             this.buttonDep_Account.Click += new System.EventHandler(this.buttonDep_Account_Click);
             // 
-            // buttonSearch_Account
-            // 
-            this.buttonSearch_Account.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.buttonSearch_Account.Enabled = false;
-            this.buttonSearch_Account.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSearch_Account.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonSearch_Account.Location = new System.Drawing.Point(833, 32);
-            this.buttonSearch_Account.Name = "buttonSearch_Account";
-            this.buttonSearch_Account.Size = new System.Drawing.Size(100, 45);
-            this.buttonSearch_Account.TabIndex = 6;
-            this.buttonSearch_Account.Text = "Search";
-            this.buttonSearch_Account.UseVisualStyleBackColor = false;
-            // 
             // textBoxSearch_Account
             // 
             this.textBoxSearch_Account.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSearch_Account.Location = new System.Drawing.Point(566, 40);
+            this.textBoxSearch_Account.Location = new System.Drawing.Point(692, 43);
             this.textBoxSearch_Account.Name = "textBoxSearch_Account";
-            this.textBoxSearch_Account.Size = new System.Drawing.Size(241, 35);
+            this.textBoxSearch_Account.Size = new System.Drawing.Size(241, 30);
             this.textBoxSearch_Account.TabIndex = 5;
             this.textBoxSearch_Account.TextChanged += new System.EventHandler(this.textBoxSearch_Account_TextChanged);
             // 
@@ -428,30 +413,6 @@ namespace PBL3_NetManagement
             this.buttonAdd_Account.UseVisualStyleBackColor = false;
             this.buttonAdd_Account.Click += new System.EventHandler(this.buttonAdd_Account_Click);
             // 
-            // buttonAdd_Account
-            // 
-            this.buttonAdd_Account.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.buttonAdd_Account.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdd_Account.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonAdd_Account.Location = new System.Drawing.Point(45, 33);
-            this.buttonAdd_Account.Name = "buttonAdd_Account";
-            this.buttonAdd_Account.Size = new System.Drawing.Size(100, 44);
-            this.buttonAdd_Account.TabIndex = 2;
-            this.buttonAdd_Account.Text = "Add";
-            this.buttonAdd_Account.UseVisualStyleBackColor = false;
-            // 
-            // buttonAdd_Account
-            // 
-            this.buttonAdd_Account.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.buttonAdd_Account.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdd_Account.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonAdd_Account.Location = new System.Drawing.Point(45, 33);
-            this.buttonAdd_Account.Name = "buttonAdd_Account";
-            this.buttonAdd_Account.Size = new System.Drawing.Size(100, 44);
-            this.buttonAdd_Account.TabIndex = 2;
-            this.buttonAdd_Account.Text = "Add";
-            this.buttonAdd_Account.UseVisualStyleBackColor = false;
-            // 
             // buttonEdit_Account
             // 
             this.buttonEdit_Account.BackColor = System.Drawing.SystemColors.MenuHighlight;
@@ -468,26 +429,28 @@ namespace PBL3_NetManagement
             // Goods
             // 
             this.Goods.BackColor = System.Drawing.Color.Transparent;
+            this.Goods.BackgroundImage = global::PBL3_NetManagement.Properties.Resources.Backgroud;
             this.Goods.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Goods.Controls.Add(this.label6);
+            this.Goods.Controls.Add(this.button1);
+            this.Goods.Controls.Add(this.dataGridView_Goods);
             this.Goods.Controls.Add(this.textBoxSearch_Goods);
             this.Goods.Controls.Add(this.buttonDel_Goods);
             this.Goods.Controls.Add(this.buttonEdit_Goods);
             this.Goods.Controls.Add(this.buttonAdd_Goods);
-            this.Goods.Controls.Add(this.dataGridView_Goods);
-            this.Goods.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Goods.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Goods.Location = new System.Drawing.Point(4, 29);
+            this.Goods.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Goods.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Goods.Location = new System.Drawing.Point(4, 25);
             this.Goods.Name = "Goods";
-            this.Goods.Size = new System.Drawing.Size(973, 626);
+            this.Goods.Size = new System.Drawing.Size(973, 630);
             this.Goods.TabIndex = 3;
             this.Goods.Text = "Goods";
             // 
             // textBoxSearch_Goods
             // 
+            this.textBoxSearch_Goods.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSearch_Goods.Location = new System.Drawing.Point(574, 44);
             this.textBoxSearch_Goods.Name = "textBoxSearch_Goods";
-            this.textBoxSearch_Goods.Size = new System.Drawing.Size(353, 35);
+            this.textBoxSearch_Goods.Size = new System.Drawing.Size(353, 30);
             this.textBoxSearch_Goods.TabIndex = 4;
             this.textBoxSearch_Goods.TextChanged += new System.EventHandler(this.textBoxSearch_Goods_TextChanged);
             // 
@@ -495,7 +458,8 @@ namespace PBL3_NetManagement
             // 
             this.buttonDel_Goods.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.buttonDel_Goods.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDel_Goods.Location = new System.Drawing.Point(308, 35);
+            this.buttonDel_Goods.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonDel_Goods.Location = new System.Drawing.Point(318, 35);
             this.buttonDel_Goods.Name = "buttonDel_Goods";
             this.buttonDel_Goods.Size = new System.Drawing.Size(100, 44);
             this.buttonDel_Goods.TabIndex = 3;
@@ -508,7 +472,7 @@ namespace PBL3_NetManagement
             this.buttonEdit_Goods.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.buttonEdit_Goods.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEdit_Goods.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonEdit_Goods.Location = new System.Drawing.Point(173, 35);
+            this.buttonEdit_Goods.Location = new System.Drawing.Point(177, 35);
             this.buttonEdit_Goods.Name = "buttonEdit_Goods";
             this.buttonEdit_Goods.Size = new System.Drawing.Size(100, 44);
             this.buttonEdit_Goods.TabIndex = 2;
@@ -529,38 +493,6 @@ namespace PBL3_NetManagement
             this.buttonAdd_Goods.UseVisualStyleBackColor = false;
             this.buttonAdd_Goods.Click += new System.EventHandler(this.buttonAdd_Goods_Click);
             // 
-            // dataGridView_Goods
-            // 
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.RoyalBlue;
-            this.dataGridView_Goods.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView_Goods.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_Goods.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView_Goods.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_Goods.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridView_Goods.Location = new System.Drawing.Point(41, 114);
-            this.dataGridView_Goods.Name = "dataGridView_Goods";
-            this.dataGridView_Goods.ReadOnly = true;
-            this.dataGridView_Goods.RowHeadersWidth = 51;
-            this.dataGridView_Goods.RowTemplate.Height = 24;
-            this.dataGridView_Goods.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_Goods.Size = new System.Drawing.Size(886, 480);
-            this.dataGridView_Goods.TabIndex = 0;
-            // 
             // SystemLog
             // 
             this.SystemLog.BackgroundImage = global::PBL3_NetManagement.Properties.Resources.Backgroud;
@@ -569,9 +501,9 @@ namespace PBL3_NetManagement
             this.SystemLog.Controls.Add(this.buttonRefreshSystemLog);
             this.SystemLog.Controls.Add(this.buttonSearch_SystemLog);
             this.SystemLog.Controls.Add(this.textBox_SystemLogSearch);
-            this.SystemLog.Location = new System.Drawing.Point(4, 29);
+            this.SystemLog.Location = new System.Drawing.Point(4, 25);
             this.SystemLog.Name = "SystemLog";
-            this.SystemLog.Size = new System.Drawing.Size(973, 626);
+            this.SystemLog.Size = new System.Drawing.Size(973, 630);
             this.SystemLog.TabIndex = 2;
             this.SystemLog.Text = "System Log";
             this.SystemLog.UseVisualStyleBackColor = true;
@@ -604,6 +536,7 @@ namespace PBL3_NetManagement
             // buttonSearch_SystemLog
             // 
             this.buttonSearch_SystemLog.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonSearch_SystemLog.Enabled = false;
             this.buttonSearch_SystemLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSearch_SystemLog.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonSearch_SystemLog.Location = new System.Drawing.Point(445, 29);
@@ -618,7 +551,7 @@ namespace PBL3_NetManagement
             this.textBox_SystemLogSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_SystemLogSearch.Location = new System.Drawing.Point(54, 35);
             this.textBox_SystemLogSearch.Name = "textBox_SystemLogSearch";
-            this.textBox_SystemLogSearch.Size = new System.Drawing.Size(347, 35);
+            this.textBox_SystemLogSearch.Size = new System.Drawing.Size(347, 30);
             this.textBox_SystemLogSearch.TabIndex = 1;
             this.textBox_SystemLogSearch.TextChanged += new System.EventHandler(this.textBox_SystemLogSearch_TextChanged);
             // 
@@ -627,13 +560,12 @@ namespace PBL3_NetManagement
             this.Bills.BackgroundImage = global::PBL3_NetManagement.Properties.Resources.Backgroud;
             this.Bills.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Bills.Controls.Add(this.textBoxBill);
-            this.Bills.Controls.Add(this.buttonAddBill);
             this.Bills.Controls.Add(this.buttonRefresh_Bills);
             this.Bills.Controls.Add(this.buttonSearch_Bills);
             this.Bills.Controls.Add(this.texboxSearch_Bills);
-            this.Bills.Location = new System.Drawing.Point(4, 29);
+            this.Bills.Location = new System.Drawing.Point(4, 25);
             this.Bills.Name = "Bills";
-            this.Bills.Size = new System.Drawing.Size(973, 626);
+            this.Bills.Size = new System.Drawing.Size(973, 630);
             this.Bills.TabIndex = 4;
             this.Bills.Text = "Bills";
             this.Bills.UseVisualStyleBackColor = true;
@@ -649,18 +581,6 @@ namespace PBL3_NetManagement
             this.textBoxBill.Size = new System.Drawing.Size(866, 508);
             this.textBoxBill.TabIndex = 4;
             this.textBoxBill.WordWrap = false;
-            // 
-            // buttonAddBill
-            // 
-            this.buttonAddBill.BackColor = System.Drawing.SystemColors.Highlight;
-            this.buttonAddBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddBill.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonAddBill.Location = new System.Drawing.Point(687, 32);
-            this.buttonAddBill.Name = "buttonAddBill";
-            this.buttonAddBill.Size = new System.Drawing.Size(100, 44);
-            this.buttonAddBill.TabIndex = 2;
-            this.buttonAddBill.Text = "Add Bill";
-            this.buttonAddBill.UseVisualStyleBackColor = false;
             // 
             // buttonRefresh_Bills
             // 
@@ -693,7 +613,7 @@ namespace PBL3_NetManagement
             this.texboxSearch_Bills.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.texboxSearch_Bills.Location = new System.Drawing.Point(53, 38);
             this.texboxSearch_Bills.Name = "texboxSearch_Bills";
-            this.texboxSearch_Bills.Size = new System.Drawing.Size(347, 35);
+            this.texboxSearch_Bills.Size = new System.Drawing.Size(347, 30);
             this.texboxSearch_Bills.TabIndex = 1;
             this.texboxSearch_Bills.TextChanged += new System.EventHandler(this.textboxBill_Textchanged);
             // 
@@ -702,15 +622,56 @@ namespace PBL3_NetManagement
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
             // 
+            // dataGridView_Goods
+            // 
+            this.dataGridView_Goods.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView_Goods.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dataGridView_Goods.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Goods.Location = new System.Drawing.Point(41, 118);
+            this.dataGridView_Goods.MultiSelect = false;
+            this.dataGridView_Goods.Name = "dataGridView_Goods";
+            this.dataGridView_Goods.ReadOnly = true;
+            this.dataGridView_Goods.RowHeadersWidth = 51;
+            this.dataGridView_Goods.RowTemplate.Height = 24;
+            this.dataGridView_Goods.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView_Goods.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView_Goods.Size = new System.Drawing.Size(888, 471);
+            this.dataGridView_Goods.TabIndex = 6;
+            // 
+            // buttonAddBill
+            // 
+            this.buttonAddBill.BackColor = System.Drawing.SystemColors.Highlight;
+            this.buttonAddBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddBill.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonAddBill.Location = new System.Drawing.Point(557, 33);
+            this.buttonAddBill.Name = "buttonAddBill";
+            this.buttonAddBill.Size = new System.Drawing.Size(100, 44);
+            this.buttonAddBill.TabIndex = 8;
+            this.buttonAddBill.Text = "Add Bill";
+            this.buttonAddBill.UseVisualStyleBackColor = false;
+            this.buttonAddBill.Click += new System.EventHandler(this.buttonAddBill_Click);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(466, 47);
+            this.label6.Location = new System.Drawing.Point(692, 20);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(102, 29);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Search:";
+            this.label6.Size = new System.Drawing.Size(53, 17);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Search";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button1.Enabled = false;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Location = new System.Drawing.Point(445, 35);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 44);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Search";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // FormAdmin
             // 
@@ -740,11 +701,11 @@ namespace PBL3_NetManagement
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Account)).EndInit();
             this.Goods.ResumeLayout(false);
             this.Goods.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Goods)).EndInit();
             this.SystemLog.ResumeLayout(false);
             this.SystemLog.PerformLayout();
             this.Bills.ResumeLayout(false);
             this.Bills.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Goods)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -756,7 +717,6 @@ namespace PBL3_NetManagement
         private System.Windows.Forms.TabPage Accouts;
         private System.Windows.Forms.TabPage Goods;
         private System.Windows.Forms.TabPage SystemLog;
-        private System.Windows.Forms.Button buttonSearch_Account;
         private System.Windows.Forms.TextBox textBoxSearch_Account;
         private System.Windows.Forms.DataGridView dataGridView_Account;
         private System.Windows.Forms.Button buttonDel_Account;
@@ -765,7 +725,6 @@ namespace PBL3_NetManagement
         private System.Windows.Forms.Button buttonDel_Goods;
         private System.Windows.Forms.Button buttonEdit_Goods;
         private System.Windows.Forms.Button buttonAdd_Goods;
-        private System.Windows.Forms.DataGridView dataGridView_Goods;
         private System.Windows.Forms.TextBox textBoxSearch_Goods;
         private System.Windows.Forms.Button buttonSearch_SystemLog;
         private System.Windows.Forms.TextBox textBox_SystemLogSearch;
@@ -798,7 +757,9 @@ namespace PBL3_NetManagement
         private System.Windows.Forms.Button buttonAdd_Account;
         private System.Windows.Forms.TextBox textBoxBill;
         private System.Windows.Forms.Button buttonRefresh_Bills;
-        private System.Windows.Forms.Button buttonAddBill;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button buttonAddBill;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridView_Goods;
     }
 }

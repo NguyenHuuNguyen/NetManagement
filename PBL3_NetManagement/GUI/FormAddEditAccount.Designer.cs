@@ -71,7 +71,7 @@ namespace PBL3_NetManagement.GUI
             this.textBoxPassword.Location = new System.Drawing.Point(141, 40);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(173, 22);
-            this.textBoxPassword.TabIndex = 1;
+            this.textBoxPassword.TabIndex = 2;
             this.textBoxPassword.UseSystemPasswordChar = true;
             // 
             // label3
@@ -88,7 +88,7 @@ namespace PBL3_NetManagement.GUI
             this.textBoxConfirm.Location = new System.Drawing.Point(141, 68);
             this.textBoxConfirm.Name = "textBoxConfirm";
             this.textBoxConfirm.Size = new System.Drawing.Size(173, 22);
-            this.textBoxConfirm.TabIndex = 1;
+            this.textBoxConfirm.TabIndex = 3;
             this.textBoxConfirm.UseSystemPasswordChar = true;
             // 
             // label4
@@ -105,7 +105,7 @@ namespace PBL3_NetManagement.GUI
             this.textBoxBalance.Location = new System.Drawing.Point(141, 97);
             this.textBoxBalance.Name = "textBoxBalance";
             this.textBoxBalance.Size = new System.Drawing.Size(173, 22);
-            this.textBoxBalance.TabIndex = 1;
+            this.textBoxBalance.TabIndex = 4;
             // 
             // buttonOK
             // 
@@ -113,6 +113,7 @@ namespace PBL3_NetManagement.GUI
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(75, 23);
             this.buttonOK.TabIndex = 2;
+            this.buttonOK.TabStop = false;
             this.buttonOK.Text = "OK";
             this.buttonOK.UseVisualStyleBackColor = true;
             this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
@@ -123,6 +124,7 @@ namespace PBL3_NetManagement.GUI
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 2;
+            this.buttonCancel.TabStop = false;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
