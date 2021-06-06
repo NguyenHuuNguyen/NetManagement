@@ -171,14 +171,19 @@ namespace PBL3_NetManagement.BLL
         {
             DAL_NM.Instance.Delete_Computer_Log(idcomputer);
         }
-        public List<Good> Get_All_Good_With_Name(string goodname)
+        public List<Good_Show> Get_All_Good_With_Name(string goodname)
         {
-            List<Good> listgood= new List<Good>();
+            List<Good_Show> listgood= new List<Good_Show>();
             foreach(Good item in DAL_NM.Instance.Get_All_Good())
             {
                 if (item.GoodName.Contains(goodname))
                 {
-                    listgood.Add(item);
+                    listgood.Add(new Good_Show 
+                    {
+                        idGood = item.idGood,
+                        GoodName = item.GoodName,
+                        GoodPrice = item.GoodPrice
+                    });
                 }
             }
             return listgood;
@@ -224,9 +229,9 @@ namespace PBL3_NetManagement.BLL
         {
             DAL_NM.Instance.Edit_Good(good);
         }
-        public void Delete_Good(string goodname)
+        public void Delete_Good(int idgood)
         {
-            DAL_NM.Instance.Delete_Good(goodname);
+            DAL_NM.Instance.Delete_Good(idgood);
         }
         public bool GoodCheck(int idgood, string namegood, int price)
         {

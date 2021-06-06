@@ -65,12 +65,10 @@ D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\bin\Debug\EntityFramewo
 D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\bin\Debug\EntityFramework.SqlServer.xml
 D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.csprojAssemblyReference.cache
 D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.FormAdmin.resources
-D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.Form1.resources
 D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.FormChat.resources
 D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.GUI.FormAddEditComputer.resources
 D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.FormLogin.resources
 D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.FormOrder.resources
-D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.GUI.FormPasswordAdmin.resources
 D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.FormPassword.resources
 D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.FormUsercs.resources
 D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.Properties.Resources.resources
@@ -83,3 +81,6 @@ G:\Code\Visual Studio projects\Do_an\PBL3_NetManagement\PBL3_NetManagement\obj\D
 G:\Code\Visual Studio projects\Do_an\PBL3_NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.GUI.FormDep.resources
 G:\Code\Visual Studio projects\Do_an\PBL3_NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.GUI.FormAddEditAccount.resources
 G:\Code\Visual Studio projects\Do_an\PBL3_NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.GUI.FormAddEditGood.resources
+D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.GUI.FormAddEditAccount.resources
+D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.GUI.FormDep.resources
+D:\Tranhongson\ky2\Doan\NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.GUI.FormAddEditGood.resources
