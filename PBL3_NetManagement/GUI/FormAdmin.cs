@@ -248,6 +248,10 @@ namespace PBL3_NetManagement
         private void buttonDel_Account_Click(object sender, EventArgs e)
         {
             if (dataGridView_Account.CurrentRow == null) return;
+            if (BLL_NM.Instance.GetAccountStatus(dataGridView_Account.CurrentRow.Cells["Username"].Value.ToString()))
+            {
+                MessageBox.Show("This user is using a computer, can't delete!");
+            }
             DialogResult result = MessageBox.Show("Do you really want to delete this account", "Warning", MessageBoxButtons.YesNo);
             if (result == System.Windows.Forms.DialogResult.Yes)
             {
