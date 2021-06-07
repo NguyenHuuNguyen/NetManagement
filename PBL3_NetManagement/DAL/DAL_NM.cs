@@ -300,13 +300,12 @@ namespace PBL3_NetManagement.DAL
             var good = db.Goods.Where(p => string.Equals(namegood, p.GoodName)).FirstOrDefault();
             return good.idGood;
         }
-        public void Delete_Good(string goodname)
+        public void Delete_Good(int idgood)
         {
-            int temp = Get_idGood_By_NameFood(goodname);
-            var billinfo = db.BillInfoes.Where(p => p.idGood == temp).Select(p => p);
+            var billinfo = db.BillInfoes.Where(p => p.idGood == idgood).Select(p => p);
             db.BillInfoes.RemoveRange(billinfo);
             db.SaveChanges();
-            var goodvar = db.Goods.Where(p => string.Equals(p.GoodName,goodname)).FirstOrDefault();
+            var goodvar = db.Goods.Where(p => p.idGood == idgood).FirstOrDefault();
             db.Goods.Remove(goodvar);
             db.SaveChanges();
         }

@@ -19,13 +19,12 @@ namespace PBL3_NetManagement.GUI
         {
             InitializeComponent();
         }
-        public FormAddEditGood(string goodname)
+        public FormAddEditGood(int idgood)
         {
             InitializeComponent();
-            Good good = BLL_NM.Instance.Get_Good_With_Name(goodname);
-            textBoxNameGood.Text = BLL_NM.Instance.Get_Good_With_Id(good.idGood).GoodName;
-            textBoxPriceGood.Text =BLL_NM.Instance.Get_Good_With_Id(good.idGood).GoodPrice.ToString();
-            label1.Tag = BLL_NM.Instance.Get_Good_With_Id(good.idGood).idGood;
+            textBoxNameGood.Text = BLL_NM.Instance.Get_Good_With_Id(idgood).GoodName;
+            textBoxPriceGood.Text =BLL_NM.Instance.Get_Good_With_Id(idgood).GoodPrice.ToString();
+            label1.Tag = BLL_NM.Instance.Get_Good_With_Id(idgood).idGood;
         }
         private void Add_Good()
         {

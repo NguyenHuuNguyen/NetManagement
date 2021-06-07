@@ -158,7 +158,8 @@ namespace PBL3_NetManagement
         private void Load_DTGrid_Good()
         {
             dataGridView_Goods.Controls.Clear();
-            dataGridView_Goods.DataSource = BLL_NM.Instance.Get_All_Good_With_Name(textBoxSearch_Goods.Text).Select(p=> new Good_Show(){ GoodName = p.GoodName, GoodPrice = p.GoodPrice }).ToList();
+            dataGridView_Goods.DataSource = BLL_NM.Instance.Get_All_Good_With_Name(textBoxSearch_Goods.Text);
+            dataGridView_Goods.Columns["idGood"].Visible = false;
         }
         private void buttonRefreshSystemLog_Click(object sender, EventArgs e)
         {
@@ -259,7 +260,7 @@ namespace PBL3_NetManagement
         {
             DataGridViewRow dr = dataGridView_Goods.CurrentRow;
             if (dr == null) return;
-            FormAddEditGood fgood = new FormAddEditGood(dr.Cells["GoodName"].Value.ToString());
+            FormAddEditGood fgood = new FormAddEditGood(Convert.ToInt32(dr.Cells["idGood"].Value.ToString()));
             fgood.Reload_Goods = Load_DTGrid_Good;
             fgood.Show();
         }
@@ -271,7 +272,7 @@ namespace PBL3_NetManagement
             DialogResult result = MessageBox.Show("Do you really want to delete this account", "Warning", MessageBoxButtons.YesNo);
             if (result == System.Windows.Forms.DialogResult.Yes)
             {
-                BLL_NM.Instance.Delete_Good(dr.Cells["GoodName"].Value.ToString());
+                BLL_NM.Instance.Delete_Good(Convert.ToInt32(dr.Cells["idGood"].Value.ToString()));
                 Load_DTGrid_Good();
                 LoadBill();
             }
