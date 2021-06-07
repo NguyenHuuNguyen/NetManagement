@@ -27,7 +27,7 @@ namespace PBL3_NetManagement.BLL
         public List<Account_Show> Get_Clients_Show(string username)
         {
             List<Account_Show> data = new List<Account_Show>();
-            foreach(Account i in DAL_NM.Instance.Get_All_Accounts())
+            foreach (Account i in DAL_NM.Instance.Get_All_Accounts())
             {
                 if (!i.Type && i.UserName.Contains(username))
                 {
@@ -165,7 +165,7 @@ namespace PBL3_NetManagement.BLL
         }
         public List<ComputerLog> GetComputerLogs()
         {
-           return DAL_NM.Instance.Get_All_ComputerLog();
+            return DAL_NM.Instance.Get_All_ComputerLog();
         }
         public void Delete_Computer_Log(string idcomputer)
         {
@@ -173,12 +173,12 @@ namespace PBL3_NetManagement.BLL
         }
         public List<Good_Show> Get_All_Good_With_Name(string goodname)
         {
-            List<Good_Show> listgood= new List<Good_Show>();
-            foreach(Good item in DAL_NM.Instance.Get_All_Good())
+            List<Good_Show> listgood = new List<Good_Show>();
+            foreach (Good item in DAL_NM.Instance.Get_All_Good())
             {
                 if (item.GoodName.Contains(goodname))
                 {
-                    listgood.Add(new Good_Show 
+                    listgood.Add(new Good_Show
                     {
                         idGood = item.idGood,
                         GoodName = item.GoodName,
@@ -257,14 +257,14 @@ namespace PBL3_NetManagement.BLL
             }
             return goodname;
         }
-        public string Text_alignment (string text, int leght)
+        public string Text_alignment(string text, int leght)
         {
             string texttxt = text;
-            if(texttxt.Length < leght)
+            if (texttxt.Length < leght)
             {
                 for (int i = 1; i <= (leght - text.Length); i++)
                 {
-                    texttxt = texttxt + " "; 
+                    texttxt = texttxt + " ";
                 }
             }
             return texttxt;
@@ -282,6 +282,14 @@ namespace PBL3_NetManagement.BLL
             DAL_NM.Instance.Delete_Bills_By_username(username);
             DAL_NM.Instance.Delete_Computer_Log_By_Username(username);
             DAL_NM.Instance.Delete_Account_By_Username(username);
+        }
+        public Bill Get_Newest_Bill()
+        {
+            return DAL_NM.Instance.Get_Newest_Bill();
+        }
+        public Bill Get_next_Bill(Bill currentBill)
+        {
+            return DAL_NM.Instance.Get_next_Bill(currentBill);
         }
     }
 }

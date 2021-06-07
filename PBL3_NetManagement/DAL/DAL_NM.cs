@@ -309,6 +309,18 @@ namespace PBL3_NetManagement.DAL
             db.Goods.Remove(goodvar);
             db.SaveChanges();
         }
+        public Bill Get_Newest_Bill()
+        {
+            var bill = db.Bills.AsNoTracking().OrderByDescending(p => p.idBill).FirstOrDefault();
+            return bill;
+        }
+        public Bill Get_next_Bill(Bill currentBill)
+        {
+            var nextbill = db.Bills.AsNoTracking().Where(p => p.idBill == currentBill.idBill + 1).FirstOrDefault();
+            if (nextbill == null) return currentBill;
+            else return nextbill;
+
+        }
     }
 }
 
