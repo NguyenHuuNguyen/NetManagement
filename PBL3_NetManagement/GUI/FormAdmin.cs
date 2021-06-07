@@ -19,12 +19,14 @@ namespace PBL3_NetManagement
         public del1 SetVisible_Login;
         DateTime login_time;
         Timer timer_LoadComputer;
+        Bill currentBill;
         public FormAdmin(string username)
         {
             InitializeComponent();
             login_time = DateTime.Now;
             AdminName = username;
             BLL_NM.Instance.Login_init(login_time, AdminName);
+            currentBill = BLL_NM.Instance.Get_Newest_Bill();
         }
         private void Logout()
         {
@@ -73,6 +75,7 @@ namespace PBL3_NetManagement
         {
             timer_LoadComputer = new Timer();
             timer_LoadComputer.Tick += LoadComputer_Tick;
+            timer_LoadComputer.Tick += Check_newBill;
             timer_LoadComputer.Interval = 1000;
             timer_LoadComputer.Enabled = true;
             Load_Table();
@@ -80,6 +83,17 @@ namespace PBL3_NetManagement
             LoadBill();
             LoadAccounts();
             Load_DTGrid_Good();
+        }
+        // Kiểm tra xem có Bill mới hay không
+        private void Check_newBill(object sender, EventArgs e)
+        {
+            Bill nextBill = BLL_NM.Instance.Get_Newest_Bill();
+            if (nextBill.idBill > currentBill.idBill)
+            {
+                currentBill = nextBill;
+                MessageBox.Show("idBill: " + nextBill.idBill + "\nUsername: " + nextBill.UserName, "New order!");
+            }
+            else return;
         }
         // Khi timer load lại flowl thì đồng thời load lại các textbox chứa thông tin của máy
         private void LoadComputer_Tick(object sender, EventArgs e)
