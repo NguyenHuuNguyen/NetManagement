@@ -108,6 +108,7 @@ namespace PBL3_NetManagement
 
         private void buttonOrder_Order_Click(object sender, EventArgs e)
         {
+            // kiểm tra nếu dữ liệu thay đổi thì huỷ
             for (int i = 0; i <= (dataGridViewOrder.Rows.Count - 1); i++)
             {
                 int idGood = Convert.ToInt32(dataGridViewOrder.Rows[i].Cells[0].Value.ToString());
@@ -121,7 +122,6 @@ namespace PBL3_NetManagement
                 }
             }
 
-            //if total = 0
             if (textBoxOrder.Text == "0")
             {
                 MessageBox.Show("You haven't yet order!");

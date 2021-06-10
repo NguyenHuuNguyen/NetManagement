@@ -47,6 +47,7 @@ namespace PBL3_NetManagement
 
         private void buttonDeleteComputer_Click(object sender, EventArgs e)
         {
+            if (string.Equals(textBoxIDComputer.Text, "")) return;
             if ((buttonDeleteComputer.Tag as Computer).ComputerStatus == true)
             {
                 MessageBox.Show("This computer is currently in use!");
@@ -67,6 +68,7 @@ namespace PBL3_NetManagement
 
         private void buttonEditComputer_Click(object sender, EventArgs e)
         {
+            if (string.Equals(textBoxIDComputer.Text, "")) return;
             FormAddEditComputer faec = new FormAddEditComputer(buttonEditComputer.Tag as Computer);
             faec.Show();
         }
