@@ -194,6 +194,7 @@ namespace PBL3_NetManagement
                 if (!lbill.UserName.Contains(texboxSearch_Bills.Text)) continue;
                 textBoxBill.Text += "Bill ID: " + lbill.idBill + "\r\n";
                 textBoxBill.Text += "Username: " + lbill.UserName + "\r\n";
+                textBoxBill.Text += "Time: " + lbill.Date + "\r\n";
                 foreach (BillInfo lbillinfo in BLL_NM.Instance.Get_Billinfo_with_idBill(lbill.idBill))
                 {
                     textBoxBill.Text += "ID BillIfo: " + lbillinfo.idBillInfo + "    ";
