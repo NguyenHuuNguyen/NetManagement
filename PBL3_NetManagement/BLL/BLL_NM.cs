@@ -233,7 +233,7 @@ namespace PBL3_NetManagement.BLL
         {
             DAL_NM.Instance.Delete_Good(idgood);
         }
-        public bool GoodCheck(int idgood, string namegood, int price)
+        public bool GoodCheck(int idgood, string namegood, double price)
         {
             return DAL_NM.Instance.GoodCheck(idgood, namegood, price);
         }

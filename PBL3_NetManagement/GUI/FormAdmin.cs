@@ -92,7 +92,7 @@ namespace PBL3_NetManagement
             Bill nextBill = BLL_NM.Instance.Get_Newest_Bill();
             if (nextBill.idBill > currentBill.idBill)
             {
-                currentBill = nextBill;
+                currentBill.idBill += 1;
                 MessageBox.Show("idBill: " + nextBill.idBill + "\nUsername: " + nextBill.UserName, "New order!");
             }
             else return;
@@ -274,6 +274,7 @@ namespace PBL3_NetManagement
         {
             FormAddEditGood fgood = new FormAddEditGood();
             fgood.Reload_Goods = Load_DTGrid_Good;
+            fgood.Text = "Add good";
             fgood.Show();
         }
 
@@ -283,6 +284,7 @@ namespace PBL3_NetManagement
             if (dr == null) return;
             FormAddEditGood fgood = new FormAddEditGood(Convert.ToInt32(dr.Cells["idGood"].Value.ToString()));
             fgood.Reload_Goods = Load_DTGrid_Good;
+            fgood.Text = "Edit good";
             fgood.Show();
         }
 
@@ -290,7 +292,7 @@ namespace PBL3_NetManagement
         {
             DataGridViewRow dr = dataGridView_Goods.CurrentRow;
             if (dr == null) return;
-            DialogResult result = MessageBox.Show("Do you really want to delete this account", "Warning", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Do you really want to delete this Good", "Warning", MessageBoxButtons.YesNo);
             if (result == System.Windows.Forms.DialogResult.Yes)
             {
                 BLL_NM.Instance.Delete_Good(Convert.ToInt32(dr.Cells["idGood"].Value.ToString()));
