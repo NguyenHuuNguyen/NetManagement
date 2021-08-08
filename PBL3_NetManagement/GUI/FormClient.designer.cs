@@ -176,6 +176,7 @@ namespace PBL3_NetManagement
             this.buttonOrder.Size = new System.Drawing.Size(80, 76);
             this.buttonOrder.TabIndex = 8;
             this.buttonOrder.UseVisualStyleBackColor = false;
+            this.buttonOrder.Click += new System.EventHandler(this.buttonOrder_Click);
             // 
             // buttonLogout
             // 
@@ -198,6 +199,7 @@ namespace PBL3_NetManagement
             this.buttonChat.Size = new System.Drawing.Size(80, 76);
             this.buttonChat.TabIndex = 0;
             this.buttonChat.UseVisualStyleBackColor = false;
+            this.buttonChat.Click += new System.EventHandler(this.buttonChat_Click);
             // 
             // FormUsercs
             // 

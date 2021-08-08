@@ -68,6 +68,11 @@ namespace PBL3_NetManagement.GUI
                 return;
             }
             string temp = textBoxPrice.Text;
+            if (temp[0] == '.')
+            {
+                MessageBox.Show("Invalid price!");
+                return;
+            }
             for (int i = 0; i < textBoxPrice.Text.Length; i++)
             {
                 if (!((temp[i] <= '9' && temp[i] >= '0') || temp[i] == '.'))

@@ -64,7 +64,9 @@
     <Compile Include="BillInfo.cs">
       <DependentUpon>NetManagementEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="BLL\Account_Show.cs" />
     <Compile Include="BLL\BLL_NM.cs" />
+    <Compile Include="BLL\Good_Show.cs" />
     <Compile Include="Computer.cs">
       <DependentUpon>NetManagementEntity.tt</DependentUpon>
     </Compile>
@@ -75,17 +77,29 @@
     <Compile Include="Good.cs">
       <DependentUpon>NetManagementEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="GUI\FormAddEditAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAddEditAccount.Designer.cs">
+      <DependentUpon>FormAddEditAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormDep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormDep.Designer.cs">
+      <DependentUpon>FormDep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAddEditGood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAddEditGood.Designer.cs">
+      <DependentUpon>FormAddEditGood.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FormAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\FormAdmin.Designer.cs">
       <DependentUpon>FormAdmin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FormChat.cs">
       <SubType>Form</SubType>
@@ -110,12 +124,6 @@
     </Compile>
     <Compile Include="GUI\FormOrder.designer.cs">
       <DependentUpon>FormOrder.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\FormPasswordAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\FormPasswordAdmin.Designer.cs">
-      <DependentUpon>FormPasswordAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FormPasswordClient.cs">
       <SubType>Form</SubType>
@@ -149,11 +157,17 @@
     <Compile Include="sysdiagram.cs">
       <DependentUpon>NetManagementEntity.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GUI\FormAddEditAccount.resx">
+      <DependentUpon>FormAddEditAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormDep.resx">
+      <DependentUpon>FormDep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAddEditGood.resx">
+      <DependentUpon>FormAddEditGood.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormAdmin.resx">
       <DependentUpon>FormAdmin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormChat.resx">
       <DependentUpon>FormChat.cs</DependentUpon>
@@ -166,9 +180,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormOrder.resx">
       <DependentUpon>FormOrder.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\FormPasswordAdmin.resx">
-      <DependentUpon>FormPasswordAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormPasswordClient.resx">
       <DependentUpon>FormPasswordClient.cs</DependentUpon>

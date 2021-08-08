@@ -91,5 +91,16 @@ namespace PBL3_NetManagement
             timeUsed = DateTime.Now - login_time;
             textBoxTimeUsed.Text = ConvertTimeToString(timeUsed.Hours, timeUsed.Minutes, timeUsed.Seconds);
         }
+
+        private void buttonOrder_Click(object sender, EventArgs e)
+        {
+            FormOrder od = new FormOrder(this.Text);
+            od.Show();
+        }
+
+        private void buttonChat_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Hét to lên cho chủ quán nghe :)");
+        }
     }
 }

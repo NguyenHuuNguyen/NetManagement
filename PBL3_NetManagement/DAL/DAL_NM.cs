@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PBL3_NetManagement.DAL
 {
@@ -21,7 +22,16 @@ namespace PBL3_NetManagement.DAL
             private set { }
         }
         private NetManagementEntity db = new NetManagementEntity();
-
+        public Account Get_Account_By_Username(string username)
+        {
+            var account = db.Accounts.AsNoTracking().Where(p => string.Equals(p.UserName, username)).Select(p => p).FirstOrDefault();
+            return account as Account;
+        }
+        public List<Account> Get_All_Accounts()
+        {
+            var account = db.Accounts.AsNoTracking().Select(p => p);
+            return account.ToList();
+        }
         public bool AccountCheck(string username, string password)
         {
             var account = from p in db.Accounts.AsNoTracking() where ((p.UserName == username) && (p.PassWord == password)) select p;
@@ -161,10 +171,155 @@ namespace PBL3_NetManagement.DAL
             computer_var.ComputerName = computer.ComputerName;
             db.SaveChanges();
         }
+        //
+        public List<Good> Get_All_Good()
+        {
+            var good = from p in db.Goods.AsNoTracking() select p;
+            return good.ToList();
+        }
+        public void Add_Bill(DateTime date, string username)
+        {
+            Bill lbill = new Bill();
+            lbill.Date = date;
+            lbill.UserName = username;
+            db.Bills.Add(lbill);
+            db.SaveChanges();
+        }
+        public int Get_idBill (DateTime date, string username)
+        {
+            var bill = db.Bills.AsNoTracking().Where(p => (p.UserName == username)).Select(p => p);
+            int idb = 0;
+            List<Bill> lbill = bill.ToList();
+            foreach(Bill i in lbill)
+            {
+                if (i.idBill > idb) idb = i.idBill;
+            }
+            return idb;
+        }
+        public void Add_BillInfo (int idbill, int idgood, int count)
+        {
+            BillInfo billInfo = new BillInfo();
+            billInfo.idBill = idbill;
+            billInfo.idGood = idgood;
+            billInfo.Count = count;
+            db.BillInfoes.Add(billInfo);
+            db.SaveChanges();
+        }
         public List<ComputerLog> Get_All_ComputerLog()
         {
             var computerlog = from p in db.ComputerLogs.AsNoTracking() select p;
             return computerlog.ToList();
+        }
+        public bool Check_If_IdComputer_Log_Exist(string idcomputer)
+        {
+            var computerlog = db.ComputerLogs.AsNoTracking().Where(p => string.Equals(p.idComputer, idcomputer)).Select(p => p);
+            return computerlog.ToList().Count > 0;
+        }
+        public void Delete_Computer_Log(string idcomputer)
+        {
+            if (Check_If_IdComputer_Log_Exist(idcomputer))
+            {
+                var computerlog = db.ComputerLogs.Where(p => string.Equals(p.idComputer, idcomputer)).Select(p => p);
+                db.ComputerLogs.RemoveRange(computerlog);
+                db.SaveChanges();
+            }    
+        }
+        public void Add_Account(Account account)
+        {
+            db.Accounts.Add(account);
+            db.SaveChanges();
+        }
+        public void Edit_Account(Account account)
+        {
+            var data = db.Accounts.Where(p => string.Equals(account.UserName, p.UserName)).FirstOrDefault();
+            db.Accounts.Attach(data);
+            data.PassWord = account.PassWord;
+            data.Balance = account.Balance;
+            db.SaveChanges();
+            Console.WriteLine(data.PassWord + " " + account.PassWord + " " + data.UserName);
+        }
+        public void Delete_Computer_Log_By_Username(string username)
+        {
+            var computerlog = db.ComputerLogs.Where(p => string.Equals(p.UserName, username)).Select(p => p);
+            if (computerlog == null) return;
+            db.ComputerLogs.RemoveRange(computerlog);
+            db.SaveChanges();
+        }
+        public void Delete_Bills_By_username(string  username)
+        {
+            var bill = db.Bills.Where(p => string.Equals(p.UserName, username)).Select(p => p);
+            if (bill == null) return;
+            foreach(Bill i in bill.ToList())
+            {
+                var billinfor = db.BillInfoes.Where(p => p.idBill == i.idBill).Select(p => p);
+                if (billinfor == null) continue;
+                db.BillInfoes.RemoveRange(billinfor);
+                db.SaveChanges();
+            }
+            db.Bills.RemoveRange(bill);
+            db.SaveChanges();
+        }
+        public void Delete_Account_By_Username(string username)
+        {
+            var account = db.Accounts.Where(p => string.Equals(username, p.UserName)).Select(p => p).FirstOrDefault();
+            db.Accounts.Remove(account);
+            db.SaveChanges();
+        }
+        public bool GoodCheck(int idgood, string namegood, double price)
+        {
+            var idGood = from p in db.Goods.AsNoTracking() where ((p.idGood == idgood) && (p.GoodName == namegood) && (p.GoodPrice == price)) select p;
+            return idGood.ToList().Count > 0;
+        }
+        public List<Bill> Get_Bill()
+        {
+            var bill = from p in db.Bills.AsNoTracking() select p;
+            return bill.ToList();
+        }
+        public List<BillInfo> Get_Billinfo_with_idBill(int idbill)
+        {
+            var billinfo_wid = from p in db.BillInfoes.AsNoTracking() where (p.idBill == idbill) select p;
+            return billinfo_wid.ToList();
+        }
+        public void Add_Good(Good good)
+        {
+            db.Goods.Add(good);
+            db.SaveChanges();
+        }
+        public void Edit_Good(Good good)
+        {
+            var goodvar = (from p in db.Goods where p.idGood == good.idGood select p).FirstOrDefault();
+            goodvar.GoodName = good.GoodName;
+            goodvar.GoodPrice = good.GoodPrice;
+            db.SaveChanges();
+        }
+        //
+        // xài tạm bợ, đợi đổi thành idbill
+        //
+        public int Get_idGood_By_NameFood(string namegood)
+        {
+            var good = db.Goods.Where(p => string.Equals(namegood, p.GoodName)).FirstOrDefault();
+            return good.idGood;
+        }
+        public void Delete_Good(int idgood)
+        {
+            var billinfo = db.BillInfoes.Where(p => p.idGood == idgood).Select(p => p);
+            db.BillInfoes.RemoveRange(billinfo);
+            db.SaveChanges();
+            var goodvar = db.Goods.Where(p => p.idGood == idgood).FirstOrDefault();
+            db.Goods.Remove(goodvar);
+            db.SaveChanges();
+        }
+        public Bill Get_Newest_Bill()
+        {
+            var bill = db.Bills.AsNoTracking().OrderByDescending(p => p.idBill).FirstOrDefault();
+            return bill;
+        }
+        public Bill Get_next_Bill(Bill currentBill)
+        {
+            var nextbill = db.Bills.AsNoTracking().Where(p => p.idBill == currentBill.idBill + 1).FirstOrDefault();
+            if (nextbill == null) return currentBill;
+            else return nextbill;
+
         }
     }
 }

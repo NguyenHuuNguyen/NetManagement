@@ -20,6 +20,27 @@ namespace PBL3_NetManagement.BLL
             }
             private set { }
         }
+        public Account Get_Account_By_Username(string username)
+        {
+            return DAL_NM.Instance.Get_Account_By_Username(username);
+        }
+        public List<Account_Show> Get_Clients_Show(string username)
+        {
+            List<Account_Show> data = new List<Account_Show>();
+            foreach (Account i in DAL_NM.Instance.Get_All_Accounts())
+            {
+                if (!i.Type && i.UserName.Contains(username))
+                {
+                    data.Add(new Account_Show
+                    {
+                        Username = i.UserName,
+                        AccountStatus = i.AccountStatus,
+                        Balance = i.Balance
+                    });
+                }
+            }
+            return data;
+        }
         public string Get_idComputer()
         {
             string username = Dns.GetHostName();
@@ -125,9 +146,150 @@ namespace PBL3_NetManagement.BLL
         {
             DAL_NM.Instance.Edit_Computer(computer);
         }
+        //
+        public List<Good> Get_All_Good()
+        {
+            return DAL_NM.Instance.Get_All_Good();
+        }
+        public void Add_Bill(DateTime date, string username)
+        {
+            DAL_NM.Instance.Add_Bill(date, username);
+        }
+        public int Get_idBill(DateTime date, string username)
+        {
+            return DAL_NM.Instance.Get_idBill(date, username);
+        }
+        public void Add_BillInfo(int idbill, int idgood, int count)
+        {
+            DAL_NM.Instance.Add_BillInfo(idbill, idgood, count);
+        }
         public List<ComputerLog> GetComputerLogs()
         {
-           return DAL_NM.Instance.Get_All_ComputerLog();
+            return DAL_NM.Instance.Get_All_ComputerLog();
+        }
+        public void Delete_Computer_Log(string idcomputer)
+        {
+            DAL_NM.Instance.Delete_Computer_Log(idcomputer);
+        }
+        public List<Good_Show> Get_All_Good_With_Name(string goodname)
+        {
+            List<Good_Show> listgood = new List<Good_Show>();
+            foreach (Good item in DAL_NM.Instance.Get_All_Good())
+            {
+                if (item.GoodName.Contains(goodname))
+                {
+                    listgood.Add(new Good_Show
+                    {
+                        idGood = item.idGood,
+                        GoodName = item.GoodName,
+                        GoodPrice = item.GoodPrice
+                    });
+                }
+            }
+            return listgood;
+        }
+        public Good Get_Good_With_Name(string goodname)
+        {
+            foreach (Good item in DAL_NM.Instance.Get_All_Good())
+            {
+                if (item.GoodName == goodname)
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
+        public Good Get_Good_With_Id(int idgood)
+        {
+            foreach (Good item in DAL_NM.Instance.Get_All_Good())
+            {
+                if (item.idGood == idgood)
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
+        public bool Check_Name_Good(string goodname)
+        {
+            foreach (Good item in DAL_NM.Instance.Get_All_Good())
+            {
+                if (item.GoodName == goodname)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public void Add_Good(Good good)
+        {
+            DAL_NM.Instance.Add_Good(good);
+        }
+        public void Edit_Good(Good good)
+        {
+            DAL_NM.Instance.Edit_Good(good);
+        }
+        public void Delete_Good(int idgood)
+        {
+            DAL_NM.Instance.Delete_Good(idgood);
+        }
+        public bool GoodCheck(int idgood, string namegood, double price)
+        {
+            return DAL_NM.Instance.GoodCheck(idgood, namegood, price);
+        }
+        public List<Bill> Get_Bill()
+        {
+            return DAL_NM.Instance.Get_Bill();
+        }
+        public List<BillInfo> Get_Billinfo_with_idBill(int idbill)
+        {
+            return DAL_NM.Instance.Get_Billinfo_with_idBill(idbill);
+        }
+        public string Get_GoodName(int idgood)
+        {
+            string goodname = "";
+            foreach (Good i in Get_All_Good())
+            {
+                if (i.idGood == idgood)
+                {
+                    goodname = i.GoodName;
+                }
+            }
+            return goodname;
+        }
+        public string Text_alignment(string text, int leght)
+        {
+            string texttxt = text;
+            if (texttxt.Length < leght)
+            {
+                for (int i = 1; i <= (leght - text.Length); i++)
+                {
+                    texttxt = texttxt + " ";
+                }
+            }
+            return texttxt;
+        }
+        public void Add_Account(Account account)
+        {
+            DAL_NM.Instance.Add_Account(account);
+        }
+        public void Edit_Account(Account account)
+        {
+            DAL_NM.Instance.Edit_Account(account);
+        }
+        public void Delete_Account(string username)
+        {
+            DAL_NM.Instance.Delete_Bills_By_username(username);
+            DAL_NM.Instance.Delete_Computer_Log_By_Username(username);
+            DAL_NM.Instance.Delete_Account_By_Username(username);
+        }
+        public Bill Get_Newest_Bill()
+        {
+            return DAL_NM.Instance.Get_Newest_Bill();
+        }
+        public Bill Get_next_Bill(Bill currentBill)
+        {
+            return DAL_NM.Instance.Get_next_Bill(currentBill);
         }
     }
 }
