@@ -265,7 +265,7 @@ namespace PBL3_NetManagement.DAL
             db.Accounts.Remove(account);
             db.SaveChanges();
         }
-        public bool GoodCheck(int idgood, string namegood, int price)
+        public bool GoodCheck(int idgood, string namegood, double price)
         {
             var idGood = from p in db.Goods.AsNoTracking() where ((p.idGood == idgood) && (p.GoodName == namegood) && (p.GoodPrice == price)) select p;
             return idGood.ToList().Count > 0;

@@ -89,14 +89,14 @@ namespace PBL3_NetManagement
         {
             // Count 1
             int quantity = ((ComboBox)sender).SelectedIndex;
-            int price = Convert.ToInt32(dataGridViewOrder.CurrentRow.Cells["Price"].Value.ToString());
+            double price = Convert.ToDouble(dataGridViewOrder.CurrentRow.Cells["Price"].Value.ToString());
             dataGridViewOrder.CurrentRow.Cells["subTotal"].Value = (price * quantity).ToString();
             // Count all
-            int total = 0;
+            double total = 0;
             for (int i = 0; i <= (dataGridViewOrder.Rows.Count - 1); i++)
             {
                 string data = dataGridViewOrder.Rows[i].Cells[5].Value.ToString();
-                total += Convert.ToInt32(data);
+                total += Convert.ToDouble(data);
             }
             textBoxOrder.Text = total.ToString();
         }
@@ -113,7 +113,7 @@ namespace PBL3_NetManagement
             {
                 int idGood = Convert.ToInt32(dataGridViewOrder.Rows[i].Cells[0].Value.ToString());
                 string namegood = dataGridViewOrder.Rows[i].Cells[1].Value.ToString();
-                int price = Convert.ToInt32(dataGridViewOrder.Rows[i].Cells[2].Value.ToString());
+                double price = Convert.ToDouble(dataGridViewOrder.Rows[i].Cells[2].Value.ToString());
                 if (BLL_NM.Instance.GoodCheck(idGood, namegood, price) == false)
                 {
                     MessageBox.Show("There was some changes in the data, aborting!");
@@ -136,7 +136,7 @@ namespace PBL3_NetManagement
                 int idBill = BLL_NM.Instance.Get_idBill(date, this.Text);
                 for (int i = 0; i <= (dataGridViewOrder.Rows.Count - 1); i++)
                 {
-                    int subtotal = Convert.ToInt32(dataGridViewOrder.Rows[i].Cells[5].Value.ToString());
+                    double subtotal = Convert.ToDouble(dataGridViewOrder.Rows[i].Cells[5].Value.ToString());
                     if (subtotal != 0)
                     {
                         int count = Convert.ToInt32(dataGridViewOrder.Rows[i].Cells[4].Value.ToString());

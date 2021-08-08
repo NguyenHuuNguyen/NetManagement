@@ -63,16 +63,17 @@ namespace PBL3_NetManagement.GUI
             string temp = textBoxPriceGood.Text;
             if (temp[0] == '.')
             {
-                MessageBox.Show("Balance is invalid!");
+                MessageBox.Show("Invalid price!");
                 return;
             }
             for (int i = 0; i < textBoxPriceGood.Text.Length; i++)
             {
-                if (!((temp[i] <= '9' && temp[i] >= '0'&& temp[i] <= 57 && temp[i] >= 48) || temp[i] == '.'))
+                if (!((temp[i] <= '9' && temp[i] >= '0') || temp[i] == '.'))
                 {
                     MessageBox.Show("Invalid price!");
                     return;
                 }
+
             }
             if (label1.Tag == null)
             {
