@@ -15,6 +15,8 @@ namespace PBL3_NetManagement
 {
     public partial class FormOrder : Form
     {
+        public delegate void del1();
+        public del1 ReEnable;
         public FormOrder(string username)
         {
             this.Text = username;
@@ -103,6 +105,11 @@ namespace PBL3_NetManagement
 
         private void buttonCancel_Order_Click(object sender, EventArgs e)
         {
+            Cancel();
+        }
+        private void Cancel()
+        {
+            ReEnable();
             this.Dispose();
         }
 
@@ -117,6 +124,7 @@ namespace PBL3_NetManagement
                 if (BLL_NM.Instance.GoodCheck(idGood, namegood, price) == false)
                 {
                     MessageBox.Show("There was some changes in the data, aborting!");
+                    ReEnable();
                     this.Dispose();
                     return;
                 }
@@ -124,7 +132,7 @@ namespace PBL3_NetManagement
 
             if (textBoxOrder.Text == "0")
             {
-                MessageBox.Show("You haven't yet order!");
+                MessageBox.Show("You haven't order anything yet!");
             }
             else
             {
@@ -144,8 +152,14 @@ namespace PBL3_NetManagement
                         BLL_NM.Instance.Add_BillInfo(idBill, idgood, count);
                     }
                 }
+                ReEnable();
                 this.Dispose();
             }
+        }
+
+        private void FormOrder_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Cancel();
         }
     }
 }

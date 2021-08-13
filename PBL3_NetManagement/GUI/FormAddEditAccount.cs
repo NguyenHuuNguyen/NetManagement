@@ -15,6 +15,7 @@ namespace PBL3_NetManagement.GUI
     {
         public delegate void del1();
         public del1 Reload_Accounts;
+        public del1 ReEnable;
         public FormAddEditAccount()
         {
             InitializeComponent();
@@ -84,13 +85,24 @@ namespace PBL3_NetManagement.GUI
                 BLL_NM.Instance.Add_Account(account);
             }
             else BLL_NM.Instance.Edit_Account(account);
+            ReEnable();
             Reload_Accounts();
             this.Dispose();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
+            Cancel();
+        }
+        private void Cancel()
+        {
+            ReEnable();
             this.Dispose();
+        }
+
+        private void FormAddEditAccount_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Cancel();
         }
     }
 }

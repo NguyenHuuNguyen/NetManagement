@@ -101,12 +101,6 @@
     <Compile Include="GUI\FormAdmin.Designer.cs">
       <DependentUpon>FormAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\FormChat.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\FormChat.designer.cs">
-      <DependentUpon>FormChat.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\FormAddEditComputer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,9 +162,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormAdmin.resx">
       <DependentUpon>FormAdmin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\FormChat.resx">
-      <DependentUpon>FormChat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormAddEditComputer.resx">
       <DependentUpon>FormAddEditComputer.cs</DependentUpon>

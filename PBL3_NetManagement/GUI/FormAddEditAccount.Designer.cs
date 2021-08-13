@@ -161,6 +161,7 @@ namespace PBL3_NetManagement.GUI
             this.Controls.Add(this.label1);
             this.Name = "FormAddEditAccount";
             this.Text = "FormAddEditAccount";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormAddEditAccount_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

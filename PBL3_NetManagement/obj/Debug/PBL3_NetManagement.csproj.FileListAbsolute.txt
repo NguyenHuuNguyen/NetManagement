@@ -20,7 +20,6 @@ G:\Code\Visual Studio projects\Do_an\PBL3_NetManagement\PBL3_NetManagement\bin\D
 G:\Code\Visual Studio projects\Do_an\PBL3_NetManagement\PBL3_NetManagement\bin\Debug\EntityFramework.SqlServer.dll
 G:\Code\Visual Studio projects\Do_an\PBL3_NetManagement\PBL3_NetManagement\bin\Debug\EntityFramework.xml
 G:\Code\Visual Studio projects\Do_an\PBL3_NetManagement\PBL3_NetManagement\bin\Debug\EntityFramework.SqlServer.xml
-G:\Code\Visual Studio projects\Do_an\PBL3_NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.FormChat.resources
 G:\Code\Visual Studio projects\Do_an\PBL3_NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.FormLogin.resources
 G:\Code\Visual Studio projects\Do_an\PBL3_NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.FormOrder.resources
 G:\Code\Visual Studio projects\Do_an\PBL3_NetManagement\PBL3_NetManagement\obj\Debug\PBL3_NetManagement.FormPassword.resources

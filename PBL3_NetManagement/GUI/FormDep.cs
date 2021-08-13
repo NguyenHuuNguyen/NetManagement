@@ -15,6 +15,7 @@ namespace PBL3_NetManagement.GUI
     {
         public delegate void del1();
         public del1 Reload_Accounts;
+        public del1 ReEnable;
         public FormDep(string username)
         {
             InitializeComponent();
@@ -47,12 +48,23 @@ namespace PBL3_NetManagement.GUI
             double amount = Convert.ToDouble(temp);
             BLL_NM.Instance.BalanceSubtraction(this.Text, amount * (-1.0));
             Reload_Accounts();
+            ReEnable();
             this.Dispose();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
+            Cancel();
+        }
+        private void Cancel()
+        {
+            ReEnable();
             this.Dispose();
+        }
+
+        private void FormDep_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Cancel();
         }
     }
 }
