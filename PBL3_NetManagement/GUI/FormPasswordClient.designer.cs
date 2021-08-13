@@ -84,9 +84,9 @@ namespace PBL3_NetManagement
             this.label3.Font = new System.Drawing.Font("MTO Chaney", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 111);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(191, 33);
+            this.label3.Size = new System.Drawing.Size(186, 33);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Comfirm Password";
+            this.label3.Text = "Confirm Password";
             // 
             // textBoxConfirm
             // 
