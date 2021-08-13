@@ -47,6 +47,7 @@ namespace PBL3_NetManagement.GUI
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.textBoxIP);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(11, 10);
@@ -57,7 +58,7 @@ namespace PBL3_NetManagement.GUI
             // 
             // textBoxIP
             // 
-            this.textBoxIP.Location = new System.Drawing.Point(60, 22);
+            this.textBoxIP.Location = new System.Drawing.Point(72, 22);
             this.textBoxIP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxIP.Name = "textBoxIP";
             this.textBoxIP.Size = new System.Drawing.Size(213, 22);
@@ -66,14 +67,16 @@ namespace PBL3_NetManagement.GUI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 25);
+            this.label1.Font = new System.Drawing.Font("MTO Chaney", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(20, 17);
+            this.label1.Size = new System.Drawing.Size(27, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "IP";
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.textBoxName);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(11, 78);
@@ -84,7 +87,7 @@ namespace PBL3_NetManagement.GUI
             // 
             // textBoxName
             // 
-            this.textBoxName.Location = new System.Drawing.Point(60, 22);
+            this.textBoxName.Location = new System.Drawing.Point(72, 22);
             this.textBoxName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(213, 22);
@@ -93,14 +96,16 @@ namespace PBL3_NetManagement.GUI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 27);
+            this.label2.Font = new System.Drawing.Font("MTO Chaney", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(3, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 17);
+            this.label2.Size = new System.Drawing.Size(54, 26);
             this.label2.TabIndex = 0;
             this.label2.Text = "Name";
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.textBoxPrice);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Location = new System.Drawing.Point(11, 146);
@@ -111,7 +116,7 @@ namespace PBL3_NetManagement.GUI
             // 
             // textBoxPrice
             // 
-            this.textBoxPrice.Location = new System.Drawing.Point(60, 22);
+            this.textBoxPrice.Location = new System.Drawing.Point(72, 22);
             this.textBoxPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(213, 22);
@@ -120,40 +125,49 @@ namespace PBL3_NetManagement.GUI
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 27);
+            this.label3.Font = new System.Drawing.Font("MTO Chaney", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 20);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 17);
+            this.label3.Size = new System.Drawing.Size(49, 26);
             this.label3.TabIndex = 0;
             this.label3.Text = "Price";
             // 
             // buttonOK
             // 
             this.buttonOK.AutoSize = true;
+            this.buttonOK.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.buttonOK.Font = new System.Drawing.Font("MTO Chaney", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonOK.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.buttonOK.Location = new System.Drawing.Point(58, 236);
             this.buttonOK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonOK.Name = "buttonOK";
-            this.buttonOK.Size = new System.Drawing.Size(67, 27);
+            this.buttonOK.Size = new System.Drawing.Size(67, 33);
             this.buttonOK.TabIndex = 3;
             this.buttonOK.Text = "OK";
-            this.buttonOK.UseVisualStyleBackColor = true;
+            this.buttonOK.UseVisualStyleBackColor = false;
             this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
             // buttonCancel
             // 
             this.buttonCancel.AutoSize = true;
+            this.buttonCancel.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.buttonCancel.Font = new System.Drawing.Font("MTO Chaney", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancel.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.buttonCancel.Location = new System.Drawing.Point(186, 236);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(67, 27);
+            this.buttonCancel.Size = new System.Drawing.Size(67, 33);
             this.buttonCancel.TabIndex = 4;
             this.buttonCancel.Text = "Cancel";
-            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.UseVisualStyleBackColor = false;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
-            // FormEdit
+            // FormAddEditComputer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::PBL3_NetManagement.Properties.Resources.Backgroud;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(321, 285);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOK);
@@ -161,7 +175,7 @@ namespace PBL3_NetManagement.GUI
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "FormEdit";
+            this.Name = "FormAddEditComputer";
             this.Text = "Add Computer";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
