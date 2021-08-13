@@ -53,6 +53,8 @@ namespace PBL3_NetManagement
             this.buttonDeleteComputer = new System.Windows.Forms.Button();
             this.flowLayoutComputer = new System.Windows.Forms.FlowLayoutPanel();
             this.Accouts = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
+            this.buttonAddBill = new System.Windows.Forms.Button();
             this.buttonDep_Account = new System.Windows.Forms.Button();
             this.textBoxSearch_Account = new System.Windows.Forms.TextBox();
             this.dataGridView_Account = new System.Windows.Forms.DataGridView();
@@ -60,6 +62,8 @@ namespace PBL3_NetManagement
             this.buttonAdd_Account = new System.Windows.Forms.Button();
             this.buttonEdit_Account = new System.Windows.Forms.Button();
             this.Goods = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView_Goods = new System.Windows.Forms.DataGridView();
             this.textBoxSearch_Goods = new System.Windows.Forms.TextBox();
             this.buttonDel_Goods = new System.Windows.Forms.Button();
             this.buttonEdit_Goods = new System.Windows.Forms.Button();
@@ -75,10 +79,6 @@ namespace PBL3_NetManagement
             this.buttonSearch_Bills = new System.Windows.Forms.Button();
             this.texboxSearch_Bills = new System.Windows.Forms.TextBox();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.dataGridView_Goods = new System.Windows.Forms.DataGridView();
-            this.buttonAddBill = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.Computers.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -89,9 +89,9 @@ namespace PBL3_NetManagement
             this.Accouts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Account)).BeginInit();
             this.Goods.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Goods)).BeginInit();
             this.SystemLog.SuspendLayout();
             this.Bills.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Goods)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -162,7 +162,7 @@ namespace PBL3_NetManagement
             this.buttonEditComputer.AutoSize = true;
             this.buttonEditComputer.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.buttonEditComputer.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.buttonEditComputer.Location = new System.Drawing.Point(835, 330);
+            this.buttonEditComputer.Location = new System.Drawing.Point(716, 330);
             this.buttonEditComputer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonEditComputer.Name = "buttonEditComputer";
             this.buttonEditComputer.Size = new System.Drawing.Size(97, 39);
@@ -311,7 +311,7 @@ namespace PBL3_NetManagement
             this.buttonDeleteComputer.AutoSize = true;
             this.buttonDeleteComputer.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.buttonDeleteComputer.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.buttonDeleteComputer.Location = new System.Drawing.Point(713, 330);
+            this.buttonDeleteComputer.Location = new System.Drawing.Point(836, 330);
             this.buttonDeleteComputer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonDeleteComputer.Name = "buttonDeleteComputer";
             this.buttonDeleteComputer.Size = new System.Drawing.Size(97, 39);
@@ -348,6 +348,28 @@ namespace PBL3_NetManagement
             this.Accouts.TabIndex = 1;
             this.Accouts.Text = "Account";
             this.Accouts.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(692, 20);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(53, 17);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Search";
+            // 
+            // buttonAddBill
+            // 
+            this.buttonAddBill.BackColor = System.Drawing.SystemColors.Highlight;
+            this.buttonAddBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddBill.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonAddBill.Location = new System.Drawing.Point(557, 33);
+            this.buttonAddBill.Name = "buttonAddBill";
+            this.buttonAddBill.Size = new System.Drawing.Size(100, 44);
+            this.buttonAddBill.TabIndex = 8;
+            this.buttonAddBill.Text = "Add Bill";
+            this.buttonAddBill.UseVisualStyleBackColor = false;
+            this.buttonAddBill.Click += new System.EventHandler(this.buttonAddBill_Click);
             // 
             // buttonDep_Account
             // 
@@ -444,6 +466,35 @@ namespace PBL3_NetManagement
             this.Goods.Size = new System.Drawing.Size(973, 630);
             this.Goods.TabIndex = 3;
             this.Goods.Text = "Goods";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button1.Enabled = false;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Location = new System.Drawing.Point(445, 35);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 44);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Search";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // dataGridView_Goods
+            // 
+            this.dataGridView_Goods.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView_Goods.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dataGridView_Goods.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Goods.Location = new System.Drawing.Point(41, 118);
+            this.dataGridView_Goods.MultiSelect = false;
+            this.dataGridView_Goods.Name = "dataGridView_Goods";
+            this.dataGridView_Goods.ReadOnly = true;
+            this.dataGridView_Goods.RowHeadersWidth = 51;
+            this.dataGridView_Goods.RowTemplate.Height = 24;
+            this.dataGridView_Goods.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView_Goods.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView_Goods.Size = new System.Drawing.Size(888, 471);
+            this.dataGridView_Goods.TabIndex = 6;
             // 
             // textBoxSearch_Goods
             // 
@@ -622,62 +673,11 @@ namespace PBL3_NetManagement
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
             // 
-            // dataGridView_Goods
-            // 
-            this.dataGridView_Goods.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView_Goods.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dataGridView_Goods.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Goods.Location = new System.Drawing.Point(41, 118);
-            this.dataGridView_Goods.MultiSelect = false;
-            this.dataGridView_Goods.Name = "dataGridView_Goods";
-            this.dataGridView_Goods.ReadOnly = true;
-            this.dataGridView_Goods.RowHeadersWidth = 51;
-            this.dataGridView_Goods.RowTemplate.Height = 24;
-            this.dataGridView_Goods.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView_Goods.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_Goods.Size = new System.Drawing.Size(888, 471);
-            this.dataGridView_Goods.TabIndex = 6;
-            // 
-            // buttonAddBill
-            // 
-            this.buttonAddBill.BackColor = System.Drawing.SystemColors.Highlight;
-            this.buttonAddBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddBill.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonAddBill.Location = new System.Drawing.Point(557, 33);
-            this.buttonAddBill.Name = "buttonAddBill";
-            this.buttonAddBill.Size = new System.Drawing.Size(100, 44);
-            this.buttonAddBill.TabIndex = 8;
-            this.buttonAddBill.Text = "Add Bill";
-            this.buttonAddBill.UseVisualStyleBackColor = false;
-            this.buttonAddBill.Click += new System.EventHandler(this.buttonAddBill_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(692, 20);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 17);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Search";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button1.Enabled = false;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(445, 35);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 44);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // FormAdmin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(993, 655);
+            this.ClientSize = new System.Drawing.Size(986, 655);
             this.Controls.Add(this.tabControl1);
             this.Name = "FormAdmin";
             this.Text = "NetManagement";
@@ -701,11 +701,11 @@ namespace PBL3_NetManagement
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Account)).EndInit();
             this.Goods.ResumeLayout(false);
             this.Goods.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Goods)).EndInit();
             this.SystemLog.ResumeLayout(false);
             this.SystemLog.PerformLayout();
             this.Bills.ResumeLayout(false);
             this.Bills.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Goods)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -138,6 +138,7 @@ namespace PBL3_NetManagement
             this.Controls.Add(this.label1);
             this.Name = "FormPassword";
             this.Text = "Change Password";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormPassword_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

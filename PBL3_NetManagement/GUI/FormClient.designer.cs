@@ -35,14 +35,12 @@ namespace PBL3_NetManagement
             this.textBoxRemainingTime = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxTimeUsed = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.buttonPassword = new System.Windows.Forms.Button();
             this.buttonOrder = new System.Windows.Forms.Button();
             this.buttonLogout = new System.Windows.Forms.Button();
-            this.buttonChat = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -109,23 +107,12 @@ namespace PBL3_NetManagement
             this.textBoxTimeUsed.Size = new System.Drawing.Size(195, 30);
             this.textBoxTimeUsed.TabIndex = 6;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("MTO Chaney", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(49, 289);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 27);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Chat";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("MTO Chaney", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(160, 289);
+            this.label5.Location = new System.Drawing.Point(46, 289);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 27);
             this.label5.TabIndex = 11;
@@ -136,7 +123,7 @@ namespace PBL3_NetManagement
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("MTO Chaney", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(257, 289);
+            this.label6.Location = new System.Drawing.Point(201, 289);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(92, 27);
             this.label6.TabIndex = 12;
@@ -158,7 +145,7 @@ namespace PBL3_NetManagement
             this.buttonPassword.BackColor = System.Drawing.Color.Transparent;
             this.buttonPassword.BackgroundImage = global::PBL3_NetManagement.Properties.Resources.Password;
             this.buttonPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonPassword.Location = new System.Drawing.Point(262, 210);
+            this.buttonPassword.Location = new System.Drawing.Point(206, 210);
             this.buttonPassword.Name = "buttonPassword";
             this.buttonPassword.Size = new System.Drawing.Size(80, 76);
             this.buttonPassword.TabIndex = 9;
@@ -171,7 +158,7 @@ namespace PBL3_NetManagement
             this.buttonOrder.BackgroundImage = global::PBL3_NetManagement.Properties.Resources.Order;
             this.buttonOrder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonOrder.Font = new System.Drawing.Font("MTO Chaney", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonOrder.Location = new System.Drawing.Point(150, 210);
+            this.buttonOrder.Location = new System.Drawing.Point(36, 210);
             this.buttonOrder.Name = "buttonOrder";
             this.buttonOrder.Size = new System.Drawing.Size(80, 76);
             this.buttonOrder.TabIndex = 8;
@@ -189,18 +176,6 @@ namespace PBL3_NetManagement
             this.buttonLogout.UseVisualStyleBackColor = true;
             this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
             // 
-            // buttonChat
-            // 
-            this.buttonChat.BackColor = System.Drawing.Color.Transparent;
-            this.buttonChat.BackgroundImage = global::PBL3_NetManagement.Properties.Resources.Chat;
-            this.buttonChat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonChat.Location = new System.Drawing.Point(36, 210);
-            this.buttonChat.Name = "buttonChat";
-            this.buttonChat.Size = new System.Drawing.Size(80, 76);
-            this.buttonChat.TabIndex = 0;
-            this.buttonChat.UseVisualStyleBackColor = false;
-            this.buttonChat.Click += new System.EventHandler(this.buttonChat_Click);
-            // 
             // FormUsercs
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -210,7 +185,6 @@ namespace PBL3_NetManagement
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.buttonPassword);
             this.Controls.Add(this.buttonOrder);
             this.Controls.Add(this.buttonLogout);
@@ -220,7 +194,6 @@ namespace PBL3_NetManagement
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxBalance);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.buttonChat);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "FormUsercs";
             this.Text = "Username";
@@ -232,8 +205,6 @@ namespace PBL3_NetManagement
         }
 
         #endregion
-
-        private System.Windows.Forms.Button buttonChat;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxBalance;
         private System.Windows.Forms.Label label2;
@@ -243,7 +214,6 @@ namespace PBL3_NetManagement
         private System.Windows.Forms.Button buttonLogout;
         private System.Windows.Forms.Button buttonOrder;
         private System.Windows.Forms.Button buttonPassword;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;

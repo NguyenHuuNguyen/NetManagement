@@ -91,6 +91,7 @@ namespace PBL3_NetManagement.GUI
             this.Controls.Add(this.textBoxAmount);
             this.Name = "FormDep";
             this.Text = "Dep";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormDep_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

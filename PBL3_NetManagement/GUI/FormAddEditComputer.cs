@@ -14,6 +14,8 @@ namespace PBL3_NetManagement.GUI
 {
     public partial class FormAddEditComputer : Form
     {
+        public delegate void del1();
+        public del1 ReEnable;
         Computer computertemp;
         public FormAddEditComputer()
         {
@@ -90,13 +92,23 @@ namespace PBL3_NetManagement.GUI
             {
                 Edit_Computer();
             }
-           
+            ReEnable();
             Dispose();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-            Dispose();
+            Cancel();
+        }
+        private void Cancel()
+        {
+            ReEnable();
+            this.Dispose();
+        }
+
+        private void FormAddEditComputer_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Cancel();
         }
     }
 }
