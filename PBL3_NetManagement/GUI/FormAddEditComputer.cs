@@ -14,6 +14,8 @@ namespace PBL3_NetManagement.GUI
 {
     public partial class FormAddEditComputer : Form
     {
+        public delegate void del1();
+        public del1 ReEnable;
         Computer computertemp;
         public FormAddEditComputer()
         {
@@ -82,6 +84,21 @@ namespace PBL3_NetManagement.GUI
                 }
 
             }
+            if (textBoxIP.Text.Length > 50)
+            {
+                MessageBox.Show("Ip is too long!");
+                return;
+            }
+            if (textBoxName.Text.Length > 50)
+            {
+                MessageBox.Show("Computer's name is too long!");
+                return;
+            }
+            if (textBoxPrice.Text.Length > 20)
+            {
+                MessageBox.Show("Price is invalid!");
+                return;
+            }
             if (textBoxIP.Enabled==true)
             {
                 Add_Computer();
@@ -90,13 +107,23 @@ namespace PBL3_NetManagement.GUI
             {
                 Edit_Computer();
             }
-           
+            ReEnable();
             Dispose();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-            Dispose();
+            Cancel();
+        }
+        private void Cancel()
+        {
+            ReEnable();
+            this.Dispose();
+        }
+
+        private void FormAddEditComputer_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Cancel();
         }
     }
 }

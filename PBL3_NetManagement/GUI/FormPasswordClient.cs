@@ -13,6 +13,8 @@ namespace PBL3_NetManagement
 {
     public partial class FormPassword : Form
     {
+        public delegate void del1();
+        public del1 ReEnable;
         private string Username;
         public FormPassword(string username)
         {
@@ -22,6 +24,11 @@ namespace PBL3_NetManagement
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
+            Cancel();
+        }
+        private void Cancel()
+        {
+            ReEnable();
             this.Dispose();
         }
 
@@ -38,11 +45,26 @@ namespace PBL3_NetManagement
             }
             if (textBoxNewpassword.Text == "")
             {
-                MessageBox.Show("Password cannot be blank!");
+                MessageBox.Show("New password cannot be blank!");
                 return;
             }
+            if (textBoxNewpassword.Text == textBoxPassword.Text)
+            {
+                MessageBox.Show("New password cannot be old password!");
+                return;
+            }
+            if (textBoxNewpassword.Text.Length > 50)
+            {
+                MessageBox.Show("New password is too long!");
+            }
             BLL_NM.Instance.ChangePassword(Username, textBoxConfirm.Text);
+            ReEnable();
             this.Dispose();
+        }
+
+        private void FormPassword_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Cancel();
         }
     }
 }

@@ -15,6 +15,7 @@ namespace PBL3_NetManagement.GUI
     {
         public delegate void del1();
         public del1 Reload_Goods;
+        public del1 ReEnable;
         public FormAddEditGood()
         {
             InitializeComponent();
@@ -60,6 +61,11 @@ namespace PBL3_NetManagement.GUI
                 MessageBox.Show("Good's price can not be blank!");
                 return;
             }
+            if (Convert.ToDouble(textBoxPriceGood.Text) == 0)
+            {
+                MessageBox.Show("Good's price can not be zero!");
+                return;
+            }
             string temp = textBoxPriceGood.Text;
             if (temp[0] == '.')
             {
@@ -75,6 +81,16 @@ namespace PBL3_NetManagement.GUI
                 }
 
             }
+            if (textBoxNameGood.Text.Length > 50)
+            {
+                MessageBox.Show("Good's name is too long!");
+                return;
+            }
+            if (textBoxPriceGood.Text.Length > 20)
+            {
+                MessageBox.Show("Invalid price!");
+                return;
+            }
             if (label1.Tag == null)
             {
                 Add_Good();
@@ -83,13 +99,24 @@ namespace PBL3_NetManagement.GUI
             {
                 Edit_Good();
             }
+            ReEnable();
             Reload_Goods();
             Dispose();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
+            Cancel();
+        }
+        private void Cancel()
+        {
+            ReEnable();
             Dispose();
         }
+        private void FormAddEditGood_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Cancel();
+        }
+
     }
 }

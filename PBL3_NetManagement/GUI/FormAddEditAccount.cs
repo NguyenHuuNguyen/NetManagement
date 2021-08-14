@@ -15,6 +15,7 @@ namespace PBL3_NetManagement.GUI
     {
         public delegate void del1();
         public del1 Reload_Accounts;
+        public del1 ReEnable;
         public FormAddEditAccount()
         {
             InitializeComponent();
@@ -61,6 +62,21 @@ namespace PBL3_NetManagement.GUI
                     return;
                 }
             }
+            if (textBoxUsername.Text.Length > 50)
+            {
+                MessageBox.Show("Username is too long!");
+                return;
+            }
+            if (textBoxPassword.Text.Length > 50)
+            {
+                MessageBox.Show("Password is too long!");
+                return;
+            }
+            if(textBoxBalance.Text.Length > 20)
+            {
+                MessageBox.Show("Balance is invalid!");
+                return;
+            }
             Account account = new Account
             {
                 UserName = textBoxUsername.Text,
@@ -84,13 +100,24 @@ namespace PBL3_NetManagement.GUI
                 BLL_NM.Instance.Add_Account(account);
             }
             else BLL_NM.Instance.Edit_Account(account);
+            ReEnable();
             Reload_Accounts();
             this.Dispose();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
+            Cancel();
+        }
+        private void Cancel()
+        {
+            ReEnable();
             this.Dispose();
+        }
+
+        private void FormAddEditAccount_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Cancel();
         }
     }
 }

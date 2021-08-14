@@ -31,6 +31,7 @@ namespace PBL3_NetManagement
         private void Logout()
         {
             BLL_NM.Instance.Logout_init(login_time, AdminName);
+            timer_LoadComputer.Enabled = false;
             this.Dispose();
             SetVisible_Login();
         }
@@ -42,7 +43,14 @@ namespace PBL3_NetManagement
         private void buttonAddComputer_Click(object sender, EventArgs e)
         {
             FormAddEditComputer faec = new FormAddEditComputer();
+            faec.Text = "Add computer";
+            faec.ReEnable = ReEnable;
+            this.Enabled = false;
             faec.Show();
+        }
+        private void ReEnable()
+        {
+            this.Enabled = true;
         }
 
         private void buttonDeleteComputer_Click(object sender, EventArgs e)
@@ -70,6 +78,9 @@ namespace PBL3_NetManagement
         {
             if (string.Equals(textBoxIDComputer.Text, "")) return;
             FormAddEditComputer faec = new FormAddEditComputer(buttonEditComputer.Tag as Computer);
+            faec.Text = "Edit computer";
+            faec.ReEnable = ReEnable;
+            this.Enabled = false;
             faec.Show();
         }
 
@@ -142,7 +153,7 @@ namespace PBL3_NetManagement
             foreach(ComputerLog item in BLL_NM.Instance.GetComputerLogs())
             if(computer.ComputerStatus == true && item.idComputer==computer.idComputer && item.DateLogout == item.DateLogin )
             {
-                    textBoxUser.Text = item.UserName;
+                textBoxUser.Text = item.UserName;
             }
             if (computer.ComputerStatus == false)
                 textBoxUser.Clear();
@@ -160,7 +171,7 @@ namespace PBL3_NetManagement
             textBoxSystemLog_All.Text = "";
             foreach(ComputerLog i in BLL_NM.Instance.GetComputerLogs().OrderByDescending(o => o.idLog))
             {
-                if (!i.UserName.Contains(textBox_SystemLogSearch.Text)) continue;
+                if (!(i.UserName.Contains(textBox_SystemLogSearch.Text) || (i.idComputer.Contains(textBox_SystemLogSearch.Text)))) continue;
                 textBoxSystemLog_All.Text += "Log Id:     " + i.idLog + "\r\n";
                 textBoxSystemLog_All.Text += "Username:     " + i.UserName + "\r\n";
                 textBoxSystemLog_All.Text += "Computer Id:  " + i.idComputer + "\r\n";
@@ -230,13 +241,18 @@ namespace PBL3_NetManagement
             if (dataGridView_Account.CurrentRow == null) return;
             FormDep fd = new FormDep(dataGridView_Account.CurrentRow.Cells["Username"].Value.ToString());
             fd.Reload_Accounts = LoadAccounts;
+            fd.ReEnable = ReEnable;
+            this.Enabled = false;
             fd.Show();
         }
 
         private void buttonAdd_Account_Click(object sender, EventArgs e)
         {
             FormAddEditAccount ftemp = new FormAddEditAccount();
+            ftemp.Text = "Add account";
             ftemp.Reload_Accounts = LoadAccounts;
+            ftemp.ReEnable = ReEnable;
+            this.Enabled = false;
             ftemp.Show();
         }
 
@@ -244,7 +260,10 @@ namespace PBL3_NetManagement
         {
             if (dataGridView_Account.CurrentRow == null) return;
             FormAddEditAccount ftemp = new FormAddEditAccount(dataGridView_Account.CurrentRow.Cells["Username"].Value.ToString());
+            ftemp.Text = "Edit account";
             ftemp.Reload_Accounts = LoadAccounts;
+            ftemp.ReEnable = ReEnable;
+            this.Enabled = false;
             ftemp.Show();
         }
 
@@ -275,6 +294,8 @@ namespace PBL3_NetManagement
             FormAddEditGood fgood = new FormAddEditGood();
             fgood.Reload_Goods = Load_DTGrid_Good;
             fgood.Text = "Add good";
+            fgood.ReEnable = ReEnable;
+            this.Enabled = false;
             fgood.Show();
         }
 
@@ -285,6 +306,8 @@ namespace PBL3_NetManagement
             FormAddEditGood fgood = new FormAddEditGood(Convert.ToInt32(dr.Cells["idGood"].Value.ToString()));
             fgood.Reload_Goods = Load_DTGrid_Good;
             fgood.Text = "Edit good";
+            fgood.ReEnable = ReEnable;
+            this.Enabled = false;
             fgood.Show();
         }
 
@@ -304,6 +327,8 @@ namespace PBL3_NetManagement
         private void buttonAddBill_Click(object sender, EventArgs e)
         {
             FormOrder od = new FormOrder(dataGridView_Account.CurrentRow.Cells["Username"].Value.ToString());
+            od.ReEnable = ReEnable;
+            this.Enabled = false;
             od.Show();
         }
     }

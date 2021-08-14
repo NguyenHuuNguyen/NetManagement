@@ -43,6 +43,7 @@ namespace PBL3_NetManagement.GUI
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.textBoxNameGood);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(11, 10);
@@ -53,7 +54,7 @@ namespace PBL3_NetManagement.GUI
             // 
             // textBoxNameGood
             // 
-            this.textBoxNameGood.Location = new System.Drawing.Point(111, 20);
+            this.textBoxNameGood.Location = new System.Drawing.Point(136, 22);
             this.textBoxNameGood.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxNameGood.Name = "textBoxNameGood";
             this.textBoxNameGood.Size = new System.Drawing.Size(213, 22);
@@ -62,14 +63,16 @@ namespace PBL3_NetManagement.GUI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 25);
+            this.label1.Font = new System.Drawing.Font("MTO Chaney", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(17, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 17);
+            this.label1.Size = new System.Drawing.Size(109, 26);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Name Good";
+            this.label1.Text = "Good\'s Name";
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.textBoxPriceGood);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(11, 78);
@@ -80,7 +83,7 @@ namespace PBL3_NetManagement.GUI
             // 
             // textBoxPriceGood
             // 
-            this.textBoxPriceGood.Location = new System.Drawing.Point(111, 22);
+            this.textBoxPriceGood.Location = new System.Drawing.Point(136, 24);
             this.textBoxPriceGood.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPriceGood.Name = "textBoxPriceGood";
             this.textBoxPriceGood.Size = new System.Drawing.Size(213, 22);
@@ -89,42 +92,51 @@ namespace PBL3_NetManagement.GUI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 27);
+            this.label2.Font = new System.Drawing.Font("MTO Chaney", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(17, 22);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 17);
+            this.label2.Size = new System.Drawing.Size(104, 26);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Price Good";
+            this.label2.Text = "Good\'s Price";
             // 
             // buttonOK
             // 
             this.buttonOK.AutoSize = true;
-            this.buttonOK.Location = new System.Drawing.Point(227, 154);
+            this.buttonOK.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.buttonOK.Font = new System.Drawing.Font("MTO Chaney", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonOK.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonOK.Location = new System.Drawing.Point(86, 154);
             this.buttonOK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonOK.Name = "buttonOK";
-            this.buttonOK.Size = new System.Drawing.Size(67, 27);
+            this.buttonOK.Size = new System.Drawing.Size(78, 36);
             this.buttonOK.TabIndex = 3;
             this.buttonOK.TabStop = false;
             this.buttonOK.Text = "OK";
-            this.buttonOK.UseVisualStyleBackColor = true;
+            this.buttonOK.UseVisualStyleBackColor = false;
             this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
             // buttonCancel
             // 
             this.buttonCancel.AutoSize = true;
-            this.buttonCancel.Location = new System.Drawing.Point(324, 154);
+            this.buttonCancel.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.buttonCancel.Font = new System.Drawing.Font("MTO Chaney", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonCancel.Location = new System.Drawing.Point(234, 154);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(67, 27);
+            this.buttonCancel.Size = new System.Drawing.Size(78, 36);
             this.buttonCancel.TabIndex = 4;
             this.buttonCancel.TabStop = false;
             this.buttonCancel.Text = "Cancel";
-            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.UseVisualStyleBackColor = false;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // FormAddEditGood
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::PBL3_NetManagement.Properties.Resources.Backgroud;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(403, 202);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOK);
@@ -133,6 +145,7 @@ namespace PBL3_NetManagement.GUI
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormAddEditGood";
             this.Text = "Add Good";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormAddEditGood_FormClosed);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

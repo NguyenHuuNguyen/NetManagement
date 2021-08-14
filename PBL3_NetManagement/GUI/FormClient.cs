@@ -47,7 +47,13 @@ namespace PBL3_NetManagement
         private void buttonPassword_Click(object sender, EventArgs e)
         {
             FormPassword fp = new FormPassword(this.Text);
+            fp.ReEnable = ReEnable;
+            this.Enabled = false;
             fp.Show();
+        }
+        private void ReEnable()
+        {
+            this.Enabled = true;
         }
         private void FormUsercs_Load(object sender, EventArgs e)
         {
@@ -95,6 +101,8 @@ namespace PBL3_NetManagement
         private void buttonOrder_Click(object sender, EventArgs e)
         {
             FormOrder od = new FormOrder(this.Text);
+            od.ReEnable = ReEnable;
+            this.Enabled = false;
             od.Show();
         }
 
