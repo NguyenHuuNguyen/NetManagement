@@ -61,6 +61,11 @@ namespace PBL3_NetManagement.GUI
                 MessageBox.Show("Good's price can not be blank!");
                 return;
             }
+            if (Convert.ToDouble(textBoxPriceGood.Text) == 0)
+            {
+                MessageBox.Show("Good's price can not be zero!");
+                return;
+            }
             string temp = textBoxPriceGood.Text;
             if (temp[0] == '.')
             {
@@ -75,6 +80,16 @@ namespace PBL3_NetManagement.GUI
                     return;
                 }
 
+            }
+            if (textBoxNameGood.Text.Length > 50)
+            {
+                MessageBox.Show("Good's name is too long!");
+                return;
+            }
+            if (textBoxPriceGood.Text.Length > 20)
+            {
+                MessageBox.Show("Invalid price!");
+                return;
             }
             if (label1.Tag == null)
             {
@@ -102,5 +117,6 @@ namespace PBL3_NetManagement.GUI
         {
             Cancel();
         }
+
     }
 }

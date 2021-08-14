@@ -62,6 +62,21 @@ namespace PBL3_NetManagement.GUI
                     return;
                 }
             }
+            if (textBoxUsername.Text.Length > 50)
+            {
+                MessageBox.Show("Username is too long!");
+                return;
+            }
+            if (textBoxPassword.Text.Length > 50)
+            {
+                MessageBox.Show("Password is too long!");
+                return;
+            }
+            if(textBoxBalance.Text.Length > 20)
+            {
+                MessageBox.Show("Balance is invalid!");
+                return;
+            }
             Account account = new Account
             {
                 UserName = textBoxUsername.Text,

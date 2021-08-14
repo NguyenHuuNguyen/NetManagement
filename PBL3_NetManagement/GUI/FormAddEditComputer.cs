@@ -84,6 +84,21 @@ namespace PBL3_NetManagement.GUI
                 }
 
             }
+            if (textBoxIP.Text.Length > 50)
+            {
+                MessageBox.Show("Ip is too long!");
+                return;
+            }
+            if (textBoxName.Text.Length > 50)
+            {
+                MessageBox.Show("Computer's name is too long!");
+                return;
+            }
+            if (textBoxPrice.Text.Length > 20)
+            {
+                MessageBox.Show("Price is invalid!");
+                return;
+            }
             if (textBoxIP.Enabled==true)
             {
                 Add_Computer();
