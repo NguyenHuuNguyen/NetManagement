@@ -45,6 +45,11 @@ namespace PBL3_NetManagement.GUI
                 }
 
             }
+            if (textBoxAmount.Text.Length > 20)
+            {
+                MessageBox.Show("Invalid amount!");
+                return;
+            }
             double amount = Convert.ToDouble(temp);
             BLL_NM.Instance.BalanceSubtraction(this.Text, amount * (-1.0));
             Reload_Accounts();

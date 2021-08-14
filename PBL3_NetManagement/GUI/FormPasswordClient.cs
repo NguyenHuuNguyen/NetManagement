@@ -48,6 +48,15 @@ namespace PBL3_NetManagement
                 MessageBox.Show("New password cannot be blank!");
                 return;
             }
+            if (textBoxNewpassword.Text == textBoxPassword.Text)
+            {
+                MessageBox.Show("New password cannot be old password!");
+                return;
+            }
+            if (textBoxNewpassword.Text.Length > 50)
+            {
+                MessageBox.Show("New password is too long!");
+            }
             BLL_NM.Instance.ChangePassword(Username, textBoxConfirm.Text);
             ReEnable();
             this.Dispose();

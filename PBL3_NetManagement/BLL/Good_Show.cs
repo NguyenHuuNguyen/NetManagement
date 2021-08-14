@@ -10,7 +10,6 @@ namespace PBL3_NetManagement.BLL
     {
      public string GoodName { get; set; }
      public double GoodPrice { get; set; }
-
      public int idGood { get; set; }
     }
 }

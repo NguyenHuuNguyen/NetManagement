@@ -31,6 +31,7 @@ namespace PBL3_NetManagement
         private void Logout()
         {
             BLL_NM.Instance.Logout_init(login_time, AdminName);
+            timer_LoadComputer.Enabled = false;
             this.Dispose();
             SetVisible_Login();
         }
@@ -152,7 +153,7 @@ namespace PBL3_NetManagement
             foreach(ComputerLog item in BLL_NM.Instance.GetComputerLogs())
             if(computer.ComputerStatus == true && item.idComputer==computer.idComputer && item.DateLogout == item.DateLogin )
             {
-                    textBoxUser.Text = item.UserName;
+                textBoxUser.Text = item.UserName;
             }
             if (computer.ComputerStatus == false)
                 textBoxUser.Clear();

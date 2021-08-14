@@ -66,9 +66,9 @@ namespace PBL3_NetManagement.GUI
             this.label1.Font = new System.Drawing.Font("MTO Chaney", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(17, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 26);
+            this.label1.Size = new System.Drawing.Size(109, 26);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Name Good";
+            this.label1.Text = "Good\'s Name";
             // 
             // panel2
             // 
@@ -95,9 +95,9 @@ namespace PBL3_NetManagement.GUI
             this.label2.Font = new System.Drawing.Font("MTO Chaney", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(17, 22);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 26);
+            this.label2.Size = new System.Drawing.Size(104, 26);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Price Good";
+            this.label2.Text = "Good\'s Price";
             // 
             // buttonOK
             // 
