@@ -33,10 +33,6 @@ namespace PBL3_NetManagement.GUI
         }
         private void Add_Computer()
         {
-            if (BLL_NM.Instance.ComputerCheck(textBoxIP.Text)){
-                MessageBox.Show("This IP is already existed!");
-                return;
-            }
             Computer cpt = new Computer();
             cpt.idComputer = textBoxIP.Text;
             cpt.ComputerName = textBoxName.Text;
@@ -53,7 +49,11 @@ namespace PBL3_NetManagement.GUI
         }
         private void buttonOK_Click(object sender, EventArgs e)
         {
-
+            if (BLL_NM.Instance.ComputerCheck(textBoxIP.Text))
+            {
+                MessageBox.Show("This IP is already existed!");
+                return;
+            }
             if (textBoxIP.Text == "")
             {
                 MessageBox.Show("IP can not be blank!");
